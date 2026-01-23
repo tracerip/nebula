@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /games/
+Allow: /games/*/*.png
+Allow: /games/*/*.jpg
+Allow: /games/*/*.jpeg
+Allow: /games/*/*.webp
+Allow: /games/*/*.gif
+Allow: /games/*/*.txt
+
+Sitemap: https://nebula.trace.rip/sitemap.xml

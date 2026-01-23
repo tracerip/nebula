@@ -1,0 +1,17 @@
+# Description
+Minecraft 1.5.2 is a classic release of the beloved sandbox survival game developed by Mojang Studios. Known as "The Redstone Update," this version revolutionized automation by introducing hoppers, droppers, comparators, daylight sensors, trapped chests, weighted pressure plates, and redstone blocks. It also added nether quartz ore, quartz blocks, and activator rails. Version 1.5.2 holds nostalgic value for veteran players and remains popular for classic modpacks and servers seeking that authentic early Minecraft experience.
+
+# Controls
+Left Click - Attack/mine blocks; pick up all items from a slot; split a stack evenly (hold and drag); sort loose items into one stack (double click).
+Right Click - Place blocks/use items; pick up half of a stack; place one item from a stack (hold and drag).
+WASD - Move forward, left, backward, right.
+Space - Jump; swim upward; fly up (Creative Mode).
+Shift - Sneak/crouch; fly down (Creative Mode); prevent falling off edges.
+E - Open inventory.
+Q - Drop held item.
+1-9 / Scroll Wheel - Select hotbar slot.
+F5 - Toggle third-person view.
+F3 - Debug screen.
+
+# Hidden SEO
+minecraft 1.5.2, minecraft 1.5, minecraft redstone update, minecraft 1.5.2 download, minecraft 1.5.2 free, minecraft hopper update, minecraft comparator, minecraft droppers, minecraft daylight sensor, minecraft 1.5.2 mods, minecraft 1.5.2 server, minecraft java edition, minecraft classic version, minecraft old version, minecraft 1.5.2 texture packs, minecraft nether quartz, minecraft quartz blocks, minecraft redstone blocks, minecraft trapped chest, minecraft weighted pressure plate, minecraft activator rail, minecraft 1.5.2 multiplayer, minecraft nostalgia, minecraft legacy version, minecraft survival game, minecraft sandbox game, minecraft mojang, minecraft automation update, minecraft 1.5.2 forge, minecraft technic 1.5.2, minecraft modded 1.5.2

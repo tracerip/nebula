@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <title>Nebula | Loading...</title>
+    <meta name="description" content="Play unblocked games on Nebula.">
+    <meta name="keywords" content="unblocked games, free games, html5">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Nebula Games">
+    <meta name="theme-color" content="#050505">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nebula Games">
+    <meta property="og:description" content="Play unblocked games on Nebula.">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="assets/og-image.jpg">
+
+    <meta property="twitter:url" content="">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Nebula Games">
+    <meta property="twitter:description" content="Play unblocked games on Nebula.">
+    <meta property="twitter:image" content="assets/og-image.jpg">
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="canonical" href="">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo">nebula</a>
+            <div class="nav-links">
+                <a href="/">Back to Library</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container play-container">
+        
+        <div class="controls-bar" data-aos="fade-down">
+            
+            <div style="display:flex; align-items:center; gap:15px;">
+                <a href="/" class="btn"><i class="fa-solid fa-arrow-left"></i> Library</a>
+                <h1 id="game-title" style="margin:0; font-size:1.2rem; font-weight:700;">Loading...</h1>
+            </div>
+
+            <div style="display:flex; gap: 10px;">
+                <a id="raw-btn" href="#" target="_blank" class="btn">
+                    <i class="fa-solid fa-up-right-from-square"></i> Raw
+                </a>
+                
+                <button onclick="toggleFullscreen()" class="btn">
+                    <i class="fa-solid fa-expand"></i> Fullscreen
+                </button>
+            </div>
+        </div>
+
+        <div class="game-frame-wrapper" data-aos="zoom-in">
+            <iframe id="game-frame" src="" allowfullscreen title="Game Content"></iframe>
+        </div>
+
+        <noscript>
+            <div style="padding: 20px; color: white;">
+                <h1>Unblocked Games Library</h1>
+                <p>Please enable JavaScript to play unblocked games like Slope, 1v1.LOL, and Retro Bowl.</p>
+            </div>
+        </noscript>
+
+        <div id="game-details-section" class="game-details" style="display: none;">
+            <div class="detail-box">
+                <h3><i class="fa-solid fa-circle-info"></i> Description</h3>
+                <p id="desc-content">...</p>
+            </div>
+            <div class="detail-box">
+                <h3><i class="fa-solid fa-gamepad"></i> Controls</h3>
+                <p id="controls-content">...</p>
+            </div>
+        </div>
+
+        <div id="seo-content" class="sr-only"></div>
+    </div>
+
+    <footer style="text-align:center; padding: 2rem; color: #555; font-size: 0.9rem;">
+        &copy; <span id="year"></span> Nebula Games.
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+</html>
