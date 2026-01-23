@@ -1,12 +1,17 @@
 # Description
-Minecraft 1.12.2 is a highly stable release of the iconic sandbox survival game developed by Mojang Studios. Known as "The World of Color Update," this version introduced concrete blocks, glazed terracotta, parrots, the recipe book, advancements system, and illusioners. Version 1.12.2 remains the gold standard for modded Minecraft due to its exceptional stability and massive mod library, making it the preferred choice for modpacks like RLCraft, SkyFactory, and countless others.
+[Minecraft 1.12.2](https://minecraft.wiki/w/Java_Edition_1.12.2) is a highly stable release of the iconic sandbox survival game developed by [Mojang Studios](https://minecraft.wiki/w/Mojang_Studios). Known as "[The World of Color Update](https://minecraft.wiki/w/World_of_Color_Update)," this version introduced concrete blocks, glazed terracotta, parrots, the recipe book, advancements system, and illusioners.
+
+Looking for better performance?
+We offer an experimental [WASM Version](play?game=eaglercraft-1.12.2-wasm) of this game. It runs faster on some devices but may not be supported by all browsers.
+
+If you prefer the classic combat mechanics before the cooldown update, you should play [Minecraft 1.8.8](play?game=eaglercraftx-1.8.8). For a nostalgic trip back to the early automation era, check out [Minecraft 1.5.2](play?game=eaglercraft-1.5.2).
 
 # Controls
 Left Click - Attack/mine blocks; pick up all items from a slot; split a stack evenly (hold and drag); sort loose items into one stack (double click).
 Right Click - Place blocks/use items; pick up half of a stack; place one item from a stack (hold and drag).
 WASD - Move forward, left, backward, right.
 Space - Jump; swim upward; fly up (Creative Mode).
-Shift - Sneak/crouch; fly down (Creative Mode); prevent falling off edges.
+Shift - Sneak/crouch; fly down (Creative Mode).
 E - Open inventory.
 Q - Drop held item.
 1-9 / Scroll Wheel - Select hotbar slot.

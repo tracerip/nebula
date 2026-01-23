@@ -1,5 +1,7 @@
 # Description
-Minecraft 1.5.2 is a classic release of the beloved sandbox survival game developed by Mojang Studios. Known as "The Redstone Update," this version revolutionized automation by introducing hoppers, droppers, comparators, daylight sensors, trapped chests, weighted pressure plates, and redstone blocks. It also added nether quartz ore, quartz blocks, and activator rails. Version 1.5.2 holds nostalgic value for veteran players and remains popular for classic modpacks and servers seeking that authentic early Minecraft experience.
+[Minecraft 1.5.2](https://minecraft.wiki/w/Java_Edition_1.5.2) is a classic release of the beloved sandbox survival game developed by [Mojang Studios](https://minecraft.wiki/w/Mojang_Studios). Known as "[The Redstone Update](https://minecraft.wiki/w/Redstone_Update)," this version revolutionized automation by introducing hoppers, droppers, comparators, daylight sensors, trapped chests, weighted pressure plates, and redstone blocks. It also added nether quartz ore, quartz blocks, and activator rails. Version 1.5.2 holds nostalgic value for veteran players seeking an authentic early experience.
+
+If you are looking for optimized PVP or a more feature-rich survival experience, we recommend trying [Minecraft 1.8.8](play?game=eaglercraftx-1.8.8) or the legendary [Minecraft 1.12.2](play?game=eaglercraft-1.12.2) directly in our library.
 
 # Controls
 Left Click - Attack/mine blocks; pick up all items from a slot; split a stack evenly (hold and drag); sort loose items into one stack (double click).

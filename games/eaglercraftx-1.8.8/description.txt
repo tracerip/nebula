@@ -1,12 +1,17 @@
 # Description
-Minecraft 1.8.8 is a stable release of the legendary sandbox survival game developed by Mojang Studios. Known as "The Bountiful Update," this version introduced ocean monuments, guardians, new stone variants, banners, armor stands, and enhanced command block functionality. Version 1.8 remains highly popular for PvP servers due to its classic combat mechanics featuring fast-paced clicking and no attack cooldown.
+[Minecraft 1.8.8](https://minecraft.wiki/w/Java_Edition_1.8.8) is a stable release of the legendary sandbox survival game developed by [Mojang Studios](https://minecraft.wiki/w/Mojang_Studios). Known as "[The Bountiful Update](https://minecraft.wiki/w/Bountiful_Update)," this version introduced ocean monuments, guardians, new stone variants, and banners. Version 1.8 remains highly popular for PvP servers due to its classic combat mechanics.
+
+Looking for better performance?
+We offer an experimental [WASM Version](play?game=eaglercraftx-1.8.8-wasm) of this game. It runs faster on some devices but may not be supported by all browsers.
+
+If you are looking for more building blocks and the updated color palette, upgrade to [Minecraft 1.12.2](play?game=eaglercraft-1.12.2). Alternatively, go back to the roots of redstone engineering in [Minecraft 1.5.2](play?game=eaglercraft-1.5.2).
 
 # Controls
 Left Click - Attack/mine blocks; pick up all items from a slot; split a stack evenly (hold and drag); sort loose items into one stack (double click).
 Right Click - Place blocks/use items; pick up half of a stack; place one item from a stack (hold and drag).
 WASD - Move forward, left, backward, right.
 Space - Jump; swim upward; fly up (Creative Mode).
-Shift - Sneak/crouch; fly down (Creative Mode); prevent falling off edges.
+Shift - Sneak/crouch; fly down (Creative Mode).
 E - Open inventory.
 Q - Drop held item.
 1-9 / Scroll Wheel - Select hotbar slot.

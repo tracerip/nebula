@@ -8,31 +8,31 @@ const games = [
     { 
         id: "eaglercraft-1.12.2", 
         title: "Minecraft 1.12.2 (Recommended)", 
-        description: "1.12, the release of the World of Color Update, released on June 7, 2017.", 
+        description: "1.12, the release of the [World of Color Update](https://minecraft.wiki/w/World_of_Color_Update), released on June 7, 2017.", 
         icon: "thumbnail.png"
     },
     { 
         id: "eaglercraft-1.12.2-wasm", 
         title: "Minecraft 1.12.2 (WASM-GC) (Experimental)", 
-        description: "1.12, the release of the World of Color Update, released on June 7, 2017.", 
+        description: "1.12, the release of the [World of Color Update](https://minecraft.wiki/w/World_of_Color_Update), released on June 7, 2017.", 
         icon: "thumbnail.jpg"
     },
     { 
         id: "eaglercraftx-1.8.8", 
         title: "Minecraft 1.8.8 (Recommended)", 
-        description: "1.8, the release of the Bountiful Update released on September 2, 2014.", 
+        description: "1.8, the release of the [Bountiful Update](https://minecraft.wiki/w/Bountiful_Update) released on September 2, 2014.", 
         icon: "thumbnail.png"
     },
     { 
         id: "eaglercraftx-1.8.8-wasm", 
         title: "Minecraft 1.8.8 (WASM-GC) (Experimental)", 
-        description: "1.8, the release of the Bountiful Update released on September 2, 2014.", 
+        description: "1.8, the release of the [Bountiful Update](https://minecraft.wiki/w/Bountiful_Update) released on September 2, 2014.", 
         icon: "thumbnail.png"
     },
     { 
         id: "eaglercraft-1.5.2", 
         title: "Minecraft 1.5.2", 
-        description: "1.5, the release of the Redstone Update, released on March 13, 2013.", 
+        description: "1.5, the release of the [Redstone Update](https://minecraft.wiki/w/Redstone_Update), released on March 13, 2013.", 
         icon: "thumbnail.png"
     },
     { 
@@ -63,27 +63,37 @@ function renderGameGrid(list) {
     grid.innerHTML = '';
 
     list.forEach((game, index) => {
-        const card = document.createElement('a');
-        card.href = `play?game=${game.id}`;
+        const cleanDesc = stripMarkdown(game.description);
+        const htmlDesc = parseMarkdown(game.description);
+        const card = document.createElement('div');
         card.className = 'game-card';
         card.setAttribute('data-aos', 'fade-up');
         card.setAttribute('data-aos-delay', index * 50);
+        
+        card.onclick = (e) => {
+            if (e.target.tagName !== 'A') {
+                window.location.href = `play?game=${game.id}`;
+            }
+        };
 
         const isImage = /\.(png|jpg|jpeg|gif|webp)$/i.test(game.icon);
+        
         let mediaHtml = isImage 
-            ? `<img src="games/${game.id}/${game.icon}" alt="${game.title}" class="card-img" loading="lazy">` 
-            : `<div class="card-emoji">${game.icon}</div>`;
+            ? `<img src="games/${game.id}/${game.icon}" alt="${cleanDesc}" class="card-img" loading="lazy">` 
+            : `<div class="card-emoji" aria-label="${cleanDesc}" role="img">${game.icon}</div>`;
 
         card.innerHTML = `
             <div class="card-media-wrapper">${mediaHtml}</div>
             <div class="card-content">
                 <h3>${game.title}</h3>
-                <p>${game.description}</p>
+                <p>${htmlDesc}</p>
             </div>
         `;
         grid.appendChild(card);
     });
 }
+
+
 
 function setupSearch() {
     const input = document.getElementById('search-input');
@@ -163,32 +173,31 @@ function parseAndDisplayDetails(text) {
 
     text.split(/\r?\n/).forEach(line => {
         const trimmed = line.trim();
-        
         if (trimmed.startsWith('#')) {
             const header = trimmed.replace('#', '').trim().toLowerCase();
             if (header.includes('description')) currentSection = 'description';
             else if (header.includes('control')) currentSection = 'controls';
             else if (header.includes('hidden') || header.includes('seo')) currentSection = 'seo';
             else currentSection = null;
-        } 
-        else if (currentSection) {
+        } else if (currentSection) {
             sections[currentSection] += line + "\n";
         }
     });
 
-    document.getElementById('desc-content').innerText = sections.description.trim() || "No description available.";
-    document.getElementById('controls-content').innerText = sections.controls.trim() || "No controls listed.";
+    const rawDesc = sections.description.trim() || "No description available.";
+    document.getElementById('desc-content').innerHTML = parseMarkdown(rawDesc);
+
+    const rawControls = sections.controls.trim() || "No controls listed.";
+    document.getElementById('controls-content').innerHTML = parseMarkdown(rawControls);
 
     if (sections.seo.trim()) {
         const seoText = sections.seo.trim();
-        
         document.getElementById('seo-content').innerText = seoText;
         
         const metaTag = document.querySelector('meta[name="keywords"]');
         if(metaTag) {
             const existing = metaTag.getAttribute('content');
-            const newKeywords = seoText.replace(/\n/g, ', ');
-            metaTag.setAttribute('content', `${existing}, ${newKeywords}`);
+            metaTag.setAttribute('content', `${existing}, ${seoText.replace(/\n/g, ', ')}`);
         }
     }
 }
@@ -198,4 +207,15 @@ function toggleFullscreen() {
     if (elem.requestFullscreen) elem.requestFullscreen();
     else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
     else if (elem.msRequestFullscreen) elem.msRequestFullscreen();
+}
+
+function parseMarkdown(text) {
+    return text.replace(
+        /\[([^\]]+)\]\(([^)]+)\)/g, 
+        '<a href="$2" target="_blank" class="desc-link" onclick="event.stopPropagation()">$1</a>'
+    );
+}
+
+function stripMarkdown(text) {
+    return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
 }
