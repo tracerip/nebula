@@ -4,8 +4,9 @@
     <!-- Main Menu -->
     <url>
         <loc>https://nebula.trace.rip</loc>
-        <lastmod>2025-01-22</lastmod>
+        <lastmod>2025-01-23</lastmod>
         <priority>1.0</priority>
+        <changefreq>daliy</changefreq>
     </url>
 
     <!-- Game: Slope -->
@@ -13,13 +14,15 @@
         <loc>https://nebula.trace.rip/play?game=slope</loc>
         <lastmod>2025-01-22</lastmod>
         <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
     <!-- Game: EaglercraftX 1.8.8 WASM-GC -->
     <url>
         <loc>https://nebula.trace.rip/play?game=eaglercraftx-1.8.8-wasm</loc>
         <lastmod>2025-01-22</lastmod>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
     <!-- Game: EaglercraftX 1.8.8 -->
@@ -27,13 +30,15 @@
         <loc>https://nebula.trace.rip/play?game=eaglercraftx-1.8.8</loc>
         <lastmod>2025-01-22</lastmod>
         <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
     <!-- Game: Eaglercraft 1.12.2 WASM-GC -->
     <url>
         <loc>https://nebula.trace.rip/play?game=eaglercraft-1.12.2-wasm</loc>
         <lastmod>2025-01-22</lastmod>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
     <!-- Game: Eaglercraft 1.12.2 -->
@@ -41,6 +46,14 @@
         <loc>https://nebula.trace.rip/play?game=eaglercraft-1.12.2</loc>
         <lastmod>2025-01-22</lastmod>
         <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
     </url>
 
+    <!-- Game: Block Blast -->
+    <url>
+        <loc>https://nebula.trace.rip/play?game=block-blast</loc>
+        <lastmod>2025-01-23</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
 </urlset>

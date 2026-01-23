@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Lost in Space</title>
+    
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#050505">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo">nebula</a>
+            <div class="nav-links">
+                <a href="/">Back to Library</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container error-page">
+        <div class="error-content" data-aos="zoom-in" data-aos-duration="1000">
+            <h1 class="error-code">404</h1>
+            
+            <h2 class="error-title">Signal Lost</h2>
+            <p class="error-desc">
+                The game you are looking for has drifted into a black hole.<br>
+                It may have been removed or the URL is incorrect.
+            </p>
+
+            <a href="/" class="btn btn-large">
+                <i class="fa-solid fa-shuttle-space"></i> Return to Base
+            </a>
+
+        </div>
+    </div>
+
+    <footer style="text-align:center; padding: 2rem; color: #555; font-size: 0.9rem;">
+        &copy; <span id="year"></span> Nebula Games.
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        document.getElementById('year').innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>
