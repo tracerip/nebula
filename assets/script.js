@@ -34,6 +34,12 @@ const games = [
         title: "Minecraft 1.5.2", 
         description: "1.5, the release of the Redstone Update, released on March 13, 2013.", 
         icon: "thumbnail.png"
+    },
+    { 
+        id: "block-blast", 
+        title: "Block Blast", 
+        description: "An exciting online puzzle game with drag-and-drop Tetris block gameplay.", 
+        icon: "thumbnail.jpg"
     }
 ];
 
