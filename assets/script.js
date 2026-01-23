@@ -16,8 +16,8 @@ const library = [
         icon: "thumbnail.jpg",
         creator: {
             name: "Y8",
-            link: "https://www.y8.com/",
-            icon: "fa-solid fa-globe"
+            link: "https://github.com/reunbozdo/BlockBlast",
+            icon: "fa-brands fa-github"
         }
     },
     { 
