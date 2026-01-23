@@ -1,15 +1,35 @@
+/*
+    Discord: "fa-brands fa-discord"
+    GitHub: "fa-brands fa-github"
+    Twitter/X: "fa-brands fa-x-twitter"
+    YouTube: "fa-brands fa-youtube"
+    Generic Website: "fa-solid fa-globe"
+    Person/User: "fa-solid fa-user"
+    Game Controller: "fa-solid fa-gamepad"
+*/
+
 const library = [
     { 
         id: "slope", 
         title: "Slope", 
-        description: "The ultimate 3D speed run game.", 
-        icon: "thumbnail.jpg"
+        description: "The ultimate 3D speed run game where you play as a ball dodging red walls going down a slope.", 
+        icon: "thumbnail.jpg",
+        creator: {
+            name: "Y8",
+            link: "https://www.y8.com/",
+            icon: "fa-solid fa-globe"
+        }
     },
     { 
         id: "block-blast", 
         title: "Block Blast", 
         description: "An exciting online puzzle game with drag-and-drop Tetris block gameplay.", 
-        icon: "thumbnail.jpg"
+        icon: "thumbnail.jpg",
+        creator: {
+            name: "Hungry Studio",
+            link: "https://www.hungrystudio.com/",
+            icon: "fa-solid fa-globe"
+        }
     },
     {
         type: "group",
@@ -21,49 +41,89 @@ const library = [
                 id: "eaglercraft-1.12.2", 
                 title: "Minecraft 1.12.2 (JS)", 
                 description: "1.12, the release of the [World of Color Update](https://minecraft.wiki/w/World_of_Color_Update), released on June 7, 2017.", 
-                icon: "thumbnail.png"
+                icon: "thumbnail.png",
+                creator: {
+                    name: "PeytonPlayz585",
+                    link: "https://discord.gg/nmKB4KRUMy",
+                    icon: "fa-brands fa-discord"
+                }
             },
             { 
                 id: "eaglercraft-1.12.2-wasm", 
                 title: "Minecraft 1.12.2 (WASM-GC)", 
                 description: "1.12, the release of the [World of Color Update](https://minecraft.wiki/w/World_of_Color_Update), released on June 7, 2017.", 
-                icon: "thumbnail.png"
+                icon: "thumbnail.png",
+                creator: {
+                    name: "PeytonPlayz585",
+                    link: "https://discord.gg/nmKB4KRUMy",
+                    icon: "fa-brands fa-discord"
+                }
             },
             { 
                 id: "eaglercraftx-1.8.8", 
                 title: "Minecraft 1.8.8 (JS)", 
                 description: "1.8, the release of the [Bountiful Update](https://minecraft.wiki/w/Bountiful_Update) released on September 2, 2014.", 
-                icon: "thumbnail.png"
+                icon: "thumbnail.png",
+                creator: {
+                    name: "Ayunami2000 / lax1dude",
+                    link: "https://gitflic.ru/project/lax1dude/eaglercraft-1_8",
+                    icon: "fa-brands fa-github"
+                }
             },
             { 
                 id: "eaglercraftx-1.8.8-wasm", 
                 title: "Minecraft 1.8.8 (WASM-GC)", 
                 description: "1.8, the release of the [Bountiful Update](https://minecraft.wiki/w/Bountiful_Update) released on September 2, 2014.", 
-                icon: "thumbnail.png"
+                icon: "thumbnail.png",
+                creator: {
+                    name: "Ayunami2000 / lax1dude",
+                    link: "https://gitflic.ru/project/lax1dude/eaglercraft-1_8",
+                    icon: "fa-brands fa-github"
+                }
             },
             { 
                 id: "eaglercraft-1.5.2", 
                 title: "Minecraft 1.5.2 (JS)", 
                 description: "1.5, the release of the [Redstone Update](https://minecraft.wiki/w/Redstone_Update), released on March 13, 2013.", 
-                icon: "thumbnail.png"
+                icon: "thumbnail.png",
+                creator: {
+                    name: "Ayunami2000 / lax1dude",
+                    link: "https://eaglercraft.com/",
+                    icon: "fa-solid fa-globe"
+                }
             },
             { 
                 id: "eaglercraft-indev-20100223", 
                 title: "Minecraft Indev 20100223 (JS)", 
                 description: "Indev 20100223, the version that introduced [paintings](https://minecraft.wiki/w/Java_Edition_Indev_20100223), released on February 23, 2010.", 
-                icon: "thumbnail.png"
+                icon: "thumbnail.png",
+                creator: {
+                    name: "Colbster937",
+                    link: "https://github.com/EaglerPorts/in-20100223",
+                    icon: "fa-brands fa-github"
+                }
             },
             { 
                 id: "eaglercraft-indev-20100223-wasm", 
                 title: "Minecraft Indev 20100223 (WASM-GC)", 
                 description: "Indev 20100223, the version that introduced [paintings](https://minecraft.wiki/w/Java_Edition_Indev_20100223), released on February 23, 2010.", 
-                icon: "thumbnail.png"
+                icon: "thumbnail.png",
+                creator: {
+                    name: "Colbster937",
+                    link: "https://github.com/EaglerPorts/in-20100223",
+                    icon: "fa-brands fa-github"
+                }
             },
             { 
                 id: "eaglercraft-classic-0.30", 
                 title: "Minecraft 0.30 (WASM-GC)", 
                 description: "0.30, the version that introduced [Survival Mode](https://minecraft.wiki/w/Java_Edition_Classic_0.30), released on November 10, 2009.", 
-                icon: "thumbnail.png"
+                icon: "thumbnail.png",
+                creator: {
+                    name: "PeytonPlayz585",
+                    link: "https://github.com/PeytonPlayz585",
+                    icon: "fa-brands fa-github"
+                }
             }
         ]
     }
@@ -192,6 +252,21 @@ function loadGame() {
         const rawBtn = document.getElementById('raw-btn');
         if(rawBtn) rawBtn.href = gamePath;
 
+        const creatorBtn = document.getElementById('creator-btn');
+        const creatorIcon = document.getElementById('creator-icon');
+        const creatorName = document.getElementById('creator-name');
+
+        if (gameData.creator) {
+            creatorBtn.style.display = 'inline-flex';
+            creatorBtn.href = gameData.creator.link;
+            creatorName.innerText = gameData.creator.name;
+            // Set icon class (e.g. "fa-brands fa-github")
+            creatorIcon.className = gameData.creator.icon;
+        } else {
+            creatorBtn.style.display = 'none';
+        }
+        // ---------------------------------
+
         updateSEOTags(gameData);
 
         fetch(`games/${gameId}/description.txt`)
@@ -224,12 +299,10 @@ function updateSEOTags(game) {
     linkTag.setAttribute('href', currentUrl);
 
     document.querySelector('meta[name="description"]').setAttribute("content", `Play ${game.title} unblocked. ${game.description}`);
-
     document.querySelector('meta[property="og:title"]').setAttribute("content", game.title);
     document.querySelector('meta[property="og:description"]').setAttribute("content", game.description);
     document.querySelector('meta[property="og:url"]').setAttribute("content", currentUrl);
     document.querySelector('meta[property="og:image"]').setAttribute("content", imageUrl);
-
     document.querySelector('meta[property="twitter:title"]').setAttribute("content", game.title);
     document.querySelector('meta[property="twitter:description"]').setAttribute("content", game.description);
     document.querySelector('meta[property="twitter:image"]').setAttribute("content", imageUrl);

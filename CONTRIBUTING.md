@@ -25,9 +25,11 @@ We use a specific text format to dynamically load the "Description" and "Control
 Create a file named `description.txt` inside your game folder. Use the `#` character to denote section headers. The parser looks for **Description**, **Controls**, and **SEO**.
 
 **Template:**
-```markdown
+```text
 # Description
-Write a detailed description of the game here. This is what appears in the "Description" box below the game frame. You can use multiple lines.
+Write a detailed description of the game here. This is what appears in the "Description" box below the game frame.
+
+You can use multiple lines. Link markdown [Text](url) is supported.
 
 # Controls
 WASD - Move
@@ -48,11 +50,18 @@ Open `assets/script.js`. You will see a `games` array at the top of the file. Yo
     id: "folder-name",          // Must match the folder name in games/
     title: "Game Title",        // Displayed on the card and tab
     description: "Short text.", // A short blurb (1 sentence) for the grid card
-    icon: "thumbnail.png"       // Filename inside the game folder OR an Emoji
+    icon: "thumbnail.png",      // Filename inside the game folder OR an Emoji
+    
+    // Optional: Adds a button linking to the developer next to the "Raw" button
+    creator: {
+        name: "Developer Name",
+        link: "https://github.com/developer",
+        icon: "fa-brands fa-github" // FontAwesome Class
+    }
 }
 ```
 
-#### Example A: Using an Image Thumbnail
+#### Example A: Using an Image Thumbnail & Creator
 If you have a `thumbnail.jpg` inside `games/my-cool-game/`:
 
 ```javascript
@@ -60,12 +69,17 @@ If you have a `thumbnail.jpg` inside `games/my-cool-game/`:
     id: "my-cool-game", 
     title: "My Cool Game", 
     description: "An awesome adventure game.", 
-    icon: "thumbnail.jpg"
+    icon: "thumbnail.jpg",
+    creator: {
+        name: "Rob Kay",
+        link: "https://twitter.com/robkay",
+        icon: "fa-brands fa-twitter"
+    }
 }
 ```
 
-#### Example B: Using an Emoji Icon
-If you don't have an image, you can simply paste an emoji string. The system automatically detects if it is not a file extension:
+#### Example B: Using an Emoji Icon (No Creator)
+If you don't have an image or creator info, you can omit the creator block and use an emoji:
 
 ```javascript
 { 
@@ -75,6 +89,14 @@ If you don't have an image, you can simply paste an emoji string. The system aut
     icon: "🏓" 
 }
 ```
+
+**Common Icons:**
+*   Discord: `fa-brands fa-discord`
+*   GitHub: `fa-brands fa-github`
+*   Twitter/X: `fa-brands fa-x-twitter`
+*   YouTube: `fa-brands fa-youtube`
+*   Generic Website: `fa-solid fa-globe`
+*   Generic User: `fa-solid fa-user`
 
 ### 4. Updating the Sitemap
 
@@ -101,3 +123,4 @@ Open `sitemap.xml` and add a new `<url>` block. Make sure to replace `game-id` w
 3.  Ensure your card appears in the grid with the correct image/emoji.
 4.  Click the card. Ensure the game loads in the iframe.
 5.  Check below the game to see if your Description and Controls loaded correctly from the text file.
+6.  If you added a creator, check that the button appears next to "Raw" and links to the correct URL.
