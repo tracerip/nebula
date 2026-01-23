@@ -159,6 +159,30 @@ iframe { width: 100%; height: 100%; border: none; }
     padding-bottom: 0.5rem;
 }
 
+.group-card {
+    border-color: rgba(251, 191, 36, 0.3);
+}
+
+.group-card:hover {
+    border-color: rgba(251, 191, 36, 0.8);
+    box-shadow: 0 10px 40px -10px rgba(251, 191, 36, 0.2);
+}
+
+.back-card {
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.back-card .card-content h3 {
+    color: var(--accent);
+}
+
+.back-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.08);
+}
+
 .sr-only {
     position: absolute;
     width: 1px;

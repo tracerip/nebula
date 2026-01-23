@@ -1,4 +1,4 @@
-const games = [
+const library = [
     { 
         id: "slope", 
         title: "Slope", 
@@ -6,40 +6,54 @@ const games = [
         icon: "thumbnail.jpg"
     },
     { 
-        id: "eaglercraft-1.12.2", 
-        title: "Minecraft 1.12.2 (Recommended)", 
-        description: "1.12, the release of the [World of Color Update](https://minecraft.wiki/w/World_of_Color_Update), released on June 7, 2017.", 
-        icon: "thumbnail.png"
-    },
-    { 
-        id: "eaglercraft-1.12.2-wasm", 
-        title: "Minecraft 1.12.2 (WASM-GC) (Experimental)", 
-        description: "1.12, the release of the [World of Color Update](https://minecraft.wiki/w/World_of_Color_Update), released on June 7, 2017.", 
-        icon: "thumbnail.jpg"
-    },
-    { 
-        id: "eaglercraftx-1.8.8", 
-        title: "Minecraft 1.8.8 (Recommended)", 
-        description: "1.8, the release of the [Bountiful Update](https://minecraft.wiki/w/Bountiful_Update) released on September 2, 2014.", 
-        icon: "thumbnail.png"
-    },
-    { 
-        id: "eaglercraftx-1.8.8-wasm", 
-        title: "Minecraft 1.8.8 (WASM-GC) (Experimental)", 
-        description: "1.8, the release of the [Bountiful Update](https://minecraft.wiki/w/Bountiful_Update) released on September 2, 2014.", 
-        icon: "thumbnail.png"
-    },
-    { 
-        id: "eaglercraft-1.5.2", 
-        title: "Minecraft 1.5.2", 
-        description: "1.5, the release of the [Redstone Update](https://minecraft.wiki/w/Redstone_Update), released on March 13, 2013.", 
-        icon: "thumbnail.png"
-    },
-    { 
         id: "block-blast", 
         title: "Block Blast", 
         description: "An exciting online puzzle game with drag-and-drop Tetris block gameplay.", 
         icon: "thumbnail.jpg"
+    },
+    {
+        type: "group",
+        title: "Minecraft Collection",
+        description: "All Eaglercraft versions (1.5.2, 1.8.8, 1.12.2).",
+        icon: "🪓",
+        items: [
+            { 
+                id: "eaglercraft-1.12.2", 
+                title: "Minecraft 1.12.2 (JS) (Recommended)", 
+                description: "1.12, the release of the [World of Color Update](https://minecraft.wiki/w/World_of_Color_Update), released on June 7, 2017.", 
+                icon: "thumbnail.png"
+            },
+            { 
+                id: "eaglercraft-1.12.2-wasm", 
+                title: "Minecraft 1.12.2 (WASM-GC) (Experimental)", 
+                description: "1.12, the release of the [World of Color Update](https://minecraft.wiki/w/World_of_Color_Update), released on June 7, 2017.", 
+                icon: "thumbnail.png"
+            },
+            { 
+                id: "eaglercraftx-1.8.8", 
+                title: "Minecraft 1.8.8 (JS) (Recommended)", 
+                description: "1.8, the release of the [Bountiful Update](https://minecraft.wiki/w/Bountiful_Update) released on September 2, 2014.", 
+                icon: "thumbnail.png"
+            },
+            { 
+                id: "eaglercraftx-1.8.8-wasm", 
+                title: "Minecraft 1.8.8 (WASM-GC) (Experimental)", 
+                description: "1.8, the release of the [Bountiful Update](https://minecraft.wiki/w/Bountiful_Update) released on September 2, 2014.", 
+                icon: "thumbnail.png"
+            },
+            { 
+                id: "eaglercraft-1.5.2", 
+                title: "Minecraft 1.5.2 (JS)", 
+                description: "1.5, the release of the [Redstone Update](https://minecraft.wiki/w/Redstone_Update), released on March 13, 2013.", 
+                icon: "thumbnail.png"
+            },
+            { 
+                id: "eaglercraft-classic-0.30", 
+                title: "Minecraft 0.30 (WASM-GC)", 
+                description: "0.30, the version that introduced [Survival Mode](https://minecraft.wiki/w/Java_Edition_Classic_0.30), released on November 10, 2009.", 
+                icon: "thumbnail.png"
+            }
+        ]
     }
 ];
 
@@ -49,43 +63,70 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearSpan = document.getElementById('year');
     if(yearSpan) yearSpan.innerText = new Date().getFullYear();
 
-    if (window.location.pathname.includes('play')) {
+    if (window.location.pathname.includes('/play')) {
         loadGame();
     } else {
-        renderGameGrid(games);
+        renderGameGrid(library);
         setupSearch();
     }
 });
 
-function renderGameGrid(list) {
+function renderGameGrid(list, isSubGroup = false) {
     const grid = document.getElementById('game-grid');
     if(!grid) return;
     grid.innerHTML = '';
 
-    list.forEach((game, index) => {
-        const cleanDesc = stripMarkdown(game.description);
-        const htmlDesc = parseMarkdown(game.description);
+    if (isSubGroup) {
+        const backCard = document.createElement('div');
+        backCard.className = 'game-card back-card';
+        backCard.onclick = () => {
+            renderGameGrid(library); 
+            document.getElementById('search-input').value = '';
+        };
+        backCard.innerHTML = `
+            <div class="card-media-wrapper" style="background: rgba(255,255,255,0.05);">
+                <div class="card-emoji">↩️</div>
+            </div>
+            <div class="card-content">
+                <h3>Go Back</h3>
+                <p>Return to main library</p>
+            </div>
+        `;
+        grid.appendChild(backCard);
+    }
+
+    list.forEach((item, index) => {
+        const cleanDesc = stripMarkdown(item.description);
+        const htmlDesc = parseMarkdown(item.description);
+
         const card = document.createElement('div');
         card.className = 'game-card';
+        if (item.type === 'group') card.classList.add('group-card');
+        
         card.setAttribute('data-aos', 'fade-up');
         card.setAttribute('data-aos-delay', index * 50);
         
         card.onclick = (e) => {
-            if (e.target.tagName !== 'A') {
-                window.location.href = `play?game=${game.id}`;
+            if (e.target.tagName === 'A') return;
+
+            if (item.type === 'group') {
+                renderGameGrid(item.items, true);
+            } else {
+                window.location.href = `play?game=${item.id}`;
             }
         };
 
-        const isImage = /\.(png|jpg|jpeg|gif|webp)$/i.test(game.icon);
-        
+        const isImage = /\.(png|jpg|jpeg|gif|webp)$/i.test(item.icon);
         let mediaHtml = isImage 
-            ? `<img src="games/${game.id}/${game.icon}" alt="${cleanDesc}" class="card-img" loading="lazy">` 
-            : `<div class="card-emoji" aria-label="${cleanDesc}" role="img">${game.icon}</div>`;
+            ? `<img src="${item.type === 'group' ? 'assets/' + item.icon : 'games/' + item.id + '/' + item.icon}" alt="${cleanDesc}" class="card-img" loading="lazy">` 
+            : `<div class="card-emoji" aria-label="${cleanDesc}" role="img">${item.icon}</div>`;
+
+        const titlePrefix = item.type === 'group' ? '<i class="fa-solid fa-folder-open" style="color:#fbbf24; margin-right:8px;"></i>' : '';
 
         card.innerHTML = `
             <div class="card-media-wrapper">${mediaHtml}</div>
             <div class="card-content">
-                <h3>${game.title}</h3>
+                <h3>${titlePrefix}${item.title}</h3>
                 <p>${htmlDesc}</p>
             </div>
         `;
@@ -93,27 +134,46 @@ function renderGameGrid(list) {
     });
 }
 
-
-
 function setupSearch() {
     const input = document.getElementById('search-input');
     if(!input) return;
+    
     input.addEventListener('keyup', (e) => {
         const term = e.target.value.toLowerCase();
-        renderGameGrid(games.filter(g => g.title.toLowerCase().includes(term)));
+
+        if (term === '') {
+            renderGameGrid(library);
+        } else {
+            const allGames = flattenLibrary(library);
+            const filtered = allGames.filter(g => g.title.toLowerCase().includes(term));
+            renderGameGrid(filtered);
+        }
     });
+}
+
+function flattenLibrary(list) {
+    let result = [];
+    list.forEach(item => {
+        if (item.type === 'group') {
+            result = result.concat(item.items);
+        } else {
+            result.push(item);
+        }
+    });
+    return result;
 }
 
 function loadGame() {
     const params = new URLSearchParams(window.location.search);
     const gameId = params.get('game');
-    const gameData = games.find(g => g.id === gameId);
+
+    const allGames = flattenLibrary(library);
+    const gameData = allGames.find(g => g.id === gameId);
     
     if (gameData) {
         const gamePath = `games/${gameId}/index.html`;
 
-        const pageTitle = `Playing ${gameData.title} | Nebula`;
-        document.title = pageTitle;
+        document.title = `Playing ${gameData.title} | Nebula`;
         document.getElementById('game-title').innerText = gameData.title;
         document.getElementById('game-frame').src = gamePath;
 
@@ -133,7 +193,7 @@ function loadGame() {
             });
 
     } else {
-        window.location.href = '/';
+        window.location.href = '/'; 
     }
 }
 

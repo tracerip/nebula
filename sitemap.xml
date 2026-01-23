@@ -1,55 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
-    <!-- Main Menu -->
     <url>
         <loc>https://nebula.trace.rip</loc>
         <lastmod>2025-01-23</lastmod>
         <priority>1.0</priority>
         <changefreq>daily</changefreq>
     </url>
-
-    <!-- Game: Slope -->
     <url>
         <loc>https://nebula.trace.rip/play?game=slope</loc>
         <lastmod>2025-01-22</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
-
-    <!-- Game: EaglercraftX 1.8.8 WASM-GC -->
     <url>
         <loc>https://nebula.trace.rip/play?game=eaglercraftx-1.8.8-wasm</loc>
         <lastmod>2025-01-22</lastmod>
         <priority>0.7</priority>
         <changefreq>monthly</changefreq>
     </url>
-
-    <!-- Game: EaglercraftX 1.8.8 -->
     <url>
         <loc>https://nebula.trace.rip/play?game=eaglercraftx-1.8.8</loc>
         <lastmod>2025-01-22</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
-
-    <!-- Game: Eaglercraft 1.12.2 WASM-GC -->
     <url>
         <loc>https://nebula.trace.rip/play?game=eaglercraft-1.12.2-wasm</loc>
         <lastmod>2025-01-22</lastmod>
         <priority>0.7</priority>
         <changefreq>monthly</changefreq>
     </url>
-
-    <!-- Game: Eaglercraft 1.12.2 -->
     <url>
         <loc>https://nebula.trace.rip/play?game=eaglercraft-1.12.2</loc>
         <lastmod>2025-01-22</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
-
-    <!-- Game: Block Blast -->
+    <url>
+        <loc>https://nebula.trace.rip/play?game=eaglercraft-classic-0.30</loc>
+        <lastmod>2025-01-23</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
     <url>
         <loc>https://nebula.trace.rip/play?game=block-blast</loc>
         <lastmod>2025-01-23</lastmod>

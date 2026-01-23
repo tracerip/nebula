@@ -1,0 +1,21 @@
+# Description
+⚠️ Experimental Build: This is the [WebAssembly GC (WASM GC)](https://webassembly.org) version of Classic 0.30. While it often provides higher framerates, it may crash on older browsers or Chromebooks. If you experience issues, please use a different Minecraft version like [1.5.2](play?game=eaglercraft-1.5.2).
+
+[Minecraft Classic 0.30](https://minecraft.wiki/w/Java_Edition_Classic_0.30) is the final version of the Classic development phase, released on November 10, 2009, by [Notch (Markus Persson)](https://minecraft.wiki/w/Notch). This creative-only sandbox experience allows players to build freely with unlimited blocks in a simple yet charming blocky world. Featuring 32 different block types including grass, stone, wood, glass, flowers, and sponge, players can construct anything their imagination allows. With no survival mechanics, health, mobs, or crafting, this pure building experience captures the original vision of [Minecraft](https://minecraft.wiki/w/Minecraft).
+
+If you want the full survival experience with mobs, crafting, and modern features, try [Minecraft 1.8.8](play?game=eaglercraftx-1.8.8) or [Minecraft 1.12.2](play?game=eaglercraft-1.12.2).
+
+# Controls
+Left Click - Destroy/remove block.
+Right Click - Place selected block.
+WASD - Move forward, left, backward, right.
+Space - Jump.
+E / B - Open block selection menu.
+1-9 - Select block from hotbar.
+Scroll Wheel - Cycle through hotbar blocks.
+Enter - Toggle chat (multiplayer).
+R - Respawn at spawn point.
+F - Toggle fog distance/render distance.
+
+# Hidden SEO
+minecraft classic wasm, minecraft classic webassembly, minecraft classic 0.30, minecraft classic 0.30 wasm gc, minecraft creative classic, minecraft classic free, play minecraft classic, minecraft browser game, minecraft free to play, minecraft original version, minecraft 2009, minecraft notch, minecraft classic online, minecraft classic unblocked, minecraft classic no download, minecraft classic multiplayer, minecraft classic blocks, minecraft history, minecraft first version, minecraft legacy, minecraft retro, minecraft old version, minecraft classic creative mode, minecraft web game, minecraft free browser, minecraft nostalgia, minecraft beginning, minecraft classic sponge, minecraft 32 blocks, play minecraft free, minecraft experimental build
