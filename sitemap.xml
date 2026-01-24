@@ -45,7 +45,7 @@
     <url>
         <loc>https://nebula.trace.rip/play?game=eaglercraft-eaglercraft-indev-20100223-wasm</loc>
         <lastmod>2025-01-23</lastmod>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
@@ -68,19 +68,31 @@
     </url>
     <url>
         <loc>https://nebula.trace.rip/play?game=slime-rancher</loc>
-        <lastmod>2025-01-23</lastmod>
+        <lastmod>2025-01-24</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://nebula.trace.rip/play?game=super-mario-64</loc>
-        <lastmod>2025-01-23</lastmod>
+        <lastmod>2025-01-24</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://nebula.trace.rip/play?game=schoolboy-runaway</loc>
-        <lastmod>2025-01-23</lastmod>
+        <lastmod>2025-01-24</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://nebula.trace.rip/play?game=repo</loc>
+        <lastmod>2025-01-24</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://nebula.trace.rip/play?game=people-playground</loc>
+        <lastmod>2025-01-24</lastmod>
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>

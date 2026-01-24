@@ -163,12 +163,34 @@ const library = [
     { 
         id: "schoolboy-runaway", 
         title: "SchoolBoy Runaway", 
-        description: "A 3D action-adventure platform game released for the N64.", 
+        description: "A thrilling 3D first-person stealth game where you play as a mischievous schoolboy grounded by strict parents for bad grades.", 
         icon: "thumbnail.jpg",
         creator: {
-            name: "gn-math",
-            link: "https://gn-math.dev/",
-            icon: "fa-solid fa-globe"
+            name: "98Corbins",
+            link: "https://itch.io/profile/98corbins/",
+            icon: "fa-brands fa-itch-io"
+        }
+    },
+    { 
+        id: "repo", 
+        title: "R.E.P.O.", 
+        description: "A chaotic online co-op horror game for up to 6 players featuring realistic physics, proximity voice chat, and terrifying monsters.", 
+        icon: "thumbnail.webp",
+        creator: {
+            name: "98Corbins",
+            link: "https://itch.io/profile/98corbins/",
+            icon: "fa-brands fa-itch-io"
+        }
+    },
+    { 
+        id: "people-playground", 
+        title: "People Playground", 
+        description: "A gruesomely fun 2D sandbox physics simulator where you unleash chaos on over 100 ragdolls with 200+ weapons, explosives, traps, gadgets, and machines.", 
+        icon: "thumbnail.jpg",
+        creator: {
+            name: "98Corbins",
+            link: "https://itch.io/profile/98corbins/",
+            icon: "fa-brands fa-itch-io"
         }
     }
 ];
