@@ -66,4 +66,10 @@
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
+    <url>
+        <loc>https://nebula.trace.rip/play?game=slime-rancher</loc>
+        <lastmod>2025-01-23</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
 </urlset>

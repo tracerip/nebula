@@ -1,0 +1,21 @@
+# Description
+[Slime Rancher](https://slimerancher.fandom.com/wiki/Slime_Rancher) is a charming first-person life simulation adventure game developed by [Monomi Park](https://www.monomipark.com/). Players take on the role of Beatrix LeBeau, a young rancher who ventures to the Far, Far Range, a mysterious planet thousands of light-years from Earth. Armed with a vacpack, players collect adorable slimes, raise them on their ranch, harvest valuable plorts, and explore a colorful alien world filled with secrets, treasures, and unique biome zones. With ranch upgrades, gadgets to craft, and rare slimes to discover, Slime Rancher offers a relaxing yet engaging farming adventure.
+
+If you're looking for a different sandbox experience, try [Minecraft Indev 20100223](play?game=eaglercraft-indev-20100223) or [Terraria](play?game=terraria).
+
+# Controls
+Left Click - Shoot vacpack; launch items.
+Right Click - Vacuum; suck up slimes, plorts, and resources.
+WASD / ↑←↓→ - Move forward, left, backward, right.
+Space - Jump; jetpack (when unlocked).
+Shift - Sprint.
+Tab - Open vacpack inventory.
+1-4 - Select vacpack slot.
+Scroll Wheel - Cycle through vacpack slots.
+Escape - Pause menu.
+M - Open map.
+E - Interact; use gadgets.
+F1 - Slime index.
+
+# Hidden SEO
+slime rancher wasm, slime rancher webassembly, slime rancher browser, slime rancher online, slime rancher free, play slime rancher, slime rancher unblocked, slime rancher no download, slime rancher web game, slime rancher monomi park, slime rancher farming game, slime rancher simulation, slime rancher beatrix, slime rancher plorts, slime rancher vacpack, slime rancher ranch, slime rancher slimes, slime rancher exploration, slime rancher adventure, slime rancher cute game, slime rancher relaxing game, slime rancher free to play, slime rancher full game, slime rancher pc, slime rancher gadgets, slime rancher upgrades, slime rancher biomes, slime rancher experimental build, slime rancher far far range, slime rancher largo slimes, slime rancher gordo slimes, slime rancher tarr

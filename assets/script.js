@@ -130,11 +130,22 @@ const library = [
     { 
         id: "terraria", 
         title: "Terraria (WASM-GC)", 
-        description: "A 2D sandbox action-adventure game developed by [Re-Logic](https://re-logic.com/). Often described as 2D Minecraft.", 
+        description: "A 2D sandbox action-adventure game, often described as 2D Minecraft.", 
         icon: "thumbnail.jpg",
         creator: {
             name: "Mercury Workshop",
             link: "https://terraria.mercurywork.shop/",
+            icon: "fa-solid fa-globe"
+        }
+    },
+    { 
+        id: "slime-rancher", 
+        title: "Slime Rancher", 
+        description: "A charming first-person life simulation adventure game. Take on the role as a young rancher who ventures to the Far, Far Range, a mysterious planet thousands of light-years from Earth.", 
+        icon: "thumbnail.png",
+        creator: {
+            name: "Snubby",
+            link: "https://dev.snubby.top/",
             icon: "fa-solid fa-globe"
         }
     }
