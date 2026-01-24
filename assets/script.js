@@ -105,6 +105,69 @@ const library = [
             }
         ]
     },
+    {
+        type: "group",
+        title: "FNaF Collection",
+        description: "All FNaF versions (1, 2, 3, 4, etc).",
+        icon: "🐻",
+        items: [
+            { 
+                id: "fnaf", 
+                title: "Five Nights at Freddy's", 
+                description: "Play as a night security guard at Freddy Fazbear's Pizza, surviving five terrifying nights by monitoring cameras, closing doors, and managing flashlight power against animatronics.", 
+                icon: "thumbnail.jpg",
+                creator: {
+                    name: "genizy",
+                    link: "https://github.com/genizy/fnaf",
+                    icon: "fa-brands fa-github"
+                }
+            },
+            { 
+                id: "fnaf-2", 
+                title: "Five Nights at Freddy's 2", 
+                description: "No doors this time—use a flashlight on vents, wind a music box remotely, and don a Freddy mask to fool aggressive animatronics.", 
+                icon: "thumbnail.jpg",
+                creator: {
+                    name: "genizy",
+                    link: "https://github.com/genizy/fnaf",
+                    icon: "fa-brands fa-github"
+                }
+            },
+            { 
+                id: "fnaf-3", 
+                title: "Five Nights at Freddy's 3", 
+                description: "Maintain systems against malfunctioning vents, cameras, and audio lures while hallucination phantoms disrupt you and Springtrap hunts silently.", 
+                icon: "thumbnail.jpg",
+                creator: {
+                    name: "genizy",
+                    link: "https://github.com/genizy/fnaf",
+                    icon: "fa-brands fa-github"
+                }
+            },
+            { 
+                id: "fnaf-4", 
+                title: "Five Nights at Freddy's 4", 
+                description: "Pure nightmare fuel in a child's bedroom. Listen for breath sounds to flash the closet and hallway, wind the music box via flashlight, and fend off animatronics in close-quarters terror.", 
+                icon: "thumbnail.jpg",
+                creator: {
+                    name: "genizy",
+                    link: "https://github.com/genizy/fnaf",
+                    icon: "fa-brands fa-github"
+                }
+            },
+            { 
+                id: "fnaf-4-halloween", 
+                title: "Five Nights at Freddy's 4 Halloween", 
+                description: "Pure nightmare fuel in a child's bedroom. Listen for breath sounds to flash the closet and hallway, wind the music box via flashlight, and fend off animatronics in close-quarters terror.", 
+                icon: "thumbnail.jpg",
+                creator: {
+                    name: "genizy",
+                    link: "https://github.com/genizy/fnaf",
+                    icon: "fa-brands fa-github"
+                }
+            }
+        ]
+    },
     { 
         id: "slope", 
         title: "Slope", 
