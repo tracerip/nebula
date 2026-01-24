@@ -9,29 +9,7 @@
 */
 
 const library = [
-    { 
-        id: "slope", 
-        title: "Slope", 
-        description: "The ultimate 3D speed run game where you play as a ball dodging red walls going down a slope.", 
-        icon: "thumbnail.jpg",
-        creator: {
-            name: "Y8",
-            link: "https://github.com/reunbozdo/BlockBlast",
-            icon: "fa-brands fa-github"
-        }
-    },
-    { 
-        id: "block-blast", 
-        title: "Block Blast", 
-        description: "An exciting online puzzle game with drag-and-drop Tetris block gameplay.", 
-        icon: "thumbnail.jpg",
-        creator: {
-            name: "Hungry Studio",
-            link: "https://www.hungrystudio.com/",
-            icon: "fa-solid fa-globe"
-        }
-    },
-    {
+        {
         type: "group",
         title: "Minecraft Collection",
         description: "All Eaglercraft versions (1.5.2, 1.8.8, 1.12.2, etc).",
@@ -128,8 +106,30 @@ const library = [
         ]
     },
     { 
+        id: "slope", 
+        title: "Slope", 
+        description: "The ultimate 3D speed run game where you play as a ball dodging red walls going down a slope.", 
+        icon: "thumbnail.jpg",
+        creator: {
+            name: "Y8",
+            link: "https://github.com/reunbozdo/BlockBlast",
+            icon: "fa-brands fa-github"
+        }
+    },
+    { 
+        id: "block-blast", 
+        title: "Block Blast", 
+        description: "An exciting online puzzle game with drag-and-drop Tetris block gameplay.", 
+        icon: "thumbnail.jpg",
+        creator: {
+            name: "Hungry Studio",
+            link: "https://www.hungrystudio.com/",
+            icon: "fa-solid fa-globe"
+        }
+    },
+    { 
         id: "terraria", 
-        title: "Terraria (WASM-GC)", 
+        title: "Terraria", 
         description: "A 2D sandbox action-adventure game, often described as 2D Minecraft.", 
         icon: "thumbnail.jpg",
         creator: {
@@ -141,12 +141,23 @@ const library = [
     { 
         id: "slime-rancher", 
         title: "Slime Rancher", 
-        description: "A charming first-person life simulation adventure game. Take on the role as a young rancher who ventures to the Far, Far Range, a mysterious planet thousands of light-years from Earth.", 
+        description: "A first-person adventure game. Become a young rancher who ventures to a mysterious planet thousands of light-years from Earth.", 
         icon: "thumbnail.png",
         creator: {
             name: "Snubby",
             link: "https://dev.snubby.top/",
             icon: "fa-solid fa-globe"
+        }
+    },
+    { 
+        id: "super-mario-64", 
+        title: "Super Mario 64", 
+        description: "A 3D action-adventure platform game released for the N64.", 
+        icon: "thumbnail.png",
+        creator: {
+            name: "Snubby",
+            link: "https://github.com/SnubbyOWO/Mario64Offline",
+            icon: "fa-brands fa-github"
         }
     }
 ];
