@@ -393,6 +393,17 @@ const library = [
             link: "https://store.steampowered.com/app/3431040/Thats_not_my_Neighbor/",
             icon: "fa-brands fa-steam"
         }
+    },
+    { 
+        id: "ultrakill", 
+        title: "ULTRAKILL", 
+        description: "A blistering retro FPS where blood is your fuel—slaughter demons in Hell as V1, a machine that thrives on fresh gore.", 
+        icon: "thumbnail.jpg",
+        creator: {
+            name: "98Corbins",
+            link: "https://itch.io/profile/98corbins/",
+            icon: "fa-brands fa-itch-io"
+        }
     }
 ];
 
