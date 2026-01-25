@@ -523,7 +523,7 @@ function loadGame() {
     if (gameData) {
         const gamePath = `games/${gameId}/index.html`;
 
-        document.title = `Playing ${gameData.title} | Nebula`;
+        document.title = `Play ${gameData.title} for Free and Unblocked | Nebula`;
         document.getElementById('game-title').innerText = gameData.title;
         document.getElementById('game-frame').src = gamePath;
 
@@ -568,6 +568,8 @@ function updateSEOTags(game) {
         ? `${window.location.origin}/games/${game.id}/${game.icon}`
         : `${window.location.origin}/assets/og-image.jpg`;
 
+    const cleanDesc = stripMarkdown(game.description);
+
     let linkTag = document.querySelector("link[rel='canonical']");
     if (!linkTag) {
         linkTag = document.createElement('link');
@@ -576,13 +578,15 @@ function updateSEOTags(game) {
     }
     linkTag.setAttribute('href', currentUrl);
 
-    document.querySelector('meta[name="description"]').setAttribute("content", `Play ${game.title} unblocked. ${game.description}`);
+    document.querySelector('meta[name="description"]').setAttribute("content", `Play ${game.title} unblocked for free with not download. ${cleanDesc}`);
+    
     document.querySelector('meta[property="og:title"]').setAttribute("content", game.title);
-    document.querySelector('meta[property="og:description"]').setAttribute("content", game.description);
+    document.querySelector('meta[property="og:description"]').setAttribute("content", `Play ${game.title} unblocked for free with not download. ${cleanDesc}`);
     document.querySelector('meta[property="og:url"]').setAttribute("content", currentUrl);
     document.querySelector('meta[property="og:image"]').setAttribute("content", imageUrl);
+    
     document.querySelector('meta[property="twitter:title"]').setAttribute("content", game.title);
-    document.querySelector('meta[property="twitter:description"]').setAttribute("content", game.description);
+    document.querySelector('meta[property="twitter:description"]').setAttribute("content", `Play ${game.title} unblocked for free with not download. ${cleanDesc}`);
     document.querySelector('meta[property="twitter:image"]').setAttribute("content", imageUrl);
     document.querySelector('meta[property="twitter:url"]').setAttribute("content", currentUrl);
 }
