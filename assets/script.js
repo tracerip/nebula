@@ -528,11 +528,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (window.location.pathname.includes('/play')) {
         loadGame();
-    } else {
+    }
+    else {
+        setupSecretTrigger();
         renderGameGrid(library);
         setupSearch();
     }
 });
+
+function setupSecretTrigger() {
+    const logo = document.getElementById('secret-logo');
+    const eduView = document.getElementById('edu-view');
+    const gameView = document.getElementById('game-view');
+    
+    if(!logo || !eduView || !gameView) return;
+
+    let clickCount = 0;
+    let resetTimer;
+
+    logo.addEventListener('click', (e) => {
+        e.preventDefault();
+        clickCount++;
+
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => {
+            clickCount = 0;
+        }, 1000);
+
+        if (clickCount >= 3) {
+            eduView.style.display = 'none';
+            gameView.style.display = 'block';
+            
+            setTimeout(() => AOS.refresh(), 100);
+            
+            document.title = "Nebula | Simulations Active";
+        }
+    });
+}
 
 function renderGameGrid(list, isSubGroup = false) {
     const grid = document.getElementById('game-grid');
@@ -551,8 +583,8 @@ function renderGameGrid(list, isSubGroup = false) {
                 <div class="card-emoji">↩️</div>
             </div>
             <div class="card-content">
-                <h3>Go Back</h3>
-                <p>Return to main library</p>
+                <h3>Return</h3>
+                <p>Back to root directory</p>
             </div>
         `;
         grid.appendChild(backCard);

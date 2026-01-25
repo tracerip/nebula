@@ -100,6 +100,45 @@ nav {
 .notice-box i { font-size: 1.1rem; }
 .notice-box strong { font-weight: 700; }
 
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding-bottom: 4rem;
+}
+
+.blog-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    border-color: #6366f1;
+}
+
+.blog-card h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.blog-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    color: #a855f7;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
 .play-container {
     margin-top: 100px;
     width: 100%;

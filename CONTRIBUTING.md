@@ -106,7 +106,7 @@ Open `sitemap.xml` and add a new `<url>` block. Make sure to replace `game-id` w
 
 ```xml
 <url>
-    <loc>https://nebula.trace.rip/play?game=YOUR-GAME-ID</loc>
+    <loc>https://trylearning.space/play?game=YOUR-GAME-ID</loc>
     <lastmod>2025-01-23</lastmod> <!-- Use today's date -->
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
@@ -117,13 +117,13 @@ If there are multiple versions of a game, like Geometry Dash or Eaglercraft, I g
 
 ```xml
 <url>
-    <loc>https://nebula.trace.rip/play?game=gd-lite</loc>
+    <loc>https://trylearning.space/play?game=gd-lite</loc>
     <lastmod>2025-01-24</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
 </url>
 <url>
-    <loc>https://nebula.trace.rip/play?game=gd-vibes</loc>
+    <loc>https://trylearning.space/play?game=gd-vibes</loc>
     <lastmod>2025-01-24</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
@@ -132,13 +132,13 @@ If there are multiple versions of a game, like Geometry Dash or Eaglercraft, I g
 
 ```xml
 <url>
-    <loc>https://nebula.trace.rip/play?game=eaglercraft-alpha-1.2.6</loc>
+    <loc>https://trylearning.space/play?game=eaglercraft-alpha-1.2.6</loc>
     <lastmod>2025-01-24</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
 </url>
 <url>
-    <loc>https://nebula.trace.rip/play?game=eaglercraft-alpha-1.2.6-wasm</loc>
+    <loc>https://trylearning.space/play?game=eaglercraft-alpha-1.2.6-wasm</loc>
     <lastmod>2025-01-24</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>

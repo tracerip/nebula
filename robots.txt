@@ -38,4 +38,4 @@ Allow: /games/*/*.webp
 Allow: /games/*/*.gif
 Allow: /games/*/*.txt
 
-Sitemap: https://nebula.trace.rip/sitemap.xml
+Sitemap: https://trylearning.space/sitemap.xml

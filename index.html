@@ -4,35 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
-    <title>Nebula | Free Steam Ports Library</title>
-    <meta name="title" content="Nebula | Free Steam Ports Library">
-    <meta name="description" content="Play the best unblocked games at school or work. High speed, no ads, and sleek design. Includes Slope, Minecraft, and more.">
-    <meta name="keywords" content="unblocked games, free games, html5 games, school games, slope unblocked, nebula games">
+    <!-- EDUCATIONAL METADATA -->
+    <title>Nebula | Astronomy Learning Resources</title>
+    <meta name="title" content="Nebula | Astronomy Learning Resources">
+    <meta name="description" content="Free educational resources about the solar system, black holes, and deep space exploration for students.">
+    <meta name="keywords" content="astronomy, space, learning, solar system, science, education">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="author" content="Nebula Games">
     <meta name="theme-color" content="#6366f1">
     <meta name="color-scheme" content="dark">
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nebula.trace.rip">
-    <meta property="og:title" content="Nebula | Play Without Limits">
-    <meta property="og:description" content="A sleek, open-source library of unblocked games. No ads. No interruptions.">
-    <meta property="og:image" content="https://nebula.trace.rip/assets/og-image.jpg">
+    <!-- Open Graph (Disguised) -->
+    <meta property="og:title" content="Nebula Astronomy">
+    <meta property="og:description" content="Learn about the wonders of the universe.">
+    <meta property="og:image" content="https://trylearning.space/assets/og-image.jpg">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nebula.trace.rip">
-    <meta property="twitter:title" content="Nebula | Play Without Limits">
-    <meta property="twitter:description" content="Play the best unblocked games at school or work.">
-    <meta property="twitter:image" content="https://nebula.trace.rip/assets/og-image.jpg">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
-    <link rel="canonical" href="https://nebula.trace.rip">
-
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/style.css">
@@ -41,35 +29,66 @@
 
     <nav>
         <div class="nav-inner">
-            <a href="/" class="logo">nebula</a>
+            <a href="#" id="secret-logo" class="logo">nebula</a>
             <div class="nav-links">
-                <a href="https://trace.rip/discord" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
-                <a href="https://github.com/tracerip/nebula" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="#">Articles</a>
+                <a href="#">Research</a>
+                <a href="#">About</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="container">
-            <h1 data-aos="zoom-in" data-aos-duration="1000">
-                Play Without<br><span class="gradient-text">Limits.</span>
-            </h1>
-            <p data-aos="fade-up" data-aos-delay="200">
-                The ultimate unblocked game library. Open source, ad-free, and fast.
-            </p>
-            <div class="search-container" data-aos="fade-up" data-aos-delay="300">
-                <input type="text" id="search-input" class="search-input" placeholder="Search games...">
+    <div id="edu-view">
+        <section class="hero">
+            <div class="container">
+                <h1 data-aos="zoom-in">
+                    Explore the <span class="gradient-text">Cosmos.</span>
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="200">
+                    Your digital gateway to understanding the universe. <br>
+                    Comprehensive guides on celestial mechanics and astrophysics.
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="container" id="library">
-        <h2 class="section-title" data-aos="fade-right">Library</h2>
-        <div id="game-grid" class="game-grid"></div>
-    </section>
+        <section class="container blog-grid">
+            <article class="blog-card" data-aos="fade-up">
+                <h3>The Lifecycle of a Star</h3>
+                <p>From the collapse of a molecular cloud to the dramatic finale of a supernova, understand the stages of stellar evolution.</p>
+                <span class="read-more">Read Article &rarr;</span>
+            </article>
+            <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Understanding Black Holes</h3>
+                <p>Explore the physics behind event horizons and the singularity. What happens when gravity becomes infinite?</p>
+                <span class="read-more">Read Article &rarr;</span>
+            </article>
+            <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                <h3>The Mars Rover Missions</h3>
+                <p>A look back at the engineering marvels of Spirit, Opportunity, Curiosity, and Perseverance.</p>
+                <span class="read-more">Read Article &rarr;</span>
+            </article>
+        </section>
+    </div>
+
+    <div id="game-view" style="display: none;">
+        <section class="hero" style="padding-top: 120px; padding-bottom: 40px;">
+            <div class="container">
+                <h1 data-aos="zoom-in">
+                    Active <span class="gradient-text">Simulations.</span>
+                </h1>
+                <div class="search-container" data-aos="fade-up" data-aos-delay="300">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search simulations...">
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="library">
+            <div id="game-grid" class="game-grid"></div>
+        </section>
+    </div>
 
     <footer style="text-align:center; padding: 2rem; color: #555; font-size: 0.9rem;">
-        &copy; <span id="year"></span> Nebula Games.
+        &copy; <span id="year"></span> Nebula Astronomy Dept.
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
