@@ -496,9 +496,9 @@ const library = [
             icon: "fa-solid fa-globe"
         }
     },
-    { 
-        id: "kitten-cannon", 
-        title: "Kitten Cannon", 
+    {
+        id: "kitten-cannon",
+        title: "Kitten Cannon",
         description: "Simple yet brutal game challenges you to fire a kitten from a cannon as far as possible.", 
         icon: "thumbnail.webp",
         creator: {
@@ -507,10 +507,10 @@ const library = [
             icon: "fa-solid fa-globe"
         }
     },
-    { 
-        id: "hollow-knight", 
-        title: "Hollow Knight", 
-        description: "A critically acclaimed 2D Metroidvania that invites you to explore the twisting caverns of a ruined kingdom called Hallownest.", 
+    {
+        id: "hollow-knight",
+        title: "Hollow Knight",
+        description: "A critically acclaimed 2D Metroidvania that invites you to explore the twisting caverns of a ruined kingdom called Hallownest.",
         icon: "thumbnail.jpg",
         creator: {
             name: "bog",
