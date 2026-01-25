@@ -312,9 +312,9 @@ const library = [
         description: "An exciting online puzzle game with drag-and-drop Tetris block gameplay.", 
         icon: "thumbnail.jpg",
         creator: {
-            name: "Hungry Studio",
-            link: "https://www.hungrystudio.com/",
-            icon: "fa-solid fa-globe"
+            name: "GreeniYT",
+            link: "https://github.com/greeniYT/gug/",
+            icon: "fa-brands fa-github"
         }
     },
     { 
