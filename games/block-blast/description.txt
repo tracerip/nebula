@@ -1,5 +1,5 @@
 # Description
-Block Blast is an addictive puzzle game that combines classic block-matching mechanics with strategic gameplay. Players must place various shaped blocks onto an 8x8 grid, clearing rows and columns by filling them completely. With no time limit, this relaxing yet challenging game tests spatial reasoning and planning skills. Block Blast features simple one-touch controls, colorful graphics, and endless gameplay that keeps players engaged for hours. Perfect for casual gaming sessions, the game offers a satisfying experience as players chase high scores and try to survive as long as possible without running out of space.
+[Block Blast](https://www.igdb.com/games/block-blast--2) is an addictive puzzle game that combines classic block-matching mechanics with strategic gameplay. Players must place various shaped blocks onto an 8x8 grid, clearing rows and columns by filling them completely. With no time limit, this relaxing yet challenging game tests spatial reasoning and planning skills. Block Blast features simple one-touch controls, colorful graphics, and endless gameplay that keeps players engaged for hours. Perfect for casual gaming sessions, the game offers a satisfying experience as players chase high scores and try to survive as long as possible without running out of space.
 
 # Controls
 Hold and Drag - Move selected block to desired position.
