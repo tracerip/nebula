@@ -7,6 +7,8 @@
     Person/User: "fa-solid fa-user"
     Game Controller: "fa-solid fa-gamepad"
 */
+let stealthTimer;
+const TIMEOUT_MS = 8000;
 
 const library = [
         {
@@ -544,26 +546,54 @@ function setupSecretTrigger() {
     if(!logo || !eduView || !gameView) return;
 
     let clickCount = 0;
-    let resetTimer;
+    let clickResetTimer;
 
     logo.addEventListener('click', (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
         clickCount++;
 
-        clearTimeout(resetTimer);
-        resetTimer = setTimeout(() => {
-            clickCount = 0;
-        }, 1000);
+        clearTimeout(clickResetTimer);
+        clickResetTimer = setTimeout(() => { clickCount = 0; }, 1000);
 
         if (clickCount >= 3) {
             eduView.style.display = 'none';
             gameView.style.display = 'block';
             
             setTimeout(() => AOS.refresh(), 100);
-            
             document.title = "Nebula | Simulations Active";
+
+            initStealthMode();
         }
     });
+}
+
+function initStealthMode() {
+    const activityEvents = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart'];
+
+    activityEvents.forEach(evt => {
+        window.addEventListener(evt, resetStealthTimer);
+    });
+
+    resetStealthTimer();
+}
+
+function resetStealthTimer() {
+    clearTimeout(stealthTimer);
+    stealthTimer = setTimeout(lockdownSystem, TIMEOUT_MS);
+}
+
+function lockdownSystem() {
+    document.getElementById('game-view').style.display = 'none';
+    document.getElementById('edu-view').style.display = 'block';
+    
+    document.title = "Nebula | Astronomy Learning Resources";
+
+    const activityEvents = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart'];
+    activityEvents.forEach(evt => {
+        window.removeEventListener(evt, resetStealthTimer);
+    });
+
+    console.log("System locked due to inactivity.");
 }
 
 function renderGameGrid(list, isSubGroup = false) {
