@@ -246,4 +246,16 @@
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
+    <url>
+        <loc>https://nebula.trace.rip/play?game=toss-the-turtle</loc>
+        <lastmod>2025-01-24</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://nebula.trace.rip/play?game=burrito-bison</loc>
+        <lastmod>2025-01-24</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
 </urlset>

@@ -473,6 +473,28 @@ const library = [
             link: "https://itch.io/profile/98corbins/",
             icon: "fa-brands fa-itch-io"
         }
+    },
+    { 
+        id: "burrito-bison", 
+        title: "Burrito Bison", 
+        description: "Trapped in a world ruled by gummy bears, your only escape is to launch yourself from a wrestling ring and bounce your way out of Candy Land.", 
+        icon: "thumbnail.jpg",
+        creator: {
+            name: "Juicy Beast Studio",
+            link: "https://burritobison.com",
+            icon: "fa-solid fa-globe"
+        }
+    },
+    { 
+        id: "toss-the-turtle", 
+        title: "Toss the Turtle", 
+        description: "Use a massive cannon to fire a helpless turtle into the atmosphere, then keep him airborne by shooting him with pistols, machine guns, and rocket launchers.", 
+        icon: "thumbnail.jpg",
+        creator: {
+            name: "Echo",
+            link: "https://3kh0.net",
+            icon: "fa-solid fa-globe"
+        }
     }
 ];
 
