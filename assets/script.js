@@ -495,6 +495,17 @@ const library = [
             link: "https://3kh0.net",
             icon: "fa-solid fa-globe"
         }
+    },
+    { 
+        id: "kitten-cannon", 
+        title: "Kitten Cannon", 
+        description: "Simple yet brutal game challenges you to fire a kitten from a cannon as far as possible.", 
+        icon: "thumbnail.webp",
+        creator: {
+            name: "BurstStudio",
+            link: "https://www.newgrounds.com/portal/view/228520",
+            icon: "fa-solid fa-globe"
+        }
     }
 ];
 
