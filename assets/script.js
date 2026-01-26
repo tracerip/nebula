@@ -6,6 +6,8 @@ const spaceWords = [
     "Asteroid", "Comet", "Galaxy", "Physics", "Atmosphere"
 ];
 
+let panicKey = localStorage.getItem('nebula_panic_key') || null;
+let isRecordingKey = false;
 let stealthTimer;
 const TIMEOUT_MS = 8000;
 
@@ -528,7 +530,7 @@ const library = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+    AOS.init({ duration: 678, once: true, easing: 'ease-out-cubic' });
 
     const yearSpan = document.getElementById('year');
     if(yearSpan) yearSpan.innerText = new Date().getFullYear();
@@ -537,6 +539,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadGame();
     } else {
         setupSecretTrigger();
+        sortLibrary(library);
         renderGameGrid(library);
         setupSearch();
     }
@@ -940,8 +943,17 @@ function stripMarkdown(text) {
     return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
 }
 
-let panicKey = localStorage.getItem('nebula_panic_key') || null;
-let isRecordingKey = false;
+function sortLibrary(list) {
+    list.sort((a, b) => {
+        const aIsGroup = a.type === 'group';
+        const bIsGroup = b.type === 'group';
+        
+        if (aIsGroup && !bIsGroup) return -1;
+        if (!aIsGroup && bIsGroup) return 1;
+        
+        return a.title.localeCompare(b.title);
+    });
+}
 
 if (document.getElementById('key-display')) {
     updateKeyDisplay();
