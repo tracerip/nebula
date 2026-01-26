@@ -695,7 +695,9 @@ function renderGameGrid(list, isSubGroup = false) {
         const backCard = document.createElement('div');
         backCard.className = 'game-card back-card';
         backCard.onclick = () => {
-            window.history.pushState({}, '', window.location.pathname);
+            const cleanUrl = window.location.pathname; 
+            window.history.replaceState({}, '', cleanUrl);
+            
             renderGameGrid(library); 
             document.getElementById('search-input').value = '';
         };
@@ -729,11 +731,7 @@ function renderGameGrid(list, isSubGroup = false) {
                 renderGameGrid(item.items, true);
             } else {
                 const param = isChromebook ? 'video' : 'game';
-                const newUrl = `?${param}=${item.id}`;
-                
-                window.history.pushState({}, '', newUrl);
-                
-                loadGame();
+                window.location.href = `play?${param}=${item.id}`; 
             }
         };
 
