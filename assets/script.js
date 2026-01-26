@@ -695,6 +695,7 @@ function renderGameGrid(list, isSubGroup = false) {
         const backCard = document.createElement('div');
         backCard.className = 'game-card back-card';
         backCard.onclick = () => {
+            window.history.pushState({}, '', window.location.pathname);
             renderGameGrid(library); 
             document.getElementById('search-input').value = '';
         };
@@ -728,7 +729,11 @@ function renderGameGrid(list, isSubGroup = false) {
                 renderGameGrid(item.items, true);
             } else {
                 const param = isChromebook ? 'video' : 'game';
-                window.location.href = `play?${param}=${item.id}`;
+                const newUrl = `?${param}=${item.id}`;
+                
+                window.history.pushState({}, '', newUrl);
+                
+                loadGame();
             }
         };
 
@@ -869,7 +874,8 @@ function loadGame() {
 }
 
 function updateSEOTags(game) {
-    const currentUrl = window.location.href;
+    const masterDomain = "https://trylearning.space";
+    const canonicalUrl = masterDomain + window.location.pathname + window.location.search;
 
     let linkTag = document.querySelector("link[rel='canonical']");
     if (!linkTag) {
@@ -877,7 +883,8 @@ function updateSEOTags(game) {
         linkTag.setAttribute('rel', 'canonical');
         document.head.appendChild(linkTag);
     }
-    linkTag.setAttribute('href', currentUrl);
+    
+    linkTag.setAttribute('href', canonicalUrl);
 
     if (isChromebook) return;
 
@@ -887,17 +894,17 @@ function updateSEOTags(game) {
 
     const cleanDesc = stripMarkdown(game.description);
 
-    document.querySelector('meta[name="description"]').setAttribute("content", `Play ${game.title} unblocked for free with not download. ${cleanDesc}`);
+    document.querySelector('meta[name="description"]').setAttribute("content", `Play ${game.title} unblocked for free without needing to download. ${cleanDesc}`);
     
     document.querySelector('meta[property="og:title"]').setAttribute("content", game.title);
-    document.querySelector('meta[property="og:description"]').setAttribute("content", `Play ${game.title} unblocked for free with not download. ${cleanDesc}`);
-    document.querySelector('meta[property="og:url"]').setAttribute("content", currentUrl);
+    document.querySelector('meta[property="og:description"]').setAttribute("content", `Play ${game.title} unblocked for free without needing to download. ${cleanDesc}`);
+    document.querySelector('meta[property="og:url"]').setAttribute("content", canonicalUrl);
     document.querySelector('meta[property="og:image"]').setAttribute("content", imageUrl);
     
     document.querySelector('meta[property="twitter:title"]').setAttribute("content", game.title);
-    document.querySelector('meta[property="twitter:description"]').setAttribute("content", `Play ${game.title} unblocked for free with not download. ${cleanDesc}`);
+    document.querySelector('meta[property="twitter:description"]').setAttribute("content", `Play ${game.title} unblocked for free without needing to download. ${cleanDesc}`);
     document.querySelector('meta[property="twitter:image"]').setAttribute("content", imageUrl);
-    document.querySelector('meta[property="twitter:url"]').setAttribute("content", currentUrl);
+    document.querySelector('meta[property="twitter:url"]').setAttribute("content", canonicalUrl);
 }
 
 function parseAndDisplayDetails(text) {
