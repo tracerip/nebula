@@ -768,34 +768,33 @@ async function launchOverlay(game) {
 
     view.style.display = 'block';
     if(titleDisp) titleDisp.innerText = "Loading " + game.title + "...";
-
-    const isDataUrl = window.location.protocol === 'data:';
-    const repoBase = isDataUrl ? "https://cdn.jsdelivr.net/gh/tracerip/nebula@main" : "";
     
-    const gameUrl = `${repoBase}/games/${game.id}/index.html`;
+    const isLocal = window.location.protocol === 'data:' || window.location.protocol === 'file:';
+    const repoBase = isLocal ? "https://cdn.jsdelivr.net/gh/tracerip/nebula@main" : "";
+    
+    const gameFolder = `${repoBase}/games/${game.id}/`;
+    const indexUrl = `${gameFolder}index.html`;
 
     try {
-        const res = await fetch(gameUrl);
+        const res = await fetch(indexUrl);
         if(!res.ok) throw new Error("Game file missing");
         let html = await res.text();
 
-        const gameFolder = `${repoBase}/games/${game.id}/`;
-        
         if(!html.includes('<base')) {
             html = html.replace('<head>', `<head><base href="${gameFolder}">`);
         }
 
-        const doc = frame.contentWindow.document;
-        doc.open();
-        doc.write(html);
-        doc.close();
+        const blob = new Blob([html], { type: "text/html" });
+        const blobUrl = URL.createObjectURL(blob);
+        
+        frame.src = blobUrl;
         
         if(titleDisp) titleDisp.innerText = game.title;
 
     } catch(e) {
         if(titleDisp) titleDisp.innerText = "Error";
         console.error(e);
-        frame.src = gameUrl;
+        frame.src = indexUrl;
     }
 }
 
@@ -804,9 +803,7 @@ window.closeOverlay = function() {
     const frame = document.getElementById('game-frame');
     if(view) view.style.display = 'none';
     if(frame) {
-        frame.contentWindow.document.open();
-        frame.contentWindow.document.write("");
-        frame.contentWindow.document.close();
+        frame.src = 'about:blank';
     }
 };
 
