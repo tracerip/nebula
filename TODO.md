@@ -11,6 +11,17 @@ Current Finished:
 - FNAF PS
 - FNAF UCN
 - FNAF World
+- Hollow Knight
+- Kitten Cannon
+- Minesweeper Variation
+- Polytrack
+- R.E.P.O.
+- SchoolBoy Runaway
+- Slope Plus
+- Terraria
+- Thats not my neighbor
+- Toss the turtle
+- Ultrakill
 
 Doesnt need to be moved:
 - Block Blast
@@ -21,4 +32,6 @@ Doesnt need to be moved:
 
 Cant change due to `File size exceeded the configured limit of 20 MB.`
 - Burrito Bison
+- Pentablocks
 - People Playground
+- Slope

@@ -305,6 +305,12 @@ const library = [
         ]
     },
     { 
+        id: "gta-vc", 
+        title: "Grand Theft Auto: Vice City", 
+        description: "GTA Vice City defines the open-world genre, transporting players to a neon-soaked, 1980s rendition of Miami.", 
+        icon: "thumbnail.jpg"
+    },
+    { 
         id: "polytrack", 
         title: "PolyTrack", 
         description: "A thrilling low-poly racing game heavily inspired by TrackMania, featuring insane loops, jumps, high-speed drifts, and precision driving where every millisecond counts.", 

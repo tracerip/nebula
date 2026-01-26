@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <base href="https://cdn.jsdelivr.net/gh/Ironics-Side-Projects/web-port@main/thats-not-my-neighbor/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <title>That's not my neighbor</title>
@@ -134,6 +135,15 @@
             }
         };
     </script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                console.log('SW Registered!');
+            });
+        });
+    }
+</script>
 </body>
 
 </html>

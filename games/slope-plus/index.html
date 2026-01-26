@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <base href="https://cdn.jsdelivr.net/gh/Ironics-Side-Projects/games@latest/slope-plus/">
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Slope Plus</title>
@@ -78,6 +79,15 @@
       // Add resize listener
       window.addEventListener('resize', resizeGame);
     </script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                console.log('SW Registered!');
+            });
+        });
+    }
+</script>
   </head>
   <body>
     <div class="webgl-content">

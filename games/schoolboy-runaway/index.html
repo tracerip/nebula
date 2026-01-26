@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <base href="https://cdn.jsdelivr.net/gh/Ironics-Side-Projects/web-port@main/schoolboy-runaway/">
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Unity WebGL Player | SchoolBoy Runaway</title>
@@ -156,5 +157,14 @@
         document.body.appendChild(script);
       })();
     </script>
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                console.log('SW Registered!');
+            });
+        });
+    }
+</script>
   </body>
 </html>

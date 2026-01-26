@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<base href="https://cdn.jsdelivr.net/gh/Ironics-Side-Projects/games@latest/terraria/">
 		<meta charset="UTF-8" />
 		<link rel="icon" href="./app.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,5 +43,15 @@
 		<canvas id="canvas" style="width: 100%">
 
 		</canvas>
+
+		<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                console.log('SW Registered!');
+            });
+        });
+    }
+</script>
 	</body>
 </html>

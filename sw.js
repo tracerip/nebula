@@ -22,29 +22,26 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
     if (event.request.method !== 'GET') return;
+    if (!event.request.url.startsWith('http')) return;
 
-    const url = new URL(event.request.url);
-    const isCDN = url.hostname === 'cdn.jsdelivr.net';
-    const isLocal = location.origin === url.origin;
+    event.respondWith(
+        caches.open(CACHE_NAME).then(async (cache) => {
+            const cachedResponse = await cache.match(event.request);
+            if (cachedResponse) {
+                return cachedResponse;
+            }
 
-    if (isCDN || isLocal) {
-        event.respondWith(
-            caches.open(CACHE_NAME).then(async (cache) => {
-                const cachedResponse = await cache.match(event.request);
-                if (cachedResponse) {
-                    return cachedResponse;
-                }
+            try {
+                const networkResponse = await fetch(event.request);
 
-                try {
-                    const networkResponse = await fetch(event.request);
+                if (networkResponse && networkResponse.status === 200) {
                     cache.put(event.request, networkResponse.clone());
-
-                    return networkResponse;
-                } catch (error) {
-                    console.error("Fetch failed:", error);
-                    throw error;
                 }
-            })
-        );
-    }
+                
+                return networkResponse;
+            } catch (error) {
+                throw error;
+            }
+        })
+    );
 });
