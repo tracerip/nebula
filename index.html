@@ -28,7 +28,7 @@
     <nav>
         <div class="nav-inner">
             <a href="#" id="secret-logo" class="logo">nebula</a>
-            <div class="nav-links">
+            <div class="nav-links" id="nav-links">
                 <a href="#">Articles</a>
                 <a href="#">Research</a>
                 <a href="#">About</a>
@@ -82,6 +82,47 @@
 
         <section class="container" id="library">
             <div id="game-grid" class="game-grid"></div>
+        </section>
+    </div>
+
+    <div id="settings-view" style="display: none;">
+        <section class="hero" style="padding-top: 120px; padding-bottom: 20px;">
+            <div class="container">
+                <h1 data-aos="zoom-in">System <span class="gradient-text">Settings</span></h1>
+            </div>
+        </section>
+
+        <section class="settings-container">
+            <button onclick="switchToGames()" class="btn" style="margin-bottom: 20px;"><i class="fa-solid fa-arrow-left"></i> Back to Simulations</button>
+            
+            <div class="settings-grid">
+                <div class="setting-card" data-aos="fade-up">
+                    <div>
+                        <h3><i class="fa-solid fa-mask"></i> Tab Cloaking</h3>
+                        <p>Open Nebula in an <code>about:blank</code> tab to hide it from your browser history and extensions.</p>
+                    </div>
+                    <button onclick="openCloak()" class="btn-setting">Launch Cloak</button>
+                </div>
+
+                <div class="setting-card" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <h3><i class="fa-solid fa-skull-crossbones"></i> Panic Keybind</h3>
+                        <p>Set a custom key to instantly nuke this tab and redirect to Google.</p>
+                        
+                        <p style="color: #ef4444; border-left: 2px solid #ef4444; padding-left: 10px; font-size: 0.85rem;">
+                            <strong>WARNING:</strong> If you press this key while playing, the tab will close immediately. You will lose all unsaved progress.
+                        </p>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; gap: 15px; margin-top: 10px;">
+                        <button id="record-btn" onclick="startKeyRecording()" class="btn-setting">Set Keybind</button>
+                        <div style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; min-width: 60px; text-align: center;">
+                            <span id="key-display" style="color: var(--accent); font-weight: 700; font-family: monospace;">NONE</span>
+                        </div>
+                        <button onclick="clearPanicKey()" style="background: none; border: none; color: #9ca3af; cursor: pointer; font-size: 0.8rem;">(Clear)</button>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 

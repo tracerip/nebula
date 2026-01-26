@@ -542,38 +542,92 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
 function setupSecretTrigger() {
     const logo = document.getElementById('secret-logo');
-    const eduView = document.getElementById('edu-view');
-    const gameView = document.getElementById('game-view');
     
-    if(!logo || !eduView || !gameView) return;
+    if(!logo) return;
 
     let clickCount = 0;
     let clickResetTimer;
 
     logo.addEventListener('click', (e) => {
         e.preventDefault(); 
-        clickCount++;
+        
+        if (document.getElementById('game-view').style.display === 'block' || 
+            document.getElementById('settings-view').style.display === 'block') {
+            switchToGames();
+            return;
+        }
 
+        clickCount++;
         clearTimeout(clickResetTimer);
         clickResetTimer = setTimeout(() => { clickCount = 0; }, 1000);
 
         if (clickCount >= 3) {
-            eduView.style.display = 'none';
-            gameView.style.display = 'block';
-            setTimeout(() => AOS.refresh(), 100);
+            switchToGames();
             
-            if (isChromebook) {
-                document.title = "Nebula | Educational Resources";
-            } else {
-                document.title = "Nebula | Simulations Active";
-            }
+            const navLinks = document.getElementById('nav-links');
+            navLinks.innerHTML = `
+                <a href="https://discord.gg/mUDUdhsauv" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+                <a href="https://github.com/tracerip/nebula" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="#" onclick="switchToSettings(); return false;"><i class="fa-solid fa-gear"></i> Settings</a>
+            `;
 
             initStealthMode();
         }
     });
+}
+
+function switchToGames() {
+    document.getElementById('edu-view').style.display = 'none';
+    document.getElementById('settings-view').style.display = 'none';
+    document.getElementById('game-view').style.display = 'block';
+    
+    setTimeout(() => AOS.refresh(), 100);
+    
+    if (isChromebook) {
+        document.title = "Nebula | Educational Resources";
+    } else {
+        document.title = "Nebula | Simulations Active";
+    }
+}
+
+function switchToSettings() {
+    document.getElementById('game-view').style.display = 'none';
+    document.getElementById('settings-view').style.display = 'block';
+    setTimeout(() => AOS.refresh(), 100);
+}
+
+function openCloak() {
+    const win = window.open('about:blank', '_blank');
+    
+    if (!win || win.closed || typeof win.closed == 'undefined') {
+        alert("Popup blocked! Please allow popups for this site to use Cloaking.");
+        return;
+    }
+
+    const url = window.location.href;
+
+    const htmlContent = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Google</title>
+            <link rel="icon" type="image/x-icon" href="https://google.com/favicon.ico">
+            <style>
+                body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+                iframe { border: none; width: 100%; height: 100%; display: block; }
+            </style>
+        </head>
+        <body>
+            <iframe src="${url}" allowfullscreen></iframe>
+        </body>
+        </html>
+    `;
+
+    win.document.open();
+    win.document.write(htmlContent);
+    win.document.close();
 }
 
 function initStealthMode() {
@@ -589,14 +643,23 @@ function resetStealthTimer() {
 
 function lockdownSystem() {
     document.getElementById('game-view').style.display = 'none';
+    document.getElementById('settings-view').style.display = 'none';
+    
     document.getElementById('edu-view').style.display = 'block';
     
+    const navLinks = document.getElementById('nav-links');
+    if(navLinks) {
+        navLinks.innerHTML = `
+            <a href="#">Articles</a>
+            <a href="#">Research</a>
+            <a href="#">About</a>
+        `;
+    }
+
     document.title = "Nebula | Astronomy Learning Resources";
 
     const activityEvents = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart'];
-    activityEvents.forEach(evt => {
-        window.removeEventListener(evt, resetStealthTimer);
-    });
+    activityEvents.forEach(evt => window.removeEventListener(evt, resetStealthTimer));
 
     console.log("System locked due to inactivity.");
 }
@@ -876,3 +939,73 @@ function parseMarkdown(text) {
 function stripMarkdown(text) {
     return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
 }
+
+let panicKey = localStorage.getItem('nebula_panic_key') || null;
+let isRecordingKey = false;
+
+if (document.getElementById('key-display')) {
+    updateKeyDisplay();
+}
+
+function startKeyRecording() {
+    isRecordingKey = true;
+    const btn = document.getElementById('record-btn');
+    btn.innerText = "Press any key...";
+    btn.style.borderColor = "#fbbf24";
+    btn.style.color = "#fbbf24";
+}
+
+function clearPanicKey() {
+    panicKey = null;
+    localStorage.removeItem('nebula_panic_key');
+    updateKeyDisplay();
+}
+
+function updateKeyDisplay() {
+    const disp = document.getElementById('key-display');
+    const btn = document.getElementById('record-btn');
+    
+    if (disp) {
+        disp.innerText = panicKey ? panicKey.toUpperCase() : "NONE";
+    }
+    
+    if (btn) {
+        btn.innerText = panicKey ? "Change Key" : "Set Keybind";
+        btn.style.borderColor = "";
+        btn.style.color = "";
+    }
+}
+
+function executePanic() {
+    window.location.replace("https://docs.google.com/");
+}
+
+window.addEventListener('keydown', (e) => {
+    if (isRecordingKey) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (e.key === "Escape") {
+            isRecordingKey = false;
+            updateKeyDisplay();
+            return;
+        }
+
+        panicKey = e.key;
+        localStorage.setItem('nebula_panic_key', panicKey);
+        
+        isRecordingKey = false;
+        updateKeyDisplay();
+        return;
+    }
+
+    if (panicKey && e.key.toLowerCase() === panicKey.toLowerCase()) {
+        if (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA") {
+            return;
+        }
+
+        e.preventDefault();
+        e.stopPropagation();
+        executePanic();
+    }
+});
