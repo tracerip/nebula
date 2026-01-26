@@ -695,9 +695,6 @@ function renderGameGrid(list, isSubGroup = false) {
         const backCard = document.createElement('div');
         backCard.className = 'game-card back-card';
         backCard.onclick = () => {
-            const cleanUrl = window.location.pathname; 
-            window.history.replaceState({}, '', cleanUrl);
-            
             renderGameGrid(library); 
             document.getElementById('search-input').value = '';
         };
@@ -730,8 +727,17 @@ function renderGameGrid(list, isSubGroup = false) {
             if (item.type === 'group') {
                 renderGameGrid(item.items, true);
             } else {
-                const param = isChromebook ? 'video' : 'game';
-                window.location.href = `play?${param}=${item.id}`; 
+                // --- UNIVERSAL ENVIRONMENT DETECTION ---
+                const overlay = document.getElementById('game-view');
+                
+                if (overlay) {
+                    // PORTABLE MODE: Overlay exists, use it.
+                    launchOverlay(item);
+                } else {
+                    // STANDARD MODE: No overlay, navigate to play page.
+                    const param = isChromebook ? 'video' : 'game';
+                    window.location.href = `play?${param}=${item.id}`;
+                }
             }
         };
 
@@ -752,6 +758,57 @@ function renderGameGrid(list, isSubGroup = false) {
         grid.appendChild(card);
     });
 }
+
+async function launchOverlay(game) {
+    const view = document.getElementById('game-view');
+    const frame = document.getElementById('game-frame');
+    const titleDisp = document.getElementById('game-title-disp');
+
+    if(!view || !frame) return;
+
+    view.style.display = 'block';
+    if(titleDisp) titleDisp.innerText = "Loading " + game.title + "...";
+
+    const isDataUrl = window.location.protocol === 'data:';
+    const repoBase = isDataUrl ? "https://cdn.jsdelivr.net/gh/tracerip/nebula@main" : "";
+    
+    const gameUrl = `${repoBase}/games/${game.id}/index.html`;
+
+    try {
+        const res = await fetch(gameUrl);
+        if(!res.ok) throw new Error("Game file missing");
+        let html = await res.text();
+
+        const gameFolder = `${repoBase}/games/${game.id}/`;
+        
+        if(!html.includes('<base')) {
+            html = html.replace('<head>', `<head><base href="${gameFolder}">`);
+        }
+
+        const doc = frame.contentWindow.document;
+        doc.open();
+        doc.write(html);
+        doc.close();
+        
+        if(titleDisp) titleDisp.innerText = game.title;
+
+    } catch(e) {
+        if(titleDisp) titleDisp.innerText = "Error";
+        console.error(e);
+        frame.src = gameUrl;
+    }
+}
+
+window.closeOverlay = function() {
+    const view = document.getElementById('game-view');
+    const frame = document.getElementById('game-frame');
+    if(view) view.style.display = 'none';
+    if(frame) {
+        frame.contentWindow.document.open();
+        frame.contentWindow.document.write("");
+        frame.contentWindow.document.close();
+    }
+};
 
 function setupSearch() {
     const input = document.getElementById('search-input');
