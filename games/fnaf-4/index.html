@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <base href="https://cdn.jsdelivr.net/gh/Ironics-Side-Projects/fnaf@latest/4/">
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -28,6 +29,15 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('SW Registered!');
+                });
+            });
+        }
+    </script>
 </body>
 
 </html>
