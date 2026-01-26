@@ -609,8 +609,17 @@ function openCloak() {
         return;
     }
 
-    const url = window.location.href;
+    const targetUrl = customUrl || window.location.href;
 
+    const iframe = win.document.createElement('iframe');
+    iframe.src = targetUrl;
+    iframe.style.width = '100vw';
+    iframe.style.height = '100vh';
+    iframe.style.border = 'none';
+    iframe.style.margin = '0';
+    iframe.style.padding = '0';
+    iframe.style.overflow = 'hidden';
+    
     const htmlContent = `
         <!DOCTYPE html>
         <html>
@@ -622,14 +631,13 @@ function openCloak() {
                 iframe { border: none; width: 100%; height: 100%; display: block; }
             </style>
         </head>
-        <body>
-            <iframe src="${url}" allowfullscreen></iframe>
-        </body>
+        <body></body>
         </html>
     `;
 
     win.document.open();
     win.document.write(htmlContent);
+    win.document.body.appendChild(iframe);
     win.document.close();
 }
 
