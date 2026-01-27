@@ -288,4 +288,16 @@
         <priority>0.95</priority>
         <changefreq>monthly</changefreq>
     </url>
+        <url>
+        <loc>https://trylearning.space/play?game=nautilusos</loc>
+        <lastmod>2025-01-27</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+        <url>
+        <loc>https://trylearning.space/play?game=helios</loc>
+        <lastmod>2025-01-27</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
 </urlset>

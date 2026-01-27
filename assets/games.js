@@ -1,15 +1,14 @@
 const isChromebook = /CrOS/.test(navigator.userAgent);
+const spaceWords = ["Solar", "Lunar", "Nebula", "Orbit", "Gravity", "Cosmic", "Galaxy", "Physics"];
 
-const spaceWords = [
-    "Solar", "Lunar", "Nebula", "Orbit", "Gravity", 
-    "Quantum", "Stellar", "Cosmic", "Eclipse", "Horizon", 
-    "Asteroid", "Comet", "Galaxy", "Physics", "Atmosphere"
-];
-
-let panicKey = localStorage.getItem('nebula_panic_key') || null;
-let isRecordingKey = false;
-let stealthTimer;
-const TIMEOUT_MS = 8000;
+const featuredItem = {
+    id: "movie-theater",
+    title: "Nebula Theater",
+    description: "Watch thousands of movies and TV shows.",
+    icon: "fa-solid fa-film",
+    link: "/movie", 
+    isExternal: true
+};
 
 const library = [
         {
@@ -17,12 +16,14 @@ const library = [
         title: "Minecraft Collection",
         description: "All Eaglercraft versions (Classic 0.30, 1.5.2, 1.8.8, 1.12.2, etc).",
         icon: "mc-thumbnail.jpg",
+        category: "html5",
         items: [
             { 
                 id: "eaglercraft-1.12.2", 
                 title: "Minecraft 1.12.2 (JS)", 
                 description: "1.12, the release of the [World of Color Update](https://minecraft.wiki/w/World_of_Color_Update), released on June 7, 2017.", 
                 icon: "thumbnail.png",
+                category: "html5",
                 creator: {
                     name: "PeytonPlayz595",
                     link: "https://discord.gg/nmKB4KRUMy",
@@ -34,6 +35,7 @@ const library = [
                 title: "Minecraft 1.12.2 (WASM-GC)", 
                 description: "1.12, the release of the [World of Color Update](https://minecraft.wiki/w/World_of_Color_Update), released on June 7, 2017.", 
                 icon: "thumbnail.png",
+                category: "html5",
                 creator: {
                     name: "PeytonPlayz595",
                     link: "https://discord.gg/nmKB4KRUMy",
@@ -45,6 +47,7 @@ const library = [
                 title: "Minecraft 1.8.8 (JS)", 
                 description: "1.8, the release of the [Bountiful Update](https://minecraft.wiki/w/Bountiful_Update) released on September 2, 2014.", 
                 icon: "thumbnail.png",
+                category: "html5",
                 creator: {
                     name: "Ayunami2000 / lax1dude",
                     link: "https://gitflic.ru/project/lax1dude/eaglercraft-1_8",
@@ -56,6 +59,7 @@ const library = [
                 title: "Minecraft 1.8.8 (WASM-GC)", 
                 description: "1.8, the release of the [Bountiful Update](https://minecraft.wiki/w/Bountiful_Update) released on September 2, 2014.", 
                 icon: "thumbnail.png",
+                category: "html5",
                 creator: {
                     name: "Ayunami2000 / lax1dude",
                     link: "https://gitflic.ru/project/lax1dude/eaglercraft-1_8",
@@ -67,6 +71,7 @@ const library = [
                 title: "Minecraft 1.5.2 (JS)", 
                 description: "1.5, the release of the [Redstone Update](https://minecraft.wiki/w/Redstone_Update), released on March 13, 2013.", 
                 icon: "thumbnail.png",
+                category: "html5",
                 creator: {
                     name: "Ayunami2000 / lax1dude",
                     link: "https://eaglercraft.com/",
@@ -78,6 +83,7 @@ const library = [
                 title: "Minecraft Alpha 1.2.6 (JS)", 
                 description: "The final alpha bug-fix release of the legendary sandbox survival game developed by [Mojang Studios](https://minecraft.wiki/w/Mojang_Studios).", 
                 icon: "thumbnail.png",
+                category: "html5",
                 creator: {
                     name: "Colbster937",
                     link: "https://github.com/EaglerPorts/a1.2.6",
@@ -89,6 +95,7 @@ const library = [
                 title: "Minecraft Alpha 1.2.6 (WASM-GC)", 
                 description: "The final alpha bug-fix release of the legendary sandbox survival game developed by [Mojang Studios](https://minecraft.wiki/w/Mojang_Studios).", 
                 icon: "thumbnail.png",
+                category: "html5",
                 creator: {
                     name: "Colbster937",
                     link: "https://github.com/EaglerPorts/a1.2.6",
@@ -100,6 +107,7 @@ const library = [
                 title: "Minecraft Indev 20100223 (JS)", 
                 description: "Indev 20100223, the version that introduced [paintings](https://minecraft.wiki/w/Java_Edition_Indev_20100223), released on February 23, 2010.", 
                 icon: "thumbnail.png",
+                category: "html5",
                 creator: {
                     name: "Colbster937",
                     link: "https://github.com/EaglerPorts/in-20100223",
@@ -111,6 +119,7 @@ const library = [
                 title: "Minecraft Indev 20100223 (WASM-GC)", 
                 description: "Indev 20100223, the version that introduced [paintings](https://minecraft.wiki/w/Java_Edition_Indev_20100223), released on February 23, 2010.", 
                 icon: "thumbnail.png",
+                category: "html5",
                 creator: {
                     name: "Colbster937",
                     link: "https://github.com/EaglerPorts/in-20100223",
@@ -122,6 +131,7 @@ const library = [
                 title: "Minecraft 0.30 (WASM-GC)", 
                 description: "0.30, the version that introduced [Survival Mode](https://minecraft.wiki/w/Java_Edition_Classic_0.30), released on November 10, 2009.", 
                 icon: "thumbnail.png",
+                category: "html5",
                 creator: {
                     name: "PeytonPlayz595",
                     link: "https://github.com/PeytonPlayz595",
@@ -135,12 +145,14 @@ const library = [
         title: "Geometry Dash Collection",
         description: "All Geometry Dash versions including fan games. (Sub Zero, Lite, World, etc).",
         icon: "gd-thumbnail.jpg",
+        category: "html5",
         items: [
             {
                 id: "gd-lite",
                 title: "Geometry Dash Lite",
                 description: "The free starter edition of the iconic rhythm-based platformer with the first 13 levels.",
                 icon: "thumbnail.jpg",
+                category: "html5",
                 creator: {
                     name: "geometrydashlite.io",
                     link: "https://geometrydashlite.io",
@@ -152,6 +164,7 @@ const library = [
                 title: "Geometry Dash World",
                 description: "The mobile-exclusive rhythm platformer expansion with four mega-levels.",
                 icon: "thumbnail.webp",
+                category: "html5",
                 creator: {
                     name: "geometrydashlite.io",
                     link: "https://geometrydashlite.io",
@@ -163,6 +176,7 @@ const library = [
                 title: "Geometry Dash SubZero",
                 description: "The icy spin-off rhythm platformer packed with three exclusive mega-levels.",
                 icon: "thumbnail.webp",
+                category: "html5",
                 creator: {
                     name: "geometrydashlite.io",
                     link: "https://geometrydashlite.io",
@@ -174,6 +188,7 @@ const library = [
                 title: "Geometry Dash Breeze",
                 description: "A popular fan-made modification of the classic rhythm platformer that introduces exclusive levels, fresh icon sets, and vibrant visual effects.",
                 icon: "thumbnail.png",
+                category: "html5",
                 creator: {
                     name: "geometrydashlite.io",
                     link: "https://geometrydashlite.io",
@@ -185,6 +200,7 @@ const library = [
                 title: "Geometry Vibes",
                 description: "A vibrant fan-made rhythm platformer channeling Geometry Dash vibes with the wave gamemode.",
                 icon: "thumbnail.jpg",
+                category: "html5",
                 creator: {
                     name: "gameVgames",
                     link: "https://www.gamevgames.com/game/geometry-vibes",
@@ -195,7 +211,8 @@ const library = [
                 id: "gj",
                 title: "Geometry Jump",
                 description: "The infamous, web-exclusive bootleg of the popular rhythm platformer, widely recognized as the school computer version.",
-                icon: "thumbnail.png"
+                icon: "thumbnail.png",
+                category: "html5"
             }
         ]
     },
@@ -204,12 +221,14 @@ const library = [
         title: "FNaF Collection",
         description: "All FNaF versions (1, 2, 3, 4, Ultimate Custom Night, etc).",
         icon: "fnaf-thumbnail.jpg",
+        category: "html5",
         items: [
             { 
                 id: "fnaf", 
                 title: "Five Nights at Freddy's", 
                 description: "Play as a night security guard at Freddy Fazbear's Pizza, surviving five terrifying nights by monitoring cameras, closing doors, and managing flashlight power against animatronics.", 
                 icon: "thumbnail.jpg",
+                category: "html5",
                 creator: {
                     name: "genizy",
                     link: "https://github.com/genizy/fnaf",
@@ -221,6 +240,7 @@ const library = [
                 title: "Five Nights at Freddy's 2", 
                 description: "No doors this time—use a flashlight on vents, wind a music box remotely, and don a Freddy mask to fool aggressive animatronics.", 
                 icon: "thumbnail.jpg",
+                category: "html5",
                 creator: {
                     name: "genizy",
                     link: "https://github.com/genizy/fnaf",
@@ -232,6 +252,7 @@ const library = [
                 title: "Five Nights at Freddy's 3", 
                 description: "Maintain systems against malfunctioning vents, cameras, and audio lures while hallucination phantoms disrupt you and Springtrap hunts silently.", 
                 icon: "thumbnail.jpg",
+                category: "html5",
                 creator: {
                     name: "genizy",
                     link: "https://github.com/genizy/fnaf",
@@ -243,6 +264,7 @@ const library = [
                 title: "Five Nights at Freddy's 4", 
                 description: "Pure nightmare fuel in a child's bedroom. Listen for breath sounds to flash the closet and hallway, wind the music box via flashlight, and fend off animatronics in close-quarters terror.", 
                 icon: "thumbnail.jpg",
+                category: "html5",
                 creator: {
                     name: "genizy",
                     link: "https://github.com/genizy/fnaf",
@@ -254,6 +276,7 @@ const library = [
                 title: "Five Nights at Freddy's 4: Halloween Edition", 
                 description: "The spine-chilling Halloween-themed edition of [FNaF 4](play?game=fnaf-4), swapping the normal animatronics with horrifying Halloween-themed animatronics.", 
                 icon: "thumbnail.jpg",
+                category: "html5",
                 creator: {
                     name: "genizy",
                     link: "https://github.com/genizy/fnaf",
@@ -265,6 +288,7 @@ const library = [
                 title: "Five Nights at Freddy's: Sister Location", 
                 description: "Work at Circus Baby's Entertainment & Rental underground facility as a technician. Navigate Primary Control Office stations via hand-unit, defend against animatronics, play death minigames, and uncover horrifying plot across endings", 
                 icon: "thumbnail.jpg",
+                category: "html5",
                 creator: {
                     name: "genizy",
                     link: "https://github.com/genizy/fnaf",
@@ -276,6 +300,7 @@ const library = [
                 title: "Freddy Fazbear's Pizzeria Simulator", 
                 description: "Build your dream pizzeria by day with risky animatronic purchases, then salvage and defend against nocturnal threats.", 
                 icon: "thumbnail.jpg",
+                category: "html5",
                 creator: {
                     name: "genizy",
                     link: "https://github.com/genizy/fnaf",
@@ -287,6 +312,7 @@ const library = [
                 title: "Ultimate Custom Night", 
                 description: "Survive 20/20 mode with 50 selectable animatronics from the FNaF series, managing doors, lights, cameras, global music box, heater, power A/C, and unique mechanics like Dee Dee summons.", 
                 icon: "thumbnail.jpg",
+                category: "html5",
                 creator: {
                     name: "genizy",
                     link: "https://github.com/genizy/fnaf",
@@ -298,6 +324,7 @@ const library = [
                 title: "FNaF World",
                 description: "A quirky chibi-style RPG adventure starring over 48 recruitable animatronics exploring a colorful overworld.",
                 icon: "thumbnail.jpg",
+                category: "html5",
                 creator: {
                     name: "genizy",
                     link: "https://github.com/genizy/fnaf",
@@ -310,13 +337,15 @@ const library = [
         id: "gta-vc", 
         title: "Grand Theft Auto: Vice City", 
         description: "GTA Vice City defines the open-world genre, transporting players to a neon-soaked, 1980s rendition of Miami.", 
-        icon: "thumbnail.jpg"
+        icon: "thumbnail.jpg",
+        category: "emulator"
     },
     { 
         id: "polytrack", 
         title: "PolyTrack", 
         description: "A thrilling low-poly racing game heavily inspired by TrackMania, featuring insane loops, jumps, high-speed drifts, and precision driving where every millisecond counts.", 
         icon: "thumbnail.png",
+        category: "html5",
         creator: {
             name: "Kodub",
             link: "https://kodub.itch.io/polytrack",
@@ -328,6 +357,7 @@ const library = [
         title: "Slope", 
         description: "The ultimate 3D speed run game where you play as a ball dodging red walls going down a slope.", 
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "Y8",
             link: "https://github.com/reunbozdo/BlockBlast",
@@ -339,6 +369,7 @@ const library = [
         title: "Slope Plus", 
         description: "A modded version of the addictive endless runner [Slope](play?game=slope), packed with extra features like seeded runs for replayable maps, custom games to load maps and set starting speeds.", 
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "coweggs",
             link: "https://coweggs.itch.io/slope-plus",
@@ -350,6 +381,7 @@ const library = [
         title: "Pentablocks", 
         description: "Maneuver your dot with precise WASD controls through endless barrages of red obstacles in a black void.", 
         icon: "thumbnail.png",
+        category: "html5",
         creator: {
             name: "coweggs",
             link: "https://coweggs.itch.io/pentablocks",
@@ -360,13 +392,15 @@ const library = [
         id: "minesweeper", 
         title: "Minesweeper", 
         description: "The timeless logic puzzle classic where you uncover a grid of hidden tiles, using numbers to deduce and flag mine locations without detonating any.", 
-        icon: "thumbnail.png"
+        icon: "thumbnail.png",
+        category: "html5"
     },
     { 
         id: "minesweeper-variation", 
         title: "Minesweeper Variation", 
         description: "A tense twist on classic [Minesweeper](play?game=minesweeper) where every 10 seconds, 3 of your moves get mysteriously reverted, forcing constant adaptation.", 
         icon: "thumbnail.png",
+        category: "html5",
         creator: {
             name: "coweggs",
             link: "https://coweggs.itch.io/minesweeper-variation",
@@ -378,6 +412,7 @@ const library = [
         title: "Buckshot Roulette",
         description: " Play Russian roulette with a 12-gauge shotgun. Four enter. One leaves. Roll the dice with your life. Good luck!",
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "Mike Klubnika",
             link: "https://mikeklubnika.itch.io/buckshot-roulette",
@@ -389,6 +424,7 @@ const library = [
         title: "Block Blast", 
         description: "An exciting online puzzle game with drag-and-drop Tetris block gameplay.", 
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "GreeniYT",
             link: "https://github.com/greeniYT/gug/",
@@ -400,6 +436,7 @@ const library = [
         title: "Terraria", 
         description: "A 2D sandbox action-adventure game, often described as 2D Minecraft.", 
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "Mercury Workshop",
             link: "https://terraria.mercurywork.shop/",
@@ -411,6 +448,7 @@ const library = [
         title: "Slime Rancher", 
         description: "A first-person adventure game. Become a young rancher who ventures to a mysterious planet thousands of light-years from Earth.", 
         icon: "thumbnail.png",
+        category: "html5",
         creator: {
             name: "Snubby",
             link: "https://dev.snubby.top/",
@@ -422,6 +460,7 @@ const library = [
         title: "Super Mario 64", 
         description: "A 3D action-adventure platform game released for the N64.", 
         icon: "thumbnail.png",
+        category: "html5",
         creator: {
             name: "Snubby",
             link: "https://github.com/SnubbyOWO/Mario64Offline",
@@ -433,6 +472,7 @@ const library = [
         title: "SchoolBoy Runaway", 
         description: "A thrilling 3D first-person stealth game where you play as a mischievous schoolboy grounded by strict parents for bad grades.", 
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "98Corbins",
             link: "https://itch.io/profile/98corbins/",
@@ -444,6 +484,7 @@ const library = [
         title: "R.E.P.O.",
         description: "A chaotic online co-op horror game for up to 6 players featuring realistic physics, proximity voice chat, and terrifying monsters.", 
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "98Corbins",
             link: "https://itch.io/profile/98corbins/",
@@ -455,6 +496,7 @@ const library = [
         title: "People Playground", 
         description: "A gruesomely fun 2D sandbox physics simulator where you unleash chaos on over 100 ragdolls with 200+ weapons, explosives, traps, gadgets, and machines.", 
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "98Corbins",
             link: "https://itch.io/profile/98corbins/",
@@ -466,6 +508,7 @@ const library = [
         title: "That's not my Neighbor", 
         description: "A chilling 1955 apartment horror sim where you man the D.D.D. entrance as a door guard, scrutinizing residents via cameras, files, and photos to spot grotesque doppelgangers mimicking humans.", 
         icon: "thumbnail.png",
+        category: "html5",
         creator: {
             name: "Nachosama Games",
             link: "https://store.steampowered.com/app/3431040/Thats_not_my_Neighbor/",
@@ -477,6 +520,7 @@ const library = [
         title: "ULTRAKILL", 
         description: "A blistering retro FPS where blood is your fuel—slaughter demons in Hell as V1, a machine that thrives on fresh gore.", 
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "98Corbins",
             link: "https://itch.io/profile/98corbins/",
@@ -488,6 +532,7 @@ const library = [
         title: "Burrito Bison", 
         description: "Trapped in a world ruled by gummy bears, your only escape is to launch yourself from a wrestling ring and bounce your way out of Candy Land.", 
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "Juicy Beast Studio",
             link: "https://burritobison.com",
@@ -499,6 +544,7 @@ const library = [
         title: "Toss the Turtle", 
         description: "Use a massive cannon to fire a helpless turtle into the atmosphere, then keep him airborne by shooting him with pistols, machine guns, and rocket launchers.", 
         icon: "thumbnail.jpg",
+        category: "flash",
         creator: {
             name: "Echo",
             link: "https://3kh0.net",
@@ -510,6 +556,7 @@ const library = [
         title: "Kitten Cannon",
         description: "Simple yet brutal game challenges you to fire a kitten from a cannon as far as possible.", 
         icon: "thumbnail.webp",
+        category: "flash",
         creator: {
             name: "BurstStudio",
             link: "https://www.newgrounds.com/portal/view/228520",
@@ -521,6 +568,7 @@ const library = [
         title: "Hollow Knight",
         description: "A critically acclaimed 2D Metroidvania that invites you to explore the twisting caverns of a ruined kingdom called Hallownest.",
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "bog",
             link: "https://github.com/aukak/hollow-knight",
@@ -532,604 +580,35 @@ const library = [
         title: "BuildNow GG",
         description: "A fast-paced third-person tactical shooter that focuses heavily on building mechanics.",
         icon: "thumbnail.jpg",
+        category: "html5",
         creator: {
             name: "BattleLab",
             link: "https://www.crazygames.com/game/buildnow-gg",
             icon: "fa-solid fa-globe"
         }
+    },
+    {
+        id: "nautilusos",
+        title: "NautilusOS",
+        description: "A sophisticated webtop that runs entirely within your browser. It simulates a full desktop environment, complete with a taskbar, custom apps, and integrated applications like a terminal, Gemini AI, and more.",
+        icon: "thumbnail.png",
+        category: "app",
+        creator: {
+            name: "Nautilus Labs",
+            link: "https://github.com/nautilus-os/NautilusOS",
+            icon: "fa-brands fa-github"
+        }
+    },
+    {
+        id: "helios",
+        title: "Helios Proxy",
+        description: "A powerful, web proxy designed to function as a browser within a browser. Created to bypass restrictive admin censorship and spyware-ridden school networks.",
+        icon: "thumbnail.png",
+        category: "app",
+        creator: {
+            name: "dinguschan",
+            link: "https://github.com/dinguschan-owo/Helios",
+            icon: "fa-brands fa-github"
+        }
     }
 ];
-
-const featuredItem = {
-    id: "movie-theater",
-    title: "Nebula Theater",
-    description: "Watch thousands of movies and TV shows for free directly in your browser. With only a single ad, high speeds, and multiple server sources.",
-    icon: "fa-solid fa-film",
-    link: "/movie", 
-    isExternal: true
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({ duration: 678, once: true, easing: 'ease-out-cubic' });
-
-    const yearSpan = document.getElementById('year');
-    if(yearSpan) yearSpan.innerText = new Date().getFullYear();
-
-    if (window.location.pathname.includes('/play')) {
-        loadGame();
-    } else {
-        setupSecretTrigger();
-
-        sortLibrary(library);
-        renderGameGrid(library);
-        
-        setupSearch();
-    }
-});
-
-
-function setupSecretTrigger() {
-    const logo = document.getElementById('secret-logo');
-    
-    if(!logo) return;
-
-    let clickCount = 0;
-    let clickResetTimer;
-
-    logo.addEventListener('click', (e) => {
-        e.preventDefault(); 
-        
-        if (document.getElementById('game-view').style.display === 'block' || 
-            document.getElementById('settings-view').style.display === 'block') {
-            switchToGames();
-            return;
-        }
-
-        clickCount++;
-        clearTimeout(clickResetTimer);
-        clickResetTimer = setTimeout(() => { clickCount = 0; }, 1000);
-
-        if (clickCount >= 3) {
-            switchToGames();
-            
-            const navLinks = document.getElementById('nav-links');
-            navLinks.innerHTML = `
-                <a href="https://discord.gg/mUDUdhsauv" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
-                <a href="https://github.com/tracerip/nebula" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-                <a href="#" onclick="switchToSettings(); return false;"><i class="fa-solid fa-gear"></i> Settings</a>
-            `;
-
-            initStealthMode();
-        }
-    });
-}
-
-function switchToGames() {
-    document.getElementById('edu-view').style.display = 'none';
-    document.getElementById('settings-view').style.display = 'none';
-    document.getElementById('game-view').style.display = 'block';
-    
-    setTimeout(() => AOS.refresh(), 100);
-    
-    if (isChromebook) {
-        document.title = "Nebula | Educational Resources";
-    } else {
-        document.title = "Nebula | Simulations Active";
-    }
-}
-
-function switchToSettings() {
-    document.getElementById('game-view').style.display = 'none';
-    document.getElementById('settings-view').style.display = 'block';
-    setTimeout(() => AOS.refresh(), 100);
-}
-
-function openCloak() {
-    const win = window.open('about:blank', '_blank');
-    
-    if (!win || win.closed || typeof win.closed == 'undefined') {
-        alert("Popup blocked! Please allow popups for this site to use Cloaking.");
-        return;
-    }
-
-    const targetUrl = customUrl || window.location.href;
-
-    const iframe = win.document.createElement('iframe');
-    iframe.src = targetUrl;
-    iframe.style.width = '100vw';
-    iframe.style.height = '100vh';
-    iframe.style.border = 'none';
-    iframe.style.margin = '0';
-    iframe.style.padding = '0';
-    iframe.style.overflow = 'hidden';
-    
-    const htmlContent = `
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>Google</title>
-            <link rel="icon" type="image/x-icon" href="https://google.com/favicon.ico">
-            <style>
-                body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
-                iframe { border: none; width: 100%; height: 100%; display: block; }
-            </style>
-        </head>
-        <body></body>
-        </html>
-    `;
-
-    win.document.open();
-    win.document.write(htmlContent);
-    win.document.body.appendChild(iframe);
-    win.document.close();
-}
-
-function initStealthMode() {
-    const activityEvents = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart'];
-    activityEvents.forEach(evt => window.addEventListener(evt, resetStealthTimer));
-    resetStealthTimer();
-}
-
-function resetStealthTimer() {
-    clearTimeout(stealthTimer);
-    stealthTimer = setTimeout(lockdownSystem, TIMEOUT_MS);
-}
-
-function lockdownSystem() {
-    document.getElementById('game-view').style.display = 'none';
-    document.getElementById('settings-view').style.display = 'none';
-    
-    document.getElementById('edu-view').style.display = 'block';
-    
-    const navLinks = document.getElementById('nav-links');
-    if(navLinks) {
-        navLinks.innerHTML = `
-            <a href="#">Articles</a>
-            <a href="#">Research</a>
-            <a href="#">About</a>
-        `;
-    }
-
-    document.title = "Nebula | Astronomy Learning Resources";
-
-    const activityEvents = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart'];
-    activityEvents.forEach(evt => window.removeEventListener(evt, resetStealthTimer));
-
-    console.log("System locked due to inactivity.");
-}
-
-function renderGameGrid(list, isSubGroup = false) {
-    const grid = document.getElementById('game-grid');
-    if(!grid) return;
-    
-    grid.innerHTML = '';
-
-    if (!isSubGroup && list === library) {
-        const featuredCard = document.createElement('div');
-        featuredCard.className = 'featured-card';
-        featuredCard.setAttribute('data-aos', 'fade-up');
-        
-        featuredCard.onclick = () => {
-            window.location.href = featuredItem.link;
-        };
-
-        featuredCard.innerHTML = `
-            <div class="featured-content">
-                <div class="featured-icon"><i class="${featuredItem.icon}"></i></div>
-                <div class="featured-text">
-                    <h3>${featuredItem.title}</h3>
-                    <p>${featuredItem.description}</p>
-                </div>
-                <div class="featured-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </div>
-        `;
-        grid.appendChild(featuredCard);
-    }
-
-    if (isSubGroup) {
-        const backCard = document.createElement('div');
-        backCard.className = 'game-card back-card';
-        backCard.onclick = () => {
-            window.history.pushState({}, '', window.location.pathname);
-            renderGameGrid(library); 
-            document.getElementById('search-input').value = '';
-        };
-        backCard.innerHTML = `
-            <div class="card-media-wrapper" style="background: rgba(255,255,255,0.05);">
-                <div class="card-emoji">↩️</div>
-            </div>
-            <div class="card-content">
-                <h3>Return</h3>
-                <p>Back to root directory</p>
-            </div>
-        `;
-        grid.appendChild(backCard);
-    }
-
-    list.forEach((item, index) => {
-        const cleanDesc = stripMarkdown(item.description);
-        const htmlDesc = parseMarkdown(item.description);
-
-        const card = document.createElement('div');
-        card.className = 'game-card';
-        if (item.type === 'group') card.classList.add('group-card');
-        
-        card.setAttribute('data-aos', 'fade-up');
-        card.setAttribute('data-aos-delay', index * 50);
-        
-        card.onclick = (e) => {
-            if (e.target.tagName === 'A') return;
-
-            if (item.type === 'group') {
-                renderGameGrid(item.items, true);
-            } else {
-                const param = isChromebook ? 'video' : 'game';
-                window.location.href = `play?${param}=${item.id}`;
-            }
-        };
-
-        const isImage = /\.(png|jpg|jpeg|gif|webp)$/i.test(item.icon);
-        let mediaHtml = isImage 
-            ? `<img src="${item.type === 'group' ? 'assets/' + item.icon : 'games/' + item.id + '/' + item.icon}" alt="${cleanDesc}" class="card-img" loading="lazy">` 
-            : `<div class="card-emoji" aria-label="${cleanDesc}" role="img">${item.icon}</div>`;
-
-        const titlePrefix = item.type === 'group' ? '<i class="fa-solid fa-folder-open" style="color:#fbbf24; margin-right:8px;"></i>' : '';
-
-        card.innerHTML = `
-            <div class="card-media-wrapper">${mediaHtml}</div>
-            <div class="card-content">
-                <h3>${titlePrefix}${item.title}</h3>
-                <p>${htmlDesc}</p>
-            </div>
-        `;
-        grid.appendChild(card);
-    });
-}
-
-async function launchOverlay(game) {
-    const view = document.getElementById('game-view');
-    const frame = document.getElementById('game-frame');
-    const titleDisp = document.getElementById('game-title-disp');
-
-    if(!view || !frame) return;
-
-    view.style.display = 'block';
-    if(titleDisp) titleDisp.innerText = "Loading " + game.title + "...";
-    
-    const isLocal = window.location.protocol === 'data:' || window.location.protocol === 'file:';
-    const repoBase = isLocal ? "https://cdn.jsdelivr.net/gh/tracerip/nebula@main" : "";
-    
-    const gameFolder = `${repoBase}/games/${game.id}/`;
-    const indexUrl = `${gameFolder}index.html`;
-
-    try {
-        const res = await fetch(indexUrl);
-        if(!res.ok) throw new Error("Game file missing");
-        let html = await res.text();
-
-        if(!html.includes('<base')) {
-            html = html.replace('<head>', `<head><base href="${gameFolder}">`);
-        }
-
-        const blob = new Blob([html], { type: "text/html" });
-        const blobUrl = URL.createObjectURL(blob);
-        
-        frame.src = blobUrl;
-        
-        if(titleDisp) titleDisp.innerText = game.title;
-
-    } catch(e) {
-        if(titleDisp) titleDisp.innerText = "Error";
-        console.error(e);
-        frame.src = indexUrl;
-    }
-}
-
-window.closeOverlay = function() {
-    const view = document.getElementById('game-view');
-    const frame = document.getElementById('game-frame');
-    if(view) view.style.display = 'none';
-    if(frame) {
-        frame.src = 'about:blank';
-    }
-};
-
-function setupSearch() {
-    const input = document.getElementById('search-input');
-    if(!input) return;
-    
-    input.addEventListener('keyup', (e) => {
-        const term = e.target.value.toLowerCase();
-        if (term === '') {
-            renderGameGrid(library);
-        } else {
-            const allGames = flattenLibrary(library);
-            const filtered = allGames.filter(g => g.title.toLowerCase().includes(term));
-            renderGameGrid(filtered);
-        }
-    });
-}
-
-function flattenLibrary(list) {
-    let result = [];
-    list.forEach(item => {
-        if (item.type === 'group') {
-            result = result.concat(item.items);
-        } else {
-            result.push(item);
-        }
-    });
-    return result;
-}
-
-function loadGame() {
-    const params = new URLSearchParams(window.location.search);
-    const gameParam = params.get('game');
-    const videoParam = params.get('video');
-    let targetId = null;
-
-    if (isChromebook) {
-        if (gameParam) {
-            const newUrl = new URL(window.location);
-            newUrl.searchParams.delete('game');
-            newUrl.searchParams.set('video', gameParam);
-            window.history.replaceState({}, '', newUrl);
-            
-            targetId = gameParam;
-        } else if (videoParam) {
-            targetId = videoParam;
-        }
-    } 
-    
-    else {
-        if (videoParam) {
-            window.location.href = '/';
-            return;
-        } else if (gameParam) {
-            targetId = gameParam;
-        }
-    }
-
-    if (!targetId) {
-        window.location.href = '/';
-        return;
-    }
-
-    const allGames = flattenLibrary(library);
-    const gameData = allGames.find(g => g.id === targetId);
-    
-    if (gameData) {
-        const gamePath = `games/${targetId}/index.html`;
-
-        if (isChromebook) {
-            const w1 = spaceWords[Math.floor(Math.random() * spaceWords.length)];
-            const w2 = spaceWords[Math.floor(Math.random() * spaceWords.length)];
-            document.title = `Playing ${w1} ${w2} Education Video`;
-        } else {
-            document.title = `Play ${gameData.title} for Free and Unblocked | Nebula`;
-        }
-
-        document.getElementById('game-title').innerText = gameData.title;
-        document.getElementById('game-frame').src = gamePath;
-
-        const rawBtn = document.getElementById('raw-btn');
-        if(rawBtn) rawBtn.href = gamePath;
-
-        if (window.self !== window.top) {
-            rawBtn.onclick = (e) => {
-                e.preventDefault();
-                openCloak(rawBtn.href); 
-            };
-        }
-
-        const creatorBtn = document.getElementById('creator-btn');
-        const creatorIcon = document.getElementById('creator-icon');
-        const creatorName = document.getElementById('creator-name');
-
-        if (gameData.creator) {
-            creatorBtn.style.display = 'inline-flex';
-            creatorBtn.href = gameData.creator.link;
-            creatorName.innerText = gameData.creator.name;
-            creatorIcon.className = gameData.creator.icon;
-        } else {
-            creatorBtn.style.display = 'none';
-        }
-
-        updateSEOTags(gameData);
-
-        fetch(`games/${targetId}/description.txt`)
-            .then(res => {
-                if(!res.ok) throw new Error("No description.txt");
-                return res.text();
-            })
-            .then(text => parseAndDisplayDetails(text))
-            .catch(err => {
-                document.getElementById('game-details-section').style.display = 'none';
-            });
-
-    } else {
-        window.location.href = '/'; 
-    }
-}
-
-function updateSEOTags(game) {
-    const masterDomain = "https://trylearning.space";
-    const canonicalUrl = masterDomain + window.location.pathname + window.location.search;
-
-    let linkTag = document.querySelector("link[rel='canonical']");
-    if (!linkTag) {
-        linkTag = document.createElement('link');
-        linkTag.setAttribute('rel', 'canonical');
-        document.head.appendChild(linkTag);
-    }
-    
-    linkTag.setAttribute('href', canonicalUrl);
-
-    if (isChromebook) return;
-
-    const imageUrl = /\.(png|jpg|jpeg|gif|webp)$/i.test(game.icon) 
-        ? `${window.location.origin}/games/${game.id}/${game.icon}`
-        : `${window.location.origin}/assets/og-image.jpg`;
-
-    const cleanDesc = stripMarkdown(game.description);
-
-    document.querySelector('meta[name="description"]').setAttribute("content", `Play ${game.title} unblocked for free without needing to download. ${cleanDesc}`);
-    
-    document.querySelector('meta[property="og:title"]').setAttribute("content", game.title);
-    document.querySelector('meta[property="og:description"]').setAttribute("content", `Play ${game.title} unblocked for free without needing to download. ${cleanDesc}`);
-    document.querySelector('meta[property="og:url"]').setAttribute("content", canonicalUrl);
-    document.querySelector('meta[property="og:image"]').setAttribute("content", imageUrl);
-    
-    document.querySelector('meta[property="twitter:title"]').setAttribute("content", game.title);
-    document.querySelector('meta[property="twitter:description"]').setAttribute("content", `Play ${game.title} unblocked for free without needing to download. ${cleanDesc}`);
-    document.querySelector('meta[property="twitter:image"]').setAttribute("content", imageUrl);
-    document.querySelector('meta[property="twitter:url"]').setAttribute("content", canonicalUrl);
-}
-
-function parseAndDisplayDetails(text) {
-    const container = document.getElementById('game-details-section');
-    container.style.display = 'grid';
-
-    const sections = { description: "", controls: "", seo: "" };
-    let currentSection = null;
-
-    text.split(/\r?\n/).forEach(line => {
-        const trimmed = line.trim();
-        if (trimmed.startsWith('#')) {
-            const header = trimmed.replace('#', '').trim().toLowerCase();
-            if (header.includes('description')) currentSection = 'description';
-            else if (header.includes('control')) currentSection = 'controls';
-            else if (header.includes('hidden') || header.includes('seo')) currentSection = 'seo';
-            else currentSection = null;
-        } else if (currentSection) {
-            sections[currentSection] += line + "\n";
-        }
-    });
-
-    const rawDesc = sections.description.trim() || "No description available.";
-    document.getElementById('desc-content').innerHTML = parseMarkdown(rawDesc);
-
-    const rawControls = sections.controls.trim() || "No controls listed.";
-    document.getElementById('controls-content').innerHTML = parseMarkdown(rawControls);
-
-    if (sections.seo.trim()) {
-        const seoText = sections.seo.trim();
-        
-        document.getElementById('seo-content').innerText = seoText;
-        
-        const metaTag = document.querySelector('meta[name="keywords"]');
-        if(metaTag) {
-            if (isChromebook) {
-                return; 
-            }
-
-            let currentKeywords = metaTag.getAttribute('content');
-
-            currentKeywords = currentKeywords
-                .replace(/education|astronomy|physics/gi, "") 
-                .replace(/,\s*,/g, ",") 
-                .replace(/^,\s*|,\s*$/g, "") 
-                .trim();
-            
-            const separator = currentKeywords.length > 0 ? ', ' : '';
-            metaTag.setAttribute('content', `${currentKeywords}${separator}${seoText.replace(/\n/g, ', ')}`);
-        }
-    }
-}
-
-function toggleFullscreen() {
-    const elem = document.getElementById("game-frame");
-    if (elem.requestFullscreen) elem.requestFullscreen();
-    else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
-    else if (elem.msRequestFullscreen) elem.msRequestFullscreen();
-}
-
-function parseMarkdown(text) {
-    return text.replace(
-        /\[([^\]]+)\]\(([^)]+)\)/g, 
-        '<a href="$2" target="_blank" class="desc-link" onclick="event.stopPropagation()">$1</a>'
-    );
-}
-
-function stripMarkdown(text) {
-    return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1');
-}
-
-function sortLibrary(list) {
-    list.sort((a, b) => {
-        const aIsGroup = a.type === 'group';
-        const bIsGroup = b.type === 'group';
-        
-        if (aIsGroup && !bIsGroup) return -1;
-        if (!aIsGroup && bIsGroup) return 1;
-        
-        return a.title.localeCompare(b.title);
-    });
-}
-
-if (document.getElementById('key-display')) {
-    updateKeyDisplay();
-}
-
-function startKeyRecording() {
-    isRecordingKey = true;
-    const btn = document.getElementById('record-btn');
-    btn.innerText = "Press any key...";
-    btn.style.borderColor = "#fbbf24";
-    btn.style.color = "#fbbf24";
-}
-
-function clearPanicKey() {
-    panicKey = null;
-    localStorage.removeItem('nebula_panic_key');
-    updateKeyDisplay();
-}
-
-function updateKeyDisplay() {
-    const disp = document.getElementById('key-display');
-    const btn = document.getElementById('record-btn');
-    
-    if (disp) {
-        disp.innerText = panicKey ? panicKey.toUpperCase() : "NONE";
-    }
-    
-    if (btn) {
-        btn.innerText = panicKey ? "Change Key" : "Set Keybind";
-        btn.style.borderColor = "";
-        btn.style.color = "";
-    }
-}
-
-function executePanic() {
-    window.location.replace("https://docs.google.com/");
-}
-
-window.addEventListener('keydown', (e) => {
-    if (isRecordingKey) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (e.key === "Escape") {
-            isRecordingKey = false;
-            updateKeyDisplay();
-            return;
-        }
-
-        panicKey = e.key;
-        localStorage.setItem('nebula_panic_key', panicKey);
-        
-        isRecordingKey = false;
-        updateKeyDisplay();
-        return;
-    }
-
-    if (panicKey && e.key.toLowerCase() === panicKey.toLowerCase()) {
-        if (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA") {
-            return;
-        }
-
-        e.preventDefault();
-        e.stopPropagation();
-        executePanic();
-    }
-});

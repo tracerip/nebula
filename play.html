@@ -28,7 +28,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
     <link rel="canonical" href="">
 
@@ -50,7 +50,6 @@
     <div class="container play-container">
         
         <div class="controls-bar" data-aos="fade-down">
-            
             <div style="display:flex; align-items:center; gap:15px;">
                 <a href="/" class="btn"><i class="fa-solid fa-arrow-left"></i> Library</a>
                 <h1 id="game-title" style="margin:0; font-size:1.2rem; font-weight:700;">Loading Resource...</h1>
@@ -58,14 +57,11 @@
 
             <div style="display:flex; gap: 10px;">
                 <a id="creator-btn" href="#" target="_blank" class="btn" style="display:none; align-items: center; gap: 8px;">
-                    <i id="creator-icon" class="fa-solid fa-user"></i> 
-                    <span id="creator-name">Creator</span>
+                    <i id="creator-icon" class="fa-solid fa-user"></i> <span id="creator-name">Creator</span>
                 </a>
-
                 <a id="raw-btn" href="#" target="_blank" class="btn">
                     <i class="fa-solid fa-up-right-from-square"></i> Raw
                 </a>
-                
                 <button onclick="toggleFullscreen()" class="btn">
                     <i class="fa-solid fa-expand"></i> Fullscreen
                 </button>
@@ -78,7 +74,7 @@
 
         <div class="notice-box" data-aos="fade-up">
             <i class="fa-solid fa-triangle-exclamation"></i>
-            <span><strong>Tip:</strong> If the content fails to load, has mouse locking issues, or graphical glitches, please click the <strong>Raw</strong> button to open it in a new tab.</span>
+            <span><strong>Tip:</strong> If the content fails to load or has mouse locking issues, click <strong>Raw</strong> to open in a new tab.</span>
         </div>
 
         <noscript>
@@ -107,6 +103,9 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="assets/script.js"></script>
+
+    <script src="assets/games.js"></script>
+    <script src="assets/ui.js"></script>
+    <script src="assets/main.js"></script>
 </body>
 </html>

@@ -50,25 +50,20 @@
     <div id="edu-view">
         <section class="hero">
             <div class="container">
-                <h1 data-aos="zoom-in">
-                    Explore the <span class="gradient-text">Cosmos.</span>
-                </h1>
-                <p data-aos="fade-up" data-aos-delay="200">
-                    Your digital gateway to understanding the universe. <br>
-                    Comprehensive guides on celestial mechanics and astrophysics.
-                </p>
+                <h1 data-aos="zoom-in">Explore the <span class="gradient-text">Cosmos.</span></h1>
+                <p data-aos="fade-up" data-aos-delay="200">Your digital gateway to understanding the universe.</p>
             </div>
         </section>
 
         <section class="container blog-grid">
             <article class="blog-card" data-aos="fade-up">
                 <h3>The Lifecycle of a Star</h3>
-                <p>From the collapse of a molecular cloud to the dramatic finale of a supernova, understand the stages of stellar evolution.</p>
+                <p>From the collapse of a molecular cloud to the dramatic finale of a supernova.</p>
                 <span class="read-more">Read Article &rarr;</span>
             </article>
             <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
                 <h3>Understanding Black Holes</h3>
-                <p>Explore the physics behind event horizons and the singularity. What happens when gravity becomes infinite?</p>
+                <p>Explore the physics behind event horizons and the singularity.</p>
                 <span class="read-more">Read Article &rarr;</span>
             </article>
             <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
@@ -82,17 +77,27 @@
     <div id="game-view" style="display: none;">
         <section class="hero" style="padding-top: 120px; padding-bottom: 40px;">
             <div class="container">
-                <h1 data-aos="zoom-in">
-                    Active <span class="gradient-text">Simulations.</span>
-                </h1>
-                <div class="search-container" data-aos="fade-up" data-aos-delay="300">
-                    <input type="text" id="search-input" class="search-input" placeholder="Search simulations...">
+                <h1 data-aos="zoom-in">Active <span class="gradient-text">Simulations.</span></h1>
+                
+                <div class="controls-bar" data-aos="fade-down">
+                    <div class="search-container" style="margin: 0; width: 100%; max-width: 100%;">
+                        <input type="text" id="search-input" class="search-input" placeholder="Search simulations...">
+                    </div>
+                </div>
+
+                <div class="category-bar" data-aos="fade-right" data-aos-delay="100">
+                    <button class="cat-btn active" onclick="filterCategory('all')">All</button>
+                    <button class="cat-btn" onclick="filterCategory('html5')"><i class="fa-brands fa-html5"></i> HTML5</button>
+                    <button class="cat-btn" onclick="filterCategory('flash')"><i class="fa-solid fa-bolt"></i> Flash</button>
+                    <button class="cat-btn" onclick="filterCategory('emulator')"><i class="fa-solid fa-gamepad"></i> Emulated</button>
+                    <button class="cat-btn" onclick="filterCategory('app')"><i class="fa-solid fa-layer-group"></i> Apps</button>
                 </div>
             </div>
         </section>
 
         <section class="container" id="library">
-            <div id="game-grid" class="game-grid"></div>
+            <div id="game-grid" class="game-grid">
+            </div>
         </section>
     </div>
 
@@ -104,13 +109,13 @@
         </section>
 
         <section class="settings-container">
-            <button onclick="switchToGames()" class="btn" style="margin-bottom: 20px;"><i class="fa-solid fa-arrow-left"></i> Back to Simulations</button>
+            <button onclick="switchToGames()" class="btn" style="margin-bottom: 20px;"><i class="fa-solid fa-arrow-left"></i> Back</button>
             
             <div class="settings-grid">
                 <div class="setting-card" data-aos="fade-up">
                     <div>
                         <h3><i class="fa-solid fa-mask"></i> Tab Cloaking</h3>
-                        <p>Open Nebula in an <code>about:blank</code> tab to hide it from your browser history and extensions.</p>
+                        <p>Open Nebula in an <code>about:blank</code> tab.</p>
                     </div>
                     <button onclick="openCloak()" class="btn-setting">Launch Cloak</button>
                 </div>
@@ -118,19 +123,15 @@
                 <div class="setting-card" data-aos="fade-up" data-aos-delay="200">
                     <div>
                         <h3><i class="fa-solid fa-skull-crossbones"></i> Panic Keybind</h3>
-                        <p>Set a custom key to instantly nuke this tab and redirect to Google.</p>
-                        
-                        <p style="color: #ef4444; border-left: 2px solid #ef4444; padding-left: 10px; font-size: 0.85rem;">
-                            <strong>WARNING:</strong> If you press this key while playing, the tab will close immediately. You will lose all unsaved progress.
-                        </p>
+                        <p>Set a custom key to instantly nuke this tab.</p>
+                        <p style="color: #ef4444; font-size: 0.8rem;"><strong>WARNING:</strong> Closes tab immediately.</p>
                     </div>
-                    
                     <div style="display: flex; align-items: center; gap: 15px; margin-top: 10px;">
                         <button id="record-btn" onclick="startKeyRecording()" class="btn-setting">Set Keybind</button>
                         <div style="background: rgba(255,255,255,0.1); padding: 5px 10px; border-radius: 4px; min-width: 60px; text-align: center;">
                             <span id="key-display" style="color: var(--accent); font-weight: 700; font-family: monospace;">NONE</span>
                         </div>
-                        <button onclick="clearPanicKey()" style="background: none; border: none; color: #9ca3af; cursor: pointer; font-size: 0.8rem;">(Clear)</button>
+                        <button onclick="clearPanicKey()" style="background: none; border: none; color: #9ca3af; cursor: pointer;">(Clear)</button>
                     </div>
                 </div>
             </div>
@@ -142,6 +143,8 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="assets/script.js"></script>
+    <script src="assets/games.js"></script>
+    <script src="assets/ui.js"></script>
+    <script src="assets/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,15 @@
+# Description
+[NautilusOS](https://github.com/nautilus-os/NautilusOS) is a sophisticated web-based operating system (webtop) that runs entirely within your browser. It simulates a full desktop environment, complete with a taskbar, window management, and integrated applications like a terminal, code editor, and file manager.
+
+Designed to be lightweight and customizable, it serves as a virtual workspace or a sandbox for testing JavaScript-based applications. It is often used by tech enthusiasts to simulate a computer environment inside another computer, bypassing restrictions and offering a clean, private desktop experience.
+
+If you enjoy technical sandboxes or classic desktop experiences, you should try [EaglercraftX](play?game=eaglercraftx-1.8.8) or the unrestricted proxy [Helios](play?game=helios).
+
+# Controls
+Mouse - Navigate cursor, Open apps, Drag windows.
+Keyboard - Type in Terminal/Text Editor.
+Right Click - Context menu.
+ESC - Close current window (in some apps).
+
+# Hidden SEO
+nautilus os unblocked, web os, browser based operating system, virtual desktop online, nautilus os github, javascript os, unblocked desktop, school computer bypass, web desktop environment, virtual machine browser, nautilus os free, linux in browser, html5 os, simulator games, fake windows, computer in a computer
