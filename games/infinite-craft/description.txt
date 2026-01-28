@@ -6,9 +6,12 @@ Unlike traditional crafting games with fixed recipes, Infinite Craft uses a Larg
 If you enjoy open-ended creativity, you should also play [EaglercraftX](play?game=eaglercraftx-1.8.8) or the survival sandbox [Terraria](play?game=terraria).
 
 # Controls
-Mouse Click / Drag - Select and Combine elements.
-Right Click - Remove an element from the workspace.<!--citation:1-->
-Double Click - Clone an element.
+Left Click - Select and Combine elements.
+Right Click - Remove an element from the workspace.
+Double Click / Shift drag - Clone an element.
+Scroll Wheel - Zoom in the canvas.
+Middle Click / Arrow Keys - Pan around canvas.
+Crtl Z - Undo.
 
 # Hidden SEO
 infinite craft unblocked, play infinite craft online, neal fun infinite craft, ai crafting game, infinite craft browser, infinite craft no download, infinite craft recipes, first discovery game, neal agarwal games, alchemy game ai, infinite craft solver, infinite craft hacks, play infinite craft school, generative ai game, infinite craft cheats, god simulator browser
