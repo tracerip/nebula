@@ -18,7 +18,7 @@
             var r = n(106)((function(i) {
                 return i[1]
             }));
-            r.push([e.i, '#sidebar[data-v-5c28f8c6]{background:var(--sidebar-bg);border-left:1px solid var(--border-color);contain:strict;height:100vh;overflow-x:visible;overflow-y:scroll;position:fixed;right:0;top:0;transition:width .05s ease;z-index:10}.resize-handle[data-v-5c28f8c6]{cursor:ew-resize;height:100vh;left:-4px;margin-top:-100vh;position:sticky;top:0;width:6px;z-index:20}.resize-handle[data-v-5c28f8c6]:active,.resize-handle[data-v-5c28f8c6]:hover{background:rgba(0,0,0,.06)}.dark-mode .resize-handle[data-v-5c28f8c6]:active,.dark-mode .resize-handle[data-v-5c28f8c6]:hover{background:hsla(0,0%,100%,.15)}.items[data-v-5c28f8c6]{line-height:.5em;margin-left:auto;margin-right:auto;max-width:900px;min-height:calc(100svh - 92px);padding:9px}.empty-sidebar[data-v-5c28f8c6]{font-size:15px;left:50%;pointer-events:none;position:absolute;text-align:center;top:25px;transform:translateX(-50%);-webkit-user-select:none;-moz-user-select:none;user-select:none}.sidebar-controls[data-v-5c28f8c6]{bottom:0;margin-top:20px;position:sticky;width:100%;z-index:2}.sidebar-controls[data-v-5c28f8c6]:before{background:linear-gradient(180deg,hsla(0,0%,100%,0),#fff 60%);content:"";height:100px;left:0;position:absolute;right:0;top:-50px}.dark-mode .sidebar-controls[data-v-5c28f8c6]:before{background:linear-gradient(180deg,transparent,rgba(0,0,0,.9) 60%)}.sidebar-search[data-v-5c28f8c6]{align-items:center;background:var(--background-color);display:flex;justify-content:right;position:relative}.sort-wrapper[data-v-5c28f8c6]{display:grid;grid-template-columns:1fr 30px;height:100%;position:relative;width:100%}.sidebar-sorting[data-v-5c28f8c6]{cursor:pointer;display:grid;grid-template-columns:1fr 1fr 40px;text-align:center;grid-gap:4px;justify-content:center;margin:0 auto;padding:0 8px}.sorting-item[data-v-5c28f8c6]{align-items:center;background:var(--background-color);border:1px solid var(--border-color);border-bottom:none;border-top-left-radius:10px;border-top-right-radius:10px;display:flex;font-size:14px;height:32px;justify-content:center;transform:translateY(1px)}.discoveries-active[data-v-5c28f8c6],.sorting-selectable[data-v-5c28f8c6]:hover{background:var(--instance-bg-hover)}.sidebar-input[data-v-5c28f8c6]{background:url(/infinite-craft/search.svg) no-repeat 22px 22px;background-position:10px 10px;background-size:21px 21px;border:none;border-top:1px solid var(--border-color);color:var(--text-color);font-size:15px;height:40px;line-height:18px;outline:none;padding:0 20px 0 40px;position:relative;width:100%}.sidebar-input[data-v-5c28f8c6]::-moz-placeholder{opacity:.8}.sidebar-input[data-v-5c28f8c6]::placeholder{opacity:.8}.dark-mode .sidebar-input[data-v-5c28f8c6]::-moz-placeholder{opacity:.75}.dark-mode .sidebar-input[data-v-5c28f8c6]::placeholder{opacity:.75}.sidebar-input[data-v-5c28f8c6]:after{content:"";font-size:20px;left:10px;pointer-events:none;top:50%}.sidebar-input-close[data-v-5c28f8c6],.sidebar-input[data-v-5c28f8c6]:after{position:absolute;transform:translateY(-50%);-webkit-user-select:none;-moz-user-select:none;user-select:none}.sidebar-input-close[data-v-5c28f8c6]{cursor:pointer;opacity:.45;right:10px;top:calc(50% + 1px);width:15px}.dark-mode .sidebar-input-close[data-v-5c28f8c6]{filter:invert(1)}.sort[data-v-5c28f8c6]{cursor:pointer;font-size:14px;opacity:.9;padding:2px}.sort-img[data-v-5c28f8c6]{height:15px;padding:2px;position:relative;top:2px}.sort-img[data-v-5c28f8c6],.sorting-icon[data-v-5c28f8c6]{-webkit-user-select:none;-moz-user-select:none;user-select:none}.sorting-icon[data-v-5c28f8c6]{height:13px;margin-right:5px}.sort-direction-icon[data-v-5c28f8c6],.sorting-icon[data-v-5c28f8c6]{line-height:0px;pointer-events:none}.sort-direction-icon[data-v-5c28f8c6]{height:11px;-webkit-user-select:none;-moz-user-select:none;user-select:none}.dark-mode .sort-direction-icon[data-v-5c28f8c6]{filter:invert(1)}.sort-direction-icon-flip[data-v-5c28f8c6]{transform:rotate(180deg)}.sort-inner[data-v-5c28f8c6]{align-items:center;display:flex;height:100%;justify-content:center;width:100%}.sort-name[data-v-5c28f8c6]{border-top-left-radius:10px}.brief-text .sort-by-text[data-v-5c28f8c6]{display:none}.brief-text[data-v-5c28f8c6]{text-transform:capitalize}.sort-direction[data-v-5c28f8c6]{border-left:1px solid var(--border-color);border-top-right-radius:10px;height:100%;width:100%}.sort-direction[data-v-5c28f8c6]:hover{background:var(--instance-bg-hover)}.dark-mode .sorting-icon[data-v-5c28f8c6]{filter:invert(1)}.trash-icon[data-v-5c28f8c6]{margin-right:0;transform:scale(1.2)}.empty-sidebar-icon[data-v-5c28f8c6]{margin-right:5px;margin-top:-5px;position:relative;top:5px;width:22px}.dark-mode .empty-sidebar-icon[data-v-5c28f8c6]{filter:invert(1)}@keyframes itemRemoveScale-5c28f8c6{0%{scale:0}to{scale:1}}.item-selected[data-v-5c28f8c6]{background:#e3e3e3}.instruction[data-v-5c28f8c6]{border:1px solid var(--border-color);border-radius:5px;font-size:14px;line-height:1.2em;margin-left:auto;margin-right:auto;margin-top:25px;padding:9px 0;pointer-events:none;text-align:center;-webkit-user-select:none;-moz-user-select:none;user-select:none;width:calc(100% - 10px)}.instruction-icon[data-v-5c28f8c6]{margin-right:5px;margin-top:-3px;position:relative;top:3px;width:16px}.dark-mode .instruction-icon[data-v-5c28f8c6]{filter:invert(1)}.bottom-spacer[data-v-5c28f8c6]{height:10px}.fake-items[data-v-5c28f8c6]{animation:fadeIn-5c28f8c6 .5s linear forwards;opacity:0}.fake-item[data-v-5c28f8c6]{background:linear-gradient(0deg,#f1f1f1 0,#fff);border:1px solid var(--border-color);border-radius:5px;display:inline-block;height:34px;margin:5px;width:80px}.fake-item[data-v-5c28f8c6]:nth-child(2n){width:95px}.fake-item[data-v-5c28f8c6]:nth-child(3n){width:85px}.trash-icon-animate[data-v-5c28f8c6]{animation:trashIconAnimate-5c28f8c6 .5s ease-in-out infinite alternate-reverse}.sort-dropdown[data-v-5c28f8c6]{animation:fadeInDropdown-5c28f8c6 .2s linear forwards;background:red;border:1px solid var(--border-color);border-radius:10px;box-shadow:0 -10px 20px 15px rgba(0,0,0,.03);left:50%;min-width:170px;overflow:hidden;position:absolute;top:0;transform:translate(-50%,calc(-100% - 10px));width:100%}.dark-mode .sort-dropdown[data-v-5c28f8c6]{box-shadow:0 -10px 20px 15px hsla(0,0%,100%,.03)}@keyframes fadeInDropdown-5c28f8c6{0%{opacity:0;transform:translate(-50%,calc(-100% - 5px))}to{opacity:1;transform:translate(-50%,calc(-100% - 10px))}}.sort-dropdown-option[data-v-5c28f8c6]{align-items:center;background:var(--background-color);display:flex;justify-content:center;padding:9px 0}.sort-dropdown-option[data-v-5c28f8c6]:hover{background:#f3f3f3}.dark-mode .sort-dropdown-option[data-v-5c28f8c6]:hover{background:#1e1e1e}@keyframes trashIconAnimate-5c28f8c6{0%{rotate:-5deg}to{rotate:5deg}}@keyframes fadeIn-5c28f8c6{0%{opacity:0}to{opacity:.4}}@media screen and (min-width:1150px){.items[data-v-5c28f8c6]{min-height:calc(100svh - 97px)}.instruction[data-v-5c28f8c6]{font-size:15px}.sidebar-input[data-v-5c28f8c6]{background-position:11px 12px;background-size:23px 23px;font-size:16px;height:45px;line-height:21px;padding-left:43px;padding-top:2px}.sidebar-input-close[data-v-5c28f8c6]{right:12px;width:18px}}@media screen and (max-width:800px){#sidebar[data-v-5c28f8c6]{border-left:none;border-top:1px solid #9f9f9f;bottom:0;height:183px;overflow-x:scroll;overflow-y:hidden;top:auto;width:100%!important}.sidebar-inner[data-v-5c28f8c6]{white-space:nowrap}#sidebar[data-v-5c28f8c6]::-webkit-scrollbar{display:none}.sidebar-controls[data-v-5c28f8c6]{display:none}.items[data-v-5c28f8c6]{display:flex;height:183px;min-height:auto;padding:5px 5px 7px}.items-row[data-v-5c28f8c6]{display:flex;white-space:nowrap}.items-inner[data-v-5c28f8c6]{height:100px;width:auto}.instruction[data-v-5c28f8c6]{display:none}.bottom-spacer[data-v-5c28f8c6]{height:100%;width:10px}.resize-handle[data-v-5c28f8c6]{display:none}}', ""]), r.locals = {}, e.exports = r
+            r.push([e.i, '#sidebar[data-v-5c28f8c6]{background:var(--sidebar-bg);border-left:1px solid var(--border-color);contain:strict;height:100vh;overflow-x:visible;overflow-y:scroll;position:fixed;right:0;top:0;transition:width .05s ease;z-index:10}.resize-handle[data-v-5c28f8c6]{cursor:ew-resize;height:100vh;left:-4px;margin-top:-100vh;position:sticky;top:0;width:6px;z-index:20}.resize-handle[data-v-5c28f8c6]:active,.resize-handle[data-v-5c28f8c6]:hover{background:rgba(0,0,0,.06)}.dark-mode .resize-handle[data-v-5c28f8c6]:active,.dark-mode .resize-handle[data-v-5c28f8c6]:hover{background:hsla(0,0%,100%,.15)}.items[data-v-5c28f8c6]{line-height:.5em;margin-left:auto;margin-right:auto;max-width:900px;min-height:calc(100svh - 92px);padding:9px}.empty-sidebar[data-v-5c28f8c6]{font-size:15px;left:50%;pointer-events:none;position:absolute;text-align:center;top:25px;transform:translateX(-50%);-webkit-user-select:none;-moz-user-select:none;user-select:none}.sidebar-controls[data-v-5c28f8c6]{bottom:0;margin-top:20px;position:sticky;width:100%;z-index:2}.sidebar-controls[data-v-5c28f8c6]:before{background:linear-gradient(180deg,hsla(0,0%,100%,0),#fff 60%);content:"";height:100px;left:0;position:absolute;right:0;top:-50px}.dark-mode .sidebar-controls[data-v-5c28f8c6]:before{background:linear-gradient(180deg,transparent,rgba(0,0,0,.9) 60%)}.sidebar-search[data-v-5c28f8c6]{align-items:center;background:var(--background-color);display:flex;justify-content:right;position:relative}.sort-wrapper[data-v-5c28f8c6]{display:grid;grid-template-columns:1fr 30px;height:100%;position:relative;width:100%}.sidebar-sorting[data-v-5c28f8c6]{cursor:pointer;display:grid;grid-template-columns:1fr 1fr 40px;text-align:center;grid-gap:4px;justify-content:center;margin:0 auto;padding:0 8px}.sorting-item[data-v-5c28f8c6]{align-items:center;background:var(--background-color);border:1px solid var(--border-color);border-bottom:none;border-top-left-radius:10px;border-top-right-radius:10px;display:flex;font-size:14px;height:32px;justify-content:center;transform:translateY(1px)}.discoveries-active[data-v-5c28f8c6],.sorting-selectable[data-v-5c28f8c6]:hover{background:var(--instance-bg-hover)}.sidebar-input[data-v-5c28f8c6]{background:url(/games/infinite-craft/infinite-craft/search.svg) no-repeat 22px 22px;background-position:10px 10px;background-size:21px 21px;border:none;border-top:1px solid var(--border-color);color:var(--text-color);font-size:15px;height:40px;line-height:18px;outline:none;padding:0 20px 0 40px;position:relative;width:100%}.sidebar-input[data-v-5c28f8c6]::-moz-placeholder{opacity:.8}.sidebar-input[data-v-5c28f8c6]::placeholder{opacity:.8}.dark-mode .sidebar-input[data-v-5c28f8c6]::-moz-placeholder{opacity:.75}.dark-mode .sidebar-input[data-v-5c28f8c6]::placeholder{opacity:.75}.sidebar-input[data-v-5c28f8c6]:after{content:"";font-size:20px;left:10px;pointer-events:none;top:50%}.sidebar-input-close[data-v-5c28f8c6],.sidebar-input[data-v-5c28f8c6]:after{position:absolute;transform:translateY(-50%);-webkit-user-select:none;-moz-user-select:none;user-select:none}.sidebar-input-close[data-v-5c28f8c6]{cursor:pointer;opacity:.45;right:10px;top:calc(50% + 1px);width:15px}.dark-mode .sidebar-input-close[data-v-5c28f8c6]{filter:invert(1)}.sort[data-v-5c28f8c6]{cursor:pointer;font-size:14px;opacity:.9;padding:2px}.sort-img[data-v-5c28f8c6]{height:15px;padding:2px;position:relative;top:2px}.sort-img[data-v-5c28f8c6],.sorting-icon[data-v-5c28f8c6]{-webkit-user-select:none;-moz-user-select:none;user-select:none}.sorting-icon[data-v-5c28f8c6]{height:13px;margin-right:5px}.sort-direction-icon[data-v-5c28f8c6],.sorting-icon[data-v-5c28f8c6]{line-height:0px;pointer-events:none}.sort-direction-icon[data-v-5c28f8c6]{height:11px;-webkit-user-select:none;-moz-user-select:none;user-select:none}.dark-mode .sort-direction-icon[data-v-5c28f8c6]{filter:invert(1)}.sort-direction-icon-flip[data-v-5c28f8c6]{transform:rotate(180deg)}.sort-inner[data-v-5c28f8c6]{align-items:center;display:flex;height:100%;justify-content:center;width:100%}.sort-name[data-v-5c28f8c6]{border-top-left-radius:10px}.brief-text .sort-by-text[data-v-5c28f8c6]{display:none}.brief-text[data-v-5c28f8c6]{text-transform:capitalize}.sort-direction[data-v-5c28f8c6]{border-left:1px solid var(--border-color);border-top-right-radius:10px;height:100%;width:100%}.sort-direction[data-v-5c28f8c6]:hover{background:var(--instance-bg-hover)}.dark-mode .sorting-icon[data-v-5c28f8c6]{filter:invert(1)}.trash-icon[data-v-5c28f8c6]{margin-right:0;transform:scale(1.2)}.empty-sidebar-icon[data-v-5c28f8c6]{margin-right:5px;margin-top:-5px;position:relative;top:5px;width:22px}.dark-mode .empty-sidebar-icon[data-v-5c28f8c6]{filter:invert(1)}@keyframes itemRemoveScale-5c28f8c6{0%{scale:0}to{scale:1}}.item-selected[data-v-5c28f8c6]{background:#e3e3e3}.instruction[data-v-5c28f8c6]{border:1px solid var(--border-color);border-radius:5px;font-size:14px;line-height:1.2em;margin-left:auto;margin-right:auto;margin-top:25px;padding:9px 0;pointer-events:none;text-align:center;-webkit-user-select:none;-moz-user-select:none;user-select:none;width:calc(100% - 10px)}.instruction-icon[data-v-5c28f8c6]{margin-right:5px;margin-top:-3px;position:relative;top:3px;width:16px}.dark-mode .instruction-icon[data-v-5c28f8c6]{filter:invert(1)}.bottom-spacer[data-v-5c28f8c6]{height:10px}.fake-items[data-v-5c28f8c6]{animation:fadeIn-5c28f8c6 .5s linear forwards;opacity:0}.fake-item[data-v-5c28f8c6]{background:linear-gradient(0deg,#f1f1f1 0,#fff);border:1px solid var(--border-color);border-radius:5px;display:inline-block;height:34px;margin:5px;width:80px}.fake-item[data-v-5c28f8c6]:nth-child(2n){width:95px}.fake-item[data-v-5c28f8c6]:nth-child(3n){width:85px}.trash-icon-animate[data-v-5c28f8c6]{animation:trashIconAnimate-5c28f8c6 .5s ease-in-out infinite alternate-reverse}.sort-dropdown[data-v-5c28f8c6]{animation:fadeInDropdown-5c28f8c6 .2s linear forwards;background:red;border:1px solid var(--border-color);border-radius:10px;box-shadow:0 -10px 20px 15px rgba(0,0,0,.03);left:50%;min-width:170px;overflow:hidden;position:absolute;top:0;transform:translate(-50%,calc(-100% - 10px));width:100%}.dark-mode .sort-dropdown[data-v-5c28f8c6]{box-shadow:0 -10px 20px 15px hsla(0,0%,100%,.03)}@keyframes fadeInDropdown-5c28f8c6{0%{opacity:0;transform:translate(-50%,calc(-100% - 5px))}to{opacity:1;transform:translate(-50%,calc(-100% - 10px))}}.sort-dropdown-option[data-v-5c28f8c6]{align-items:center;background:var(--background-color);display:flex;justify-content:center;padding:9px 0}.sort-dropdown-option[data-v-5c28f8c6]:hover{background:#f3f3f3}.dark-mode .sort-dropdown-option[data-v-5c28f8c6]:hover{background:#1e1e1e}@keyframes trashIconAnimate-5c28f8c6{0%{rotate:-5deg}to{rotate:5deg}}@keyframes fadeIn-5c28f8c6{0%{opacity:0}to{opacity:.4}}@media screen and (min-width:1150px){.items[data-v-5c28f8c6]{min-height:calc(100svh - 97px)}.instruction[data-v-5c28f8c6]{font-size:15px}.sidebar-input[data-v-5c28f8c6]{background-position:11px 12px;background-size:23px 23px;font-size:16px;height:45px;line-height:21px;padding-left:43px;padding-top:2px}.sidebar-input-close[data-v-5c28f8c6]{right:12px;width:18px}}@media screen and (max-width:800px){#sidebar[data-v-5c28f8c6]{border-left:none;border-top:1px solid #9f9f9f;bottom:0;height:183px;overflow-x:scroll;overflow-y:hidden;top:auto;width:100%!important}.sidebar-inner[data-v-5c28f8c6]{white-space:nowrap}#sidebar[data-v-5c28f8c6]::-webkit-scrollbar{display:none}.sidebar-controls[data-v-5c28f8c6]{display:none}.items[data-v-5c28f8c6]{display:flex;height:183px;min-height:auto;padding:5px 5px 7px}.items-row[data-v-5c28f8c6]{display:flex;white-space:nowrap}.items-inner[data-v-5c28f8c6]{height:100px;width:auto}.instruction[data-v-5c28f8c6]{display:none}.bottom-spacer[data-v-5c28f8c6]{height:100%;width:10px}.resize-handle[data-v-5c28f8c6]{display:none}}', ""]), r.locals = {}, e.exports = r
         },
         1070: function(e, t, n) {
             "use strict";
@@ -68,7 +68,7 @@
             var r = n(106)((function(i) {
                 return i[1]
             }));
-            r.push([e.i, '.infinite-craft .instance-pinwheel{transform-style:preserve-3d;--delay:0s}.infinite-craft .instance-img{content-visibility:auto;height:56px;margin-right:10px;-o-object-fit:contain;object-fit:contain;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none;width:56px}.infinite-craft .instance-pinwheel:before{animation:instancePinwheelSpin 3s linear forwards var(--delay);background:url(/infinite-craft/pinwheel.webp);background-size:contain;content:"";height:270px;left:50%;position:absolute;top:50%;transform:translate3d(-50%,-50%,-1px);width:270px}@keyframes instancePinwheelSpin{0%{transform:translate3d(-50%,-50%,-1px) rotate(0deg) scale(0)}15%{transform:translate3d(-50%,-50%,-1px) rotate(54deg) scale(1)}75%{transform:translate3d(-50%,-50%,-1px) rotate(270deg) scale(1)}to{transform:translate3d(-50%,-50%,-1px) rotate(1turn) scale(0)}}.infinite-craft .instance{align-items:center;backface-visibility:hidden;background:var(--instance-bg);border:2px solid var(--instance-border);border-radius:10px;contain:layout style size paint;contain:layout style;cursor:pointer;display:flex;font-size:38px;height:90px;left:0;padding:0 20px;position:absolute;scale:.5;top:0;transform-origin:center center;transition:scale .14s ease-in;-webkit-user-select:none;-moz-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:11}.infinite-craft .instance-discovery:after{bottom:-6px;color:#000;content:"First Discovery";font-size:26px;left:50%;position:absolute;transform:translate(-50%,100%);white-space:nowrap}@keyframes instanceScaleIn{0%{scale:.125}to{scale:.5}}.infinite-craft #instances-top .instance,.infinite-craft .instance-selected{background:var(--instance-bg-hover);border:2px solid var(--instance-border-hover)}.infinite-craft #select-box{background:rgba(85,164,255,.09);border:1px solid rgba(85,164,255,.9);left:0;position:fixed;top:0;z-index:100}.infinite-craft .instance-discovered-text{bottom:-3px;font-size:12px;left:50%;position:absolute;text-align:center;transform:translate(-50%,100%);-webkit-user-select:none;-moz-user-select:none;user-select:none;width:100%;width:110px}.infinite-craft .instance-discovered-emoji{margin-right:3px;position:relative;top:1px;width:12px}.infinite-craft .instance-emoji{font-size:42px;margin-right:10px}.infinite-craft .instance-emoji,.infinite-craft .instance-text{pointer-events:none}.infinite-craft .instance-hide{display:none!important;pointer-events:none!important}.infinite-craft .instance-disabled{animation:instancePulse .8s ease-in-out .15s infinite alternate-reverse;opacity:.7;pointer-events:none;transition:.15s linear}.infinite-craft .instance-disabled:after{content:"";height:100%;left:0;pointer-events:none;position:absolute;top:0;width:100%}.infinite-craft .instance-hover{background:var(--instance-bg-hover);border:2px solid var(--instance-border-hover);scale:.535!important}@media (hover:hover){.infinite-craft .instance:hover{background:var(--instance-bg-hover);border:2px solid var(--instance-border-hover)}}.dark-mode .instance-discovery:after{color:#fff}@keyframes instancePulse{0%{opacity:.2}to{opacity:.7}}', ""]), r.locals = {}, e.exports = r
+            r.push([e.i, '.infinite-craft .instance-pinwheel{transform-style:preserve-3d;--delay:0s}.infinite-craft .instance-img{content-visibility:auto;height:56px;margin-right:10px;-o-object-fit:contain;object-fit:contain;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none;width:56px}.infinite-craft .instance-pinwheel:before{animation:instancePinwheelSpin 3s linear forwards var(--delay);background:url(/games/infinite-craft/infinite-craft/pinwheel.webp);background-size:contain;content:"";height:270px;left:50%;position:absolute;top:50%;transform:translate3d(-50%,-50%,-1px);width:270px}@keyframes instancePinwheelSpin{0%{transform:translate3d(-50%,-50%,-1px) rotate(0deg) scale(0)}15%{transform:translate3d(-50%,-50%,-1px) rotate(54deg) scale(1)}75%{transform:translate3d(-50%,-50%,-1px) rotate(270deg) scale(1)}to{transform:translate3d(-50%,-50%,-1px) rotate(1turn) scale(0)}}.infinite-craft .instance{align-items:center;backface-visibility:hidden;background:var(--instance-bg);border:2px solid var(--instance-border);border-radius:10px;contain:layout style size paint;contain:layout style;cursor:pointer;display:flex;font-size:38px;height:90px;left:0;padding:0 20px;position:absolute;scale:.5;top:0;transform-origin:center center;transition:scale .14s ease-in;-webkit-user-select:none;-moz-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:11}.infinite-craft .instance-discovery:after{bottom:-6px;color:#000;content:"First Discovery";font-size:26px;left:50%;position:absolute;transform:translate(-50%,100%);white-space:nowrap}@keyframes instanceScaleIn{0%{scale:.125}to{scale:.5}}.infinite-craft #instances-top .instance,.infinite-craft .instance-selected{background:var(--instance-bg-hover);border:2px solid var(--instance-border-hover)}.infinite-craft #select-box{background:rgba(85,164,255,.09);border:1px solid rgba(85,164,255,.9);left:0;position:fixed;top:0;z-index:100}.infinite-craft .instance-discovered-text{bottom:-3px;font-size:12px;left:50%;position:absolute;text-align:center;transform:translate(-50%,100%);-webkit-user-select:none;-moz-user-select:none;user-select:none;width:100%;width:110px}.infinite-craft .instance-discovered-emoji{margin-right:3px;position:relative;top:1px;width:12px}.infinite-craft .instance-emoji{font-size:42px;margin-right:10px}.infinite-craft .instance-emoji,.infinite-craft .instance-text{pointer-events:none}.infinite-craft .instance-hide{display:none!important;pointer-events:none!important}.infinite-craft .instance-disabled{animation:instancePulse .8s ease-in-out .15s infinite alternate-reverse;opacity:.7;pointer-events:none;transition:.15s linear}.infinite-craft .instance-disabled:after{content:"";height:100%;left:0;pointer-events:none;position:absolute;top:0;width:100%}.infinite-craft .instance-hover{background:var(--instance-bg-hover);border:2px solid var(--instance-border-hover);scale:.535!important}@media (hover:hover){.infinite-craft .instance:hover{background:var(--instance-bg-hover);border:2px solid var(--instance-border-hover)}}.dark-mode .instance-discovery:after{color:#fff}@keyframes instancePulse{0%{opacity:.2}to{opacity:.7}}', ""]), r.locals = {}, e.exports = r
         },
         1541: function(e, t, n) {
             "use strict";
@@ -112,12 +112,12 @@
                     }, [e.element.hide ? t("img", {
                         staticClass: "item-hidden-toggle-icon",
                         attrs: {
-                            src: "/infinite-craft/plus.svg"
+                            src: "/games/infinite-craft/infinite-craft/plus.svg"
                         }
                     }) : t("img", {
                         staticClass: "item-hidden-toggle-icon",
                         attrs: {
-                            src: "/infinite-craft/minus.svg"
+                            src: "/games/infinite-craft/infinite-craft/minus.svg"
                         }
                     })]) : e._e(), e._v(" "), t("div", e._b({
                         staticClass: "item",
@@ -368,7 +368,7 @@
                     }, [t("img", {
                         staticClass: "empty-sidebar-icon",
                         attrs: {
-                            src: "/infinite-craft/empty.svg"
+                            src: "/games/infinite-craft/infinite-craft/empty.svg"
                         }
                     }), e._v("\n      No items\n    ")]) : e._e(), e._v(" "), t("div", {
                         staticClass: "items",
@@ -445,7 +445,7 @@
                     }, [t("img", {
                         staticClass: "instruction-icon",
                         attrs: {
-                            src: "/infinite-craft/left-arrow.svg"
+                            src: "/games/infinite-craft/infinite-craft/left-arrow.svg"
                         }
                     }), e._v("\n          Drag elements to craft\n        ")])]), e._v(" "), t("div", {
                         ref: "spacer",
@@ -470,7 +470,7 @@
                     }, [t("img", {
                         staticClass: "sorting-icon",
                         attrs: {
-                            src: "/infinite-craft/magic.svg"
+                            src: "/games/infinite-craft/infinite-craft/magic.svg"
                         }
                     }), e._v("\n        Discoveries\n      ")]), e._v(" "), t("div", {
                         staticClass: "sidebar-sort sorting-item"
@@ -490,7 +490,7 @@
                         }, [t("img", {
                             staticClass: "sorting-icon",
                             attrs: {
-                                src: "/infinite-craft/".concat(n.name, ".svg")
+                                src: "/games/infinite-craft/infinite-craft/".concat(n.name, ".svg")
                             }
                         }), e._v("\n              Sort by " + e._s(n.name) + "\n            ")])
                     })), 0) : e._e(), e._v(" "), t("div", {
@@ -501,7 +501,7 @@
                     }, [t("img", {
                         staticClass: "sorting-icon",
                         attrs: {
-                            src: "/infinite-craft/".concat(e.sortBy.name, ".svg")
+                            src: "/games/infinite-craft/infinite-craft/".concat(e.sortBy.name, ".svg")
                         }
                     }), e._v(" "), t("span", {
                         staticClass: "sort-by-text-wrapper",
@@ -521,7 +521,7 @@
                             "sort-direction-icon-flip": !e.sortBy.asc
                         },
                         attrs: {
-                            src: "/infinite-craft/up-arrow.svg"
+                            src: "/games/infinite-craft/infinite-craft/up-arrow.svg"
                         }
                     })])])]), e._v(" "), t("div", {
                         staticClass: "sidebar-sort sorting-item sorting-selectable",
@@ -537,7 +537,7 @@
                             "trash-icon-animate": e.showHidden
                         },
                         attrs: {
-                            src: "/infinite-craft/trash.svg"
+                            src: "/games/infinite-craft/infinite-craft/trash.svg"
                         }
                     })])]), e._v(" "), t("div", {
                         staticClass: "sidebar-search"
@@ -570,7 +570,7 @@
                         }],
                         staticClass: "sidebar-input-close",
                         attrs: {
-                            src: "/infinite-craft/close.svg"
+                            src: "/games/infinite-craft/infinite-craft/close.svg"
                         },
                         on: {
                             click: function(t) {
@@ -1383,20 +1383,20 @@
             var St = {
                     init: function(e, t) {
                         re = window.innerWidth <= 800, pe = e, ne = document.getElementById("instances"), ae = document.getElementById("instances-top"), ie = document.getElementById("select-box"), Oe(t), J = new X.Howl({
-                            src: ["/infinite-craft/instance.mp3"],
+                            src: ["/games/infinite-craft/infinite-craft/instance.mp3"],
                             volume: .5
                         }), K = new X.Howl({
-                            src: ["/infinite-craft/delete.mp3"],
+                            src: ["/games/infinite-craft/infinite-craft/delete.mp3"],
                             volume: .5
                         }), Z = new X.Howl({
-                            src: ["/infinite-craft/error.mp3"],
+                            src: ["/games/infinite-craft/infinite-craft/error.mp3"],
                             volume: .4
                         }), G = new X.Howl({
-                            src: ["/infinite-craft/discovery.mp3"],
+                            src: ["/games/infinite-craft/infinite-craft/discovery.mp3"],
                             volume: .1,
                             rate: 1.1
                         }), V = new X.Howl({
-                            src: ["/infinite-craft/reward.mp3"],
+                            src: ["/games/infinite-craft/infinite-craft/reward.mp3"],
                             volume: .4
                         }), ee = new AbortController, te = ee.signal, window.addEventListener("mousemove", He, {
                             signal: te
@@ -1507,7 +1507,7 @@
                     }, [t("img", {
                         staticClass: "dark-mode-icon tool-icon",
                         attrs: {
-                            src: "/infinite-craft/dark-mode".concat(e.isDarkMode ? "-on" : "", ".svg")
+                            src: "/games/infinite-craft/infinite-craft/dark-mode".concat(e.isDarkMode ? "-on" : "", ".svg")
                         },
                         on: {
                             click: function(t) {
@@ -1517,7 +1517,7 @@
                     }), e._v(" "), t("img", {
                         staticClass: "clear tool-icon",
                         attrs: {
-                            src: "/infinite-craft/clear.svg"
+                            src: "/games/infinite-craft/infinite-craft/clear.svg"
                         },
                         on: {
                             click: e.showDialog
@@ -1525,7 +1525,7 @@
                     }), e._v(" "), t("img", {
                         staticClass: "sound tool-icon",
                         attrs: {
-                            src: e.isMuted ? "/infinite-craft/mute.svg" : "/infinite-craft/sound.svg"
+                            src: e.isMuted ? "/games/infinite-craft/infinite-craft/mute.svg" : "/games/infinite-craft/infinite-craft/sound.svg"
                         },
                         on: {
                             click: function(t) {
@@ -1786,7 +1786,7 @@
                         }), e._v(" "), e.nameChange !== n.id ? t("img", {
                             staticClass: "save-icon",
                             attrs: {
-                                src: "/infinite-craft/pencil.svg"
+                                src: "/games/infinite-craft/infinite-craft/pencil.svg"
                             },
                             on: {
                                 click: function(t) {
@@ -1796,7 +1796,7 @@
                         }) : t("img", {
                             staticClass: "save-icon",
                             attrs: {
-                                src: "/infinite-craft/check.svg"
+                                src: "/games/infinite-craft/infinite-craft/check.svg"
                             },
                             on: {
                                 mousedown: function(e) {
@@ -1820,7 +1820,7 @@
                         }, [t("img", {
                             staticClass: "save-action-icon",
                             attrs: {
-                                src: "/infinite-craft/download.svg"
+                                src: "/games/infinite-craft/infinite-craft/download.svg"
                             }
                         }), e._v("\n              Download\n            ")]), e._v(" "), t("label", {
                             staticClass: "save-action",
@@ -1832,7 +1832,7 @@
                         }, [t("img", {
                             staticClass: "save-action-icon",
                             attrs: {
-                                src: "/infinite-craft/upload.svg"
+                                src: "/games/infinite-craft/infinite-craft/upload.svg"
                             }
                         }), e._v("\n              Upload\n              "), t("input", {
                             staticClass: "download-input",
@@ -1855,7 +1855,7 @@
                         }, [t("img", {
                             staticClass: "save-action-icon",
                             attrs: {
-                                src: "/infinite-craft/refresh.svg"
+                                src: "/games/infinite-craft/infinite-craft/refresh.svg"
                             }
                         }), e._v("Reset\n            ")])])]) : t("div", {
                             staticClass: "delete-wrapper"
@@ -3057,7 +3057,7 @@
                     }, [t("img", {
                         staticClass: "app-store-icon",
                         attrs: {
-                            src: "/infinite-craft/app-logo.png"
+                            src: "/games/infinite-craft/infinite-craft/app-logo.png"
                         }
                     }), e._v("\n    Get Infinite Craft on the " + e._s(e.isIOS ? "App" : "Play") + " Store! →\n  ")]) : e._e(), e._v(" "), t("canvas", {
                         ref: "particles",
@@ -3087,7 +3087,7 @@
                     }), e._v(" "), t("img", {
                         staticClass: "logo",
                         attrs: {
-                            src: "/infinite-craft/logo.svg"
+                            src: "/games/infinite-craft/infinite-craft/logo.svg"
                         }
                     }), e._v(" "), t("div", {
                         staticClass: "menu",
@@ -3102,7 +3102,7 @@
                     }, [t("img", {
                         staticClass: "menu-icon",
                         attrs: {
-                            src: "/infinite-craft/menu.svg"
+                            src: "/games/infinite-craft/infinite-craft/menu.svg"
                         }
                     }), e._v("\n    Menu\n  ")])], 1)
                 }), [], !1, null, "6ee28a24", null));
