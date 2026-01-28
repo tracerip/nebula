@@ -378,4 +378,10 @@
         <priority>0.8</priority>
         <changefreq>monthly</changefreq>
     </url>
+    <url>
+        <loc>https://trylearning.space/play?game=infinite-craft</loc>
+        <lastmod>2025-01-28</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
 </urlset>

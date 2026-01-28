@@ -707,12 +707,24 @@ const library = [
     {
         id: "tapper",
         title: "Tapper",
-        description: "The classic arcade test of reflexes and multitasking. You play as a bartender who must frantically serve frothy mugs of root beer to waves of thirsty customers",
+        description: "The classic arcade test of reflexes and multitasking. You play as a bartender who must frantically serve frothy mugs of root beer to waves of thirsty customers.",
         icon: "thumbnail.png",
         category: "emulator",
         creator: {
             name: "Marvin Glass and Associates",
             link: "https://en.wikipedia.org/wiki/Marvin_Glass_and_Associates",
+            icon: "fa-solid fa-globe"
+        }
+    },
+    {
+        id: "infinite-craft",
+        title: "Infinite Craft",
+        description: "You start with just four basic elements—Water, Fire, Earth, and Wind—and combine them to discover new items, concepts, pop culture icons, and even entire universes.",
+        icon: "thumbnail.png",
+        category: "html5",
+        creator: {
+            name: "Neal",
+            link: "https://neal.fun/infinite-craft/",
             icon: "fa-solid fa-globe"
         }
     }
