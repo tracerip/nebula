@@ -1,0 +1,27 @@
+[
+    {
+        "id": "action",
+        "title": "Action",
+        "thumbnail": "⚔️"
+    },
+    {
+        "id": "strategy",
+        "title": "Strategy",
+        "thumbnail": "🧠"
+    },
+    {
+        "id": "horror",
+        "title": "Horror",
+        "thumbnail": "👻"
+    },
+    {
+        "id": "puzzle",
+        "title": "Puzzle",
+        "thumbnail": "🧩"
+    },
+    {
+        "id": "tower-defense",
+        "title": "Tower Defense",
+        "thumbnail": "🛡️"
+    }
+]

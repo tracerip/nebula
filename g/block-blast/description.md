@@ -1,0 +1,10 @@
+# Description
+[Block Blast](https://www.igdb.com/games/block-blast--2) is an addictive puzzle game that combines classic block-matching mechanics with strategic gameplay. Players must place various shaped blocks onto an 8x8 grid, clearing rows and columns by filling them completely. With no time limit, this relaxing yet challenging game tests spatial reasoning and planning skills. Block Blast features simple one-touch controls, colorful graphics, and endless gameplay that keeps players engaged for hours. Perfect for casual gaming sessions, the game offers a satisfying experience as players chase high scores and try to survive as long as possible without running out of space.
+
+# Controls
+Hold and Drag - Move selected block to desired position.
+
+Release - Drop block into place on the grid.
+
+# Hidden SEO
+block blast, block blast game, block blast puzzle, block blast online, block blast free, play block blast, block blast unblocked, block blast no download, block blast browser game, block puzzle game, block matching game, tetris like game, grid puzzle game, block blast high score, block blast addictive, block blast casual game, block blast mobile, block blast pc, block blast full screen, block clearing game, row clearing game, column clearing game, block blast strategy, block blast tips, block blast endless, relaxing puzzle game, brain teaser game, spatial puzzle game, block blast app, block blast web game, block blast free to play, block blast online free, cube blast game, block puzzle free, wooden block puzzle, 8x8 grid puzzle, block fit game

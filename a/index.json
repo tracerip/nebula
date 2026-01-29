@@ -1,0 +1,10 @@
+[
+    {
+        "id": "helios",
+        "title": "Helios Browser",
+        "description": "The ultimate tool for accessing the unrestricted web from a locked-down device.",
+        "thumbnail": "a/helios/thumbnail.png",
+        "path": "a/helios/index.html",
+        "meta": "a/helios/description.md"
+    }
+]
