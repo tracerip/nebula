@@ -1,0 +1,20 @@
+# Description
+[Infinite Craft](https://en.wikipedia.org/wiki/Infinite_Craft) is a viral sandbox game developed by Neal Agarwal that uses generative AI to let you create literally anything. You start with just four basic elements—Water, Fire, Earth, and Wind—and combine them to discover new items, concepts, pop culture icons, and even entire universes.
+
+Unlike traditional crafting games with fixed recipes, Infinite Craft uses a Large Language Model (LLM) to determine the result of your combinations in real-time. This means you can discover "First Discoveries"—unique items that no other player in the world has ever found before.
+
+# Controls
+Left Click - Select and Combine elements.
+
+Right Click - Remove an element from the workspace.
+
+Double Click / Shift drag - Clone an element.
+
+Scroll Wheel - Zoom in the canvas.
+
+Middle Click / Arrow Keys - Pan around canvas.
+
+Crtl Z - Undo.
+
+# Hidden SEO
+infinite craft unblocked, play infinite craft online, neal fun infinite craft, ai crafting game, infinite craft browser, infinite craft no download, infinite craft recipes, first discovery game, neal agarwal games, alchemy game ai, infinite craft solver, infinite craft hacks, play infinite craft school, generative ai game, infinite craft cheats, god simulator browser

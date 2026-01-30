@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/g/infinite-craft/game/">
+
+    <meta data-n-head="ssr" charset="utf-8">
+    <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body style="background: white;" cz-shortcut-listen="true" class="infinite-craft-body">
+    <div id="loading" style="
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: white;
+		color: black;
+		font-size: 24px;
+		z-index: 9999;
+	">
+        Loading...
+    </div>
+    <div id="__nuxt" style="visibility: hidden;">
+        <!---->
+        <div id="__layout">
+            <div>
+                <div data-v-6ee28a24="" data-container="" class="container infinite-craft"
+                    style="--sidebar-width: 350px;">
+                    <!---->
+                    <div data-v-5c28f8c6="" data-v-6ee28a24="" id="sidebar" style="width: 350px;">
+                        <div data-v-5c28f8c6="" class="resize-handle"></div>
+                        <div data-v-5c28f8c6="" class="sidebar-overlay"></div>
+                        <div data-v-5c28f8c6="" class="sidebar-inner">
+                            <!---->
+                            <div data-v-5c28f8c6="" class="items">
+                                <div data-v-5c28f8c6="" class="items-inner">
+                                    <!---->
+                                    <div data-v-73c98bfa="" data-v-5c28f8c6="" class="item-wrapper">
+                                        <!---->
+                                        <div data-v-73c98bfa="" data-item="" data-item-emoji="💧" data-item-text="Water"
+                                            data-item-id="0" class="item"><span data-v-73c98bfa=""
+                                                class="item-emoji">💧</span> Water
+                                            <!---->
+                                        </div>
+                                    </div>
+                                    <div data-v-73c98bfa="" data-v-5c28f8c6="" class="item-wrapper">
+                                        <!---->
+                                        <div data-v-73c98bfa="" data-item="" data-item-emoji="🔥" data-item-text="Fire"
+                                            data-item-id="1" class="item"><span data-v-73c98bfa=""
+                                                class="item-emoji">🔥</span> Fire
+                                            <!---->
+                                        </div>
+                                    </div>
+                                    <div data-v-73c98bfa="" data-v-5c28f8c6="" class="item-wrapper">
+                                        <!---->
+                                        <div data-v-73c98bfa="" data-item="" data-item-emoji="🌬️" data-item-text="Wind"
+                                            data-item-id="2" class="item"><span data-v-73c98bfa=""
+                                                class="item-emoji">🌬️</span> Wind
+                                            <!---->
+                                        </div>
+                                    </div>
+                                    <div data-v-73c98bfa="" data-v-5c28f8c6="" class="item-wrapper">
+                                        <!---->
+                                        <div data-v-73c98bfa="" data-item="" data-item-emoji="🌍" data-item-text="Earth"
+                                            data-item-id="3" class="item"><span data-v-73c98bfa=""
+                                                class="item-emoji">🌍</span> Earth
+                                            <!---->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div data-v-5c28f8c6="" style="display: none;"></div>
+                                <div data-v-5c28f8c6="" class="instruction"><img data-v-5c28f8c6=""
+                                        src="../infinite-craft/left-arrow.svg" class="instruction-icon"> Drag elements
+                                    to craft
+                                </div>
+                                <div data-v-5c28f8c6="" class="bottom-spacer"></div>
+                            </div>
+                        </div>
+                        <div data-v-5c28f8c6="" class="sidebar-controls">
+                            <div data-v-5c28f8c6="" class="sidebar-sorting">
+                                <div data-v-5c28f8c6="" class="sidebar-discoveries sorting-item sorting-selectable"><img
+                                        data-v-5c28f8c6="" src="../infinite-craft/magic.svg" class="sorting-icon">
+                                    Discoveries
+                                </div>
+                                <div data-v-5c28f8c6="" class="sidebar-sort sorting-item">
+                                    <div data-v-5c28f8c6="" class="sort-wrapper">
+                                        <!---->
+                                        <div data-v-5c28f8c6="" class="sort-name sort-inner sorting-selectable"><img
+                                                data-v-5c28f8c6="" src="../infinite-craft/time.svg"
+                                                class="sorting-icon"> <span data-v-5c28f8c6=""
+                                                class="sort-by-text-wrapper brief-text"><span data-v-5c28f8c6=""
+                                                    class="sort-by-text">Sort by</span> time
+                                            </span>
+                                        </div>
+                                        <div data-v-5c28f8c6="" class="sort-direction sorting-selectable sort-inner">
+                                            <img data-v-5c28f8c6="" src="../infinite-craft/up-arrow.svg"
+                                                class="sort-direction-icon sort-direction-icon-flip"></div>
+                                    </div>
+                                </div>
+                                <div data-v-5c28f8c6="" class="sidebar-sort sorting-item sorting-selectable"><img
+                                        data-v-5c28f8c6="" src="../infinite-craft/trash.svg"
+                                        class="sorting-icon trash-icon"></div>
+                            </div>
+                            <div data-v-5c28f8c6="" class="sidebar-search"><input data-v-5c28f8c6=""
+                                    placeholder="Search (4) items..." class="sidebar-input"> <img data-v-5c28f8c6=""
+                                    src="../infinite-craft/close.svg" class="sidebar-input-close"
+                                    style="display: none;"></div>
+                        </div>
+                    </div>
+                    <!---->
+                    <div data-v-1748f434="" data-v-6ee28a24="">
+                        <div data-v-1748f434="" class="side-controls"><img data-v-1748f434=""
+                                src="../infinite-craft/dark-mode.svg" class="dark-mode-icon tool-icon"> <img
+                                data-v-1748f434="" src="../infinite-craft/clear.svg" class="clear tool-icon"> <img
+                                data-v-1748f434="" src="../infinite-craft/sound.svg" class="sound tool-icon"></div>
+                        <dialog data-v-1748f434="">
+                            <p data-v-1748f434="" class="question">Clear all items on the canvas?</p>
+                            <div data-v-1748f434="" class="actions"><button data-v-1748f434=""
+                                    class="action-btn action-danger">
+                                    Yes
+                                </button> <button data-v-1748f434="" class="action-btn">No</button></div>
+                        </dialog>
+                    </div>
+                    <!----><canvas data-v-6ee28a24="" id="particles" width="2880" height="1028"></canvas>
+                    <div data-v-6ee28a24="" id="select-box"></div>
+                    <div data-v-6ee28a24="" id="instances-top" style="transform: translate(0px, 0px) scale(1);"></div>
+                    <div data-v-6ee28a24="" id="instances" style="transform: translate(0px, 0px) scale(1);"></div>
+                    <div data-v-6ee28a24="" id="infinite-craft-center-ad"></div>
+                    <div data-v-6ee28a24="" id="infinite-craft-sidebar-ad"></div>
+                    <div data-v-6ee28a24="" data-ui="" class="menu"><img data-v-6ee28a24=""
+                            src="../infinite-craft/menu.svg" class="menu-icon"> Menu
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="_nuxt/26e76dd.js" defer=""></script>
+    <script src="_nuxt/84016db.js?d7" defer=""></script>
+    <script src="_nuxt/1d3cf2a.js" defer=""></script>
+    <script src="_nuxt/2ea0d18.js" defer=""></script>
+    <script src="_nuxt/acab9e9.js" defer=""></script>
+    <script src="_nuxt/5cf70e4.js" defer=""></script>
+    <script src="_nuxt/106c1c1.js" defer=""></script>
+    <script src="_nuxt/533be58.js" defer=""></script>
+    <script>
+        window.addEventListener('load', function () {
+            document.getElementById('__nuxt').style.visibility = 'visible';
+            const loading = document.getElementById('loading');
+            if (loading) loading.remove();
+        });
+    </script>
+</body>
+
+</html>

@@ -168,5 +168,18 @@
             "Puzzle",
             "Strategy"
         ]
+    },
+    {
+        "id": "infinite-craft",
+        "title": "Infinite Craft",
+        "description": "An endless crafting game powered by a LLM.",
+        "thumbnail": "g/infinite-craft/thumbnail.png",
+        "path": "g/infinite-craft/index.html",
+        "meta": "g/infinite-craft/description.md",
+        "tags": [
+            "Arcade",
+            "Puzzle",
+            "Strategy"
+        ]
     }
 ]
