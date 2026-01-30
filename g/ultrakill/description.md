@@ -1,0 +1,30 @@
+# Description
+[ULTRAKILL](https://store.steampowered.com/app/1229490/ULTRAKILL/) ([Wikipedia](https://en.wikipedia.org/wiki/Ultrakill)) is a blistering retro FPS where blood is your fuel—slaughter demons in Hell as V1, a machine that thrives on fresh gore. Master stylish combos with shotguns, railcannon, rocket launcher, nailgun variations; parry projectiles, slide-hop at supersonic speeds, coin-ricochet enemies, and conquer brutal levels, secret missions, and cyber grind arenas in this skill-based bloodbath of motion, precision, and metal riffs.
+
+# Controls
+WASD - Move.
+
+Mouse - Look / Aim.
+
+Left Click - Primary fire.
+
+Right Click - Secondary fire / Slide.
+
+Mouse Wheel - Cycle weapons.
+
+Q - Previous weapon.
+
+E - Interact / Pick up weapon.
+
+Space - Jump.
+
+Shift - Walk.
+
+Ctrl - Crouch.
+
+V - Melee / Punch (parry).
+
+Esc - Pause / Menu.
+
+# Hidden SEO
+ultrakill unblocked, ultrakill free download, ultrakill online free, play ultrakill unblocked, ultrakill no download, ultrakill browser game, ultrakill game free, ultrakill steam unblocked, ultrakill fps unblocked, v1 blood machine free, ultrakill hell layers online, ultrakill pc free download, ultrakill mobile free, ultrakill android apk, ultrakill ios free, stylish fps no download, ultrakill parry free, ultrakill cyber grind unblocked, ultrakill coin shot online, doom eternal like unblocked, ultrakill full game free, ultrakill secrets unblocked, ultrakill walkthrough free, ultrakill controls unblocked, ultrakill free play

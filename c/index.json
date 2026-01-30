@@ -2,46 +2,401 @@
     {
         "id": "action",
         "title": "Action",
-        "thumbnail": "⚔️"
+        "thumbnail": "⚔️",
+        "aliases": [
+            "combat",
+            "fighting"
+        ]
     },
     {
         "id": "sandbox",
         "title": "Sandbox",
-        "thumbnail": "🏜️"
+        "thumbnail": "🏜️",
+        "aliases": [
+            "open world",
+            "creative"
+        ]
     },
     {
         "id": "strategy",
         "title": "Strategy",
-        "thumbnail": "🧠"
+        "thumbnail": "🧠",
+        "aliases": [
+            "tactical"
+        ]
     },
     {
         "id": "shooter",
         "title": "Shooter",
-        "thumbnail": "🔫"
+        "thumbnail": "🔫",
+        "aliases": [
+            "fps",
+            "tps",
+            "aim",
+            "boomer shooter"
+        ]
     },
     {
         "id": "horror",
         "title": "Horror",
-        "thumbnail": "👻"
+        "thumbnail": "👻",
+        "aliases": [
+            "scary",
+            "spooky"
+        ]
     },
     {
         "id": "puzzle",
         "title": "Puzzle",
-        "thumbnail": "🧩"
+        "thumbnail": "🧩",
+        "aliases": [
+            "logic"
+        ]
     },
     {
         "id": "tower-defense",
         "title": "Tower Defense",
-        "thumbnail": "🛡️"
+        "thumbnail": "🛡️",
+        "aliases": [
+            "td"
+        ]
     },
     {
         "id": "multiplayer",
         "title": "Multiplayer",
-        "thumbnail": "🧑‍🤝‍🧑"
+        "thumbnail": "🧑‍🤝‍🧑",
+        "aliases": [
+            "online",
+            "pvp"
+        ]
     },
     {
         "id": "adventure",
         "title": "Adventure",
-        "thumbnail": "⛰️"
+        "thumbnail": "⛰️",
+        "aliases": [
+            "exploration"
+        ]
+    },
+    {
+        "id": "action-adventure",
+        "title": "Action-Adventure",
+        "thumbnail": "🏃",
+        "aliases": [
+            "adventure action"
+        ]
+    },
+    {
+        "id": "arcade",
+        "title": "Arcade",
+        "thumbnail": "🕹️",
+        "aliases": [
+            "classic",
+            "retro"
+        ]
+    },
+    {
+        "id": "platformer",
+        "title": "Platformer",
+        "thumbnail": "🧗",
+        "aliases": [
+            "jump",
+            "parkour"
+        ]
+    },
+    {
+        "id": "visual-novel",
+        "title": "Visual Novel",
+        "thumbnail": "📖",
+        "aliases": [
+            "vn",
+            "story"
+        ]
+    },
+    {
+        "id": "roguelike",
+        "title": "Roguelike",
+        "thumbnail": "🪄",
+        "aliases": [
+            "rogue",
+            "dungeon crawler"
+        ]
+    },
+    {
+        "id": "point-and-click",
+        "title": "Point & Click",
+        "thumbnail": "�️",
+        "aliases": [
+            "clicker"
+        ]
+    },
+    {
+        "id": "action-rpg",
+        "title": "Action RPG",
+        "thumbnail": "🗡️",
+        "aliases": [
+            "arpg"
+        ]
+    },
+    {
+        "id": "action-roguelike",
+        "title": "Action Roguelike",
+        "thumbnail": "💀",
+        "aliases": [
+            "roguelite"
+        ]
+    },
+    {
+        "id": "interactive-fiction",
+        "title": "Interactive Fiction",
+        "thumbnail": "�",
+        "aliases": [
+            "text adventure"
+        ]
+    },
+    {
+        "id": "turn-based-strategy",
+        "title": "Turn-Based Strategy",
+        "thumbnail": "♟️",
+        "aliases": [
+            "tbs"
+        ]
+    },
+    {
+        "id": "tabletop",
+        "title": "Tabletop",
+        "thumbnail": "🎲",
+        "aliases": [
+            "board game"
+        ]
+    },
+    {
+        "id": "dating-sim",
+        "title": "Dating Sim",
+        "thumbnail": "💖",
+        "aliases": [
+            "romance"
+        ]
+    },
+    {
+        "id": "walking-simulator",
+        "title": "Walking Simulator",
+        "thumbnail": "🚶",
+        "aliases": [
+            "narrative"
+        ]
+    },
+    {
+        "id": "jrpg",
+        "title": "JRPG",
+        "thumbnail": "🏮",
+        "aliases": [
+            "japanese rpg"
+        ]
+    },
+    {
+        "id": "education",
+        "title": "Education",
+        "thumbnail": "🎓",
+        "aliases": [
+            "learning"
+        ]
+    },
+    {
+        "id": "party-based-rpg",
+        "title": "Party-Based RPG",
+        "thumbnail": "👥",
+        "aliases": [
+            "crpg"
+        ]
+    },
+    {
+        "id": "card-game",
+        "title": "Card Game",
+        "thumbnail": "🃏",
+        "aliases": [
+            "deckbuilder",
+            "cards"
+        ]
+    },
+    {
+        "id": "life-sim",
+        "title": "Life Sim",
+        "thumbnail": "🏠",
+        "aliases": [
+            "simulation"
+        ]
+    },
+    {
+        "id": "strategy-rpg",
+        "title": "Strategy RPG",
+        "thumbnail": "🏹",
+        "aliases": [
+            "tactical rpg"
+        ]
+    },
+    {
+        "id": "rts",
+        "title": "RTS",
+        "thumbnail": "🏗️",
+        "aliases": [
+            "real-time strategy"
+        ]
+    },
+    {
+        "id": "city-builder",
+        "title": "City Builder",
+        "thumbnail": "🏙️",
+        "aliases": [
+            "management",
+            "builder"
+        ]
+    },
+    {
+        "id": "beat-em-up",
+        "title": "Beat 'em up",
+        "thumbnail": "�",
+        "aliases": [
+            "brawler"
+        ]
+    },
+    {
+        "id": "automobile-sim",
+        "title": "Automobile Sim",
+        "thumbnail": "🚗",
+        "aliases": [
+            "racing",
+            "driving"
+        ]
+    },
+    {
+        "id": "2d-fighter",
+        "title": "2D Fighter",
+        "thumbnail": "🥊",
+        "aliases": [
+            "fighting game"
+        ]
+    },
+    {
+        "id": "rhythm",
+        "title": "Rhythm",
+        "thumbnail": "🎸",
+        "aliases": [
+            "music"
+        ]
+    },
+    {
+        "id": "farming-sim",
+        "title": "Farming Sim",
+        "thumbnail": "👩‍🌾",
+        "aliases": [
+            "farm"
+        ]
+    },
+    {
+        "id": "auto-battler",
+        "title": "Auto Battler",
+        "thumbnail": "�",
+        "aliases": [
+            "autochess"
+        ]
+    },
+    {
+        "id": "word-game",
+        "title": "Word Game",
+        "thumbnail": "📝",
+        "aliases": [
+            "scrabble"
+        ]
+    },
+    {
+        "id": "colony-sim",
+        "title": "Colony Sim",
+        "thumbnail": "👨‍👩‍👧‍👦",
+        "aliases": [
+            "survival"
+        ]
+    },
+    {
+        "id": "space-sim",
+        "title": "Space Sim",
+        "thumbnail": "🚀",
+        "aliases": [
+            "space"
+        ]
+    },
+    {
+        "id": "grand-strategy",
+        "title": "Grand Strategy",
+        "thumbnail": "🗺️",
+        "aliases": [
+            "map games"
+        ]
+    },
+    {
+        "id": "mmorpg",
+        "title": "MMORPG",
+        "thumbnail": "🌐",
+        "aliases": [
+            "mmo"
+        ]
+    },
+    {
+        "id": "battle-royale",
+        "title": "Battle Royale",
+        "thumbnail": "🪂",
+        "aliases": [
+            "br",
+            "last man standing"
+        ]
+    },
+    {
+        "id": "party-game",
+        "title": "Party Game",
+        "thumbnail": "🎉",
+        "aliases": [
+            "local multiplayer"
+        ]
+    },
+    {
+        "id": "god-game",
+        "title": "God Game",
+        "thumbnail": "⚡",
+        "aliases": [
+            "creator"
+        ]
+    },
+    {
+        "id": "4x",
+        "title": "4X",
+        "thumbnail": "🏺",
+        "aliases": [
+            "civilization"
+        ]
+    },
+    {
+        "id": "moba",
+        "title": "MOBA",
+        "thumbnail": "🏟️",
+        "aliases": [
+            "dota",
+            "lol"
+        ]
+    },
+    {
+        "id": "trivia",
+        "title": "Trivia",
+        "thumbnail": "💡",
+        "aliases": [
+            "quiz"
+        ]
+    },
+    {
+        "id": "fast-paced",
+        "title": "Fast-Paced",
+        "thumbnail": "⚡️",
+        "aliases": [
+            "fast paced"
+        ]
     }
 ]

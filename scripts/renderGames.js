@@ -7,7 +7,7 @@ function generateGridItem(item) {
     const div = document.createElement('div');
     div.className = 'grid-item';
 
-    const displayImage = item.logo || item.thumbnail;
+    const displayImage = item.icon || item.thumbnail;
     const isUrl = displayImage && (displayImage.startsWith('http') || displayImage.includes('/') || displayImage.includes('.'));
 
     if (isUrl) {

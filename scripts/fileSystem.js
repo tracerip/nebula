@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const loadedMenus = { c: false, a: false, g: false };
     let allItemsCache = []; // Cache all items for search/deep linking
+    let categoriesCache = []; // Cache categories for alias mapping
 
     // --- TOOLTIP LOGIC ---
     const previewTooltip = document.createElement('div');
@@ -54,11 +55,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             `;
         }
 
-        const displayImage = item.thumbnail || item.logo;
+        const displayImage = item.thumbnail || item.icon;
+        const normalizedTags = normalizeTags(item.tags || []);
         previewTooltip.innerHTML = `
             <img src="${displayImage}" class="preview-thumb" alt="${item.title}">
             <div class="preview-title">${item.title}</div>
             <div class="preview-desc">${item.description || 'No description available.'}</div>
+            <div class="preview-tags" style="font-size: 0.75rem; color: #666; margin-top: 4px;">${normalizedTags.join(', ')}</div>
             ${screenshotsHtml}
         `;
         previewTooltip.classList.add('visible');
@@ -89,6 +92,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Pre-fetch all indices for search/deep link lookup
     async function loadAllData() {
+        // Load Categories first for alias mapping
+        try {
+            const catRes = await fetch('c/index.json');
+            if (catRes.ok) categoriesCache = await catRes.json();
+        } catch (e) {
+            console.error("Failed to load categories index");
+        }
+
         const sources = ['g', 'a']; // Categories aren't 'playable' items usually
         for (const folder of sources) {
             try {
@@ -101,6 +112,19 @@ document.addEventListener('DOMContentLoaded', async () => {
                 console.error(`Failed to load ${folder} index`);
             }
         }
+    }
+
+    // Helper to resolve aliases and deduplicate tags
+    function normalizeTags(tags) {
+        if (!tags) return [];
+        const resolved = tags.map(tag => {
+            const cat = categoriesCache.find(c =>
+                c.title.toLowerCase() === tag.toLowerCase() ||
+                (c.aliases && c.aliases.some(a => a.toLowerCase() === tag.toLowerCase()))
+            );
+            return cat ? cat.title : tag;
+        });
+        return [...new Set(resolved)];
     }
 
     await loadAllData();
@@ -137,7 +161,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     function renderCategoryView(categoryTitle) {
         const results = allItemsCache.filter(item => {
             if (!item.tags) return false;
-            return item.tags.some(tag => tag.toLowerCase() === categoryTitle.toLowerCase());
+            const normalized = normalizeTags(item.tags);
+            return normalized.some(tag => tag.toLowerCase() === categoryTitle.toLowerCase());
         });
         renderGrid(results, categoryTitle);
     }
@@ -188,7 +213,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 card.style.transition = 'all 0.2s';
 
                 const img = document.createElement('img');
-                img.src = item.thumbnail || item.logo;
+                img.src = item.thumbnail || item.icon;
                 img.style.width = '100%';
                 img.style.aspectRatio = '16/9';
                 img.style.objectFit = 'cover';
@@ -275,8 +300,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const link = document.createElement('a');
                 link.className = 'submenu-item';
 
-                // Check if image exists (prefer logo for square icons)
-                const displayIcon = item.logo || item.thumbnail;
+                // Check if image exists (prefer icon for square icons)
+                const displayIcon = item.icon || item.thumbnail;
                 const isUrl = displayIcon && (displayIcon.includes('/') || displayIcon.includes('.'));
 
                 let iconHtml = '';
@@ -530,16 +555,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                 card.href = `?u=${sim.id}`;
 
                 const img = document.createElement('img');
-                img.src = sim.thumbnail || sim.logo;
+                img.src = sim.thumbnail || sim.icon;
                 img.className = 'similar-thumb';
                 img.alt = sim.title;
                 img.style.transition = 'transform 0.3s ease'; // Keep for hover effect
 
+                const normalizedSimTags = normalizeTags(sim.tags || []);
                 const info = document.createElement('div');
                 info.className = 'similar-info';
                 info.innerHTML = `
                     <div class="similar-name">${sim.title}</div>
-                    <div class="similar-tags">${(sim.tags || []).join(', ')}</div>
+                    <div class="similar-tags">${normalizedSimTags.join(', ')}</div>
                 `;
 
                 card.appendChild(img);
