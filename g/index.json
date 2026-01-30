@@ -427,5 +427,66 @@
             "https://images.igdb.com/igdb/image/upload/t_720p/scqul1.webp",
             "https://images.igdb.com/igdb/image/upload/t_720p/scqul2.webp"
         ]
+    },
+    {
+        "id": "toss-the-turtle",
+        "title": "Toss the Turtle",
+        "description": "Use a massive cannon to fire a helpless turtle into the atmosphere, then keep him airborne by shooting him with pistols, machine guns, and rocket launchers.",
+        "thumbnail": "g/toss-the-turtle/thumbnail.jpg",
+        "icon": "g/toss-the-turtle/icon.png",
+        "path": "g/toss-the-turtle/index.html",
+        "meta": "g/toss-the-turtle/description.md",
+        "tags": [
+            "Arcade"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scz1gk.webp"
+        ]
+    },
+    {
+        "id": "gta-vc",
+        "title": "Grand Theft Auto: Vice City",
+        "description": "You step into the shoes of Tommy Vercetti, a mobster recently released from prison, as he navigates a treacherous underworld of cartels, bikers, and corrupt politicians to build his own criminal empire.",
+        "thumbnail": "g/gta-vc/thumbnail.jpg",
+        "icon": "g/gta-vc/icon.jpg",
+        "path": "g/gta-vc/index.html",
+        "meta": "g/gta-vc/description.md",
+        "tags": [
+            "Action",
+            "Adventure",
+            "Open World",
+            "Arcade"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/yl0nzc7itjnc6oyawagp.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/tfcu496z7nwgnkbqfvrv.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/cqiwbbgjhersmqru7339.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/ilxqfgiaxygal1srqnfz.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/txxrbak4yycdogvvjwtb.webp"
+        ]
+    },
+    {
+        "id": "super-mario-64",
+        "title": "Super Mario 64",
+        "description": "Retrieve the Power Stars from their hidden locations and confront your arch-nemesis— Bowser, King of the Koopas!",
+        "thumbnail": "g/super-mario-64/thumbnail.jpg",
+        "icon": "g/super-mario-64/icon.jpg",
+        "path": "g/super-mario-64/index.html",
+        "meta": "g/super-mario-64/description.md",
+        "tags": [
+            "Adventure",
+            "Arcade",
+            "Action",
+            "Platformer"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/sc8e2l.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/sc8e2n.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/sc8e2o.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/sc8e2p.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/sc8e2k.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/sce8zv.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/sc8e2m.webp"
+        ]
     }
 ]
