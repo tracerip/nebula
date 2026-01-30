@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base href="https://cdn.jsdelivr.net/gh/Ironics-Side-Projects/games@latest/kitten-cannon/">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>kittencannon</title>
+	
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	
+		<link rel="stylesheet" type="text/css" href="https://swagapi.shockwave.com/dist/swag-api.css">
+		<script type="text/javascript" src="https://swagapi.shockwave.com/dist/swag-api.js"></script>
+	
+	
+	
+	<script type="text/javascript" src="./lib/clipboard.min.js"></script>
+	<script type="text/javascript" src="./lib/howler.min.js"></script>
+	<script type="text/javascript" src="./game.js"></script>
+	
+	<script>
+		//window.addEventListener ("touchmove", function (event) { event.preventDefault (); }, false);
+		if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
+			var meta = document.getElementById ("viewport");
+			meta.setAttribute ('content', 'width=device-width, initial-scale=' + (2 / window.devicePixelRatio) + ', user-scalable=no');
+		}
+		
+		function visibilityChange() {
+			var hidden = 'hidden'
+
+			// Standards:
+			if (hidden in document)
+				document.addEventListener('visibilitychange', onchange)
+			else if ((hidden = 'mozHidden') in document)
+				document.addEventListener('mozvisibilitychange', onchange)
+			else if ((hidden = 'webkitHidden') in document)
+				document.addEventListener('webkitvisibilitychange', onchange)
+			else if ((hidden = 'msHidden') in document)
+				document.addEventListener('msvisibilitychange', onchange)
+			// IE 9 and lower:
+			else if ('onfocusin' in document)
+				document.onfocusin = document.onfocusout = onchange
+			// All others:
+			else
+				window.onpageshow = window.onpagehide = window.onfocus = window.onblur = onchange
+
+			function onchange(evt) {
+				let v = false,
+					h = true,
+					evtMap = {
+						focus: v,
+						focusin: v,
+						pageshow: v,
+						blur: h,
+						focusout: h,
+						pagehide: h
+					}
+
+				evt = evt || window.event
+
+				let windowHidden = false
+				if (evt.type in evtMap) {
+					windowHidden = evtMap[evt.type]
+				} else {
+					windowHidden = this[hidden]
+				}
+
+				var howl = Howler;
+
+				if (howl) {
+					if (windowHidden) {
+						howl.mute(true)
+					} else {
+						howl.mute(false)
+					}
+				}
+			}
+
+			// set the initial state (but only if browser supports the Page Visibility API)
+			if (document[hidden] !== undefined)
+				onchange({
+					type: document[hidden] ? 'blur' : 'focus'
+				})
+			}
+
+		visibilityChange();
+	</script>
+	
+	<style>
+		html,body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+		#openfl-content {}
+
+		canvas {
+			max-width:100%;
+			display:block;
+			margin:auto;
+		}
+
+		
+		@font-face {
+			font-family: '0_NokiaCellphoneFC_8p';
+			src: url('assets/fonts/344_Nokia Cellphone FC_8pt_st.woff2') format('woff2');
+			src: url('assets/fonts/344_Nokia Cellphone FC_8pt_st.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Tahoma';
+			src: url('assets/fonts/340_Tahoma.woff2') format('woff2');
+			src: url('assets/fonts/340_Tahoma.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: '04b25_12pt_st';
+			src: url('assets/fonts/343_04b25_12pt_st.woff2') format('woff2');
+			src: url('assets/fonts/343_04b25_12pt_st.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Bobcat';
+			src: url('assets/fonts/302_Bobcat.woff2') format('woff2');
+			src: url('assets/fonts/302_Bobcat.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Tahoma';
+			src: url('assets/fonts/392_Tahoma.woff2') format('woff2');
+			src: url('assets/fonts/392_Tahoma.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Nicotine Stains';
+			src: url('assets/fonts/289_Nicotine Stains.woff2') format('woff2');
+			src: url('assets/fonts/289_Nicotine Stains.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Soopafresh';
+			src: url('assets/fonts/292_Soopafresh.woff2') format('woff2');
+			src: url('assets/fonts/292_Soopafresh.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+	</style>
+	
+<body>
+	
+	<div id="root">
+		<div id="openfl-content"></div>
+	</div>
+	
+	<script type="text/javascript">
+		lime.embed ("openfl-content", 650, 400, "FFFFFF");
+	</script>
+	<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                console.log('SW Registered!');
+            });
+        });
+    }
+</script>
+	</body>
+</html>

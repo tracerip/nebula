@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const toggleApps = document.getElementById('nav-apps-toggle');
     const toggleGames = document.getElementById('nav-games-toggle');
     const navHome = document.getElementById('nav-home');
+    const searchInput = document.querySelector('.search-input');
     const subCategories = document.getElementById('submenu-categories');
     const subApps = document.getElementById('submenu-apps');
     const subGames = document.getElementById('submenu-games');
@@ -114,6 +115,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
+    function syncSidebar(id) {
+        document.querySelectorAll('.submenu-item').forEach(link => {
+            if (link.dataset.id === id) {
+                link.style.color = 'white';
+            } else {
+                link.style.color = '#888';
+            }
+        });
+        document.getElementById('nav-home')?.classList.remove('active');
+    }
+
     // Helper to resolve aliases and deduplicate tags
     function normalizeTags(tags) {
         if (!tags) return [];
@@ -125,6 +137,35 @@ document.addEventListener('DOMContentLoaded', async () => {
             return cat ? cat.title : tag;
         });
         return [...new Set(resolved)];
+    }
+
+    // --- SEARCH LOGIC ---
+    function performSearch(query) {
+        if (!query.trim()) {
+            showDashboard();
+            return;
+        }
+
+        const q = query.toLowerCase();
+        const results = allItemsCache.filter(item => {
+            const matchesBasic = item.title.toLowerCase().includes(q) ||
+                item.id.toLowerCase().includes(q) ||
+                (item.icon && item.icon.toLowerCase().includes(q));
+
+            const normalized = normalizeTags(item.tags || []);
+            const matchesTags = normalized.some(tag => {
+                const isMatch = tag.toLowerCase().includes(q);
+                if (isMatch) return true;
+
+                // Check if query is an alias for this resolved category
+                const cat = categoriesCache.find(c => c.title.toLowerCase() === tag.toLowerCase());
+                return cat && cat.aliases && cat.aliases.some(a => a.toLowerCase().includes(q));
+            });
+
+            return matchesBasic || matchesTags;
+        });
+
+        renderGrid(results, `Search Results for "${query}"`);
     }
 
     await loadAllData();
@@ -146,6 +187,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             fetch('c/index.json').then(r => r.json()).then(cats => {
                 const cat = cats.find(c => c.id === catId);
                 if (cat) {
+                    syncSidebar(cat.id);
                     renderCategoryView(cat.title);
                 }
             });
@@ -174,6 +216,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const existingBrowse = document.querySelector('.browse-grid-container');
         if (existingBrowse) existingBrowse.remove();
 
+        mainContent.scrollTop = 0;
         mainContent.style.overflowY = 'auto';
 
         const container = document.createElement('div');
@@ -309,9 +352,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                     iconHtml = `<img class="submenu-icon" src="${displayIcon}">`;
                 } else {
                     // Emoji / Text (Check both fields just in case)
-                    const iconValue = item.logo || item.thumbnail || '📁';
+                    const iconValue = item.icon || item.thumbnail || '📁';
                     iconHtml = `<span style="width:18px; text-align:center; font-size:14px;">${iconValue}</span>`;
                 }
+
+                link.dataset.id = item.id;
 
                 link.innerHTML = `
                     ${iconHtml}
@@ -329,6 +374,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                     if (folder === 'c') {
                         // Filter by category
+                        syncSidebar(item.id);
                         renderCategoryView(item.title);
                         // Update URL
                         const url = new URL(window.location);
@@ -351,6 +397,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // --- ITEM VIEWER (GAMES/APPS) ---
 
     async function openItem(item, skipPush = false) {
+        // Sync Sidebar Highlight
+        syncSidebar(item.id);
+
         if (!skipPush) {
             const url = new URL(window.location);
             url.searchParams.set('u', item.id);
@@ -624,6 +673,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (browseGrid) browseGrid.remove();
 
         // Restore Dashboard
+        mainContent.scrollTop = 0;
         mainContent.style.overflowY = 'hidden';
         dashboardView.style.display = 'flex';
     }
@@ -638,6 +688,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         e.preventDefault();
         showDashboard();
     });
+
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            performSearch(e.target.value);
+        });
+
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const query = searchInput.value.toLowerCase();
+                const results = allItemsCache.filter(item =>
+                    item.title.toLowerCase().includes(query) ||
+                    item.id.toLowerCase().includes(query)
+                );
+                if (results.length === 1) {
+                    openItem(results[0]);
+                    searchInput.value = '';
+                }
+            }
+        });
+    }
 
     // Expose functions for other scripts (like renderGames.js)
     window.openItem = openItem;

@@ -515,8 +515,11 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
-    animation: visual-scroll 45s linear infinite;
-    /* Slower scroll for smoother look */
+    padding: 0;
+    padding-bottom: 24px;
+    /* Matches gap to ensure 50% loop is pixel-perfect */
+    margin: 0;
+    animation: visual-scroll 60s linear infinite;
     will-change: transform;
 }
 
@@ -529,7 +532,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: #222;
     position: relative;
-    margin-bottom: 24px;
     flex-shrink: 0;
     /* Prevent squishing */
     cursor: pointer;

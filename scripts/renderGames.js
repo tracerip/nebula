@@ -66,10 +66,12 @@ async function initVisualGrid() {
 
     let displayList = [];
     if (allItems.length > 0) {
-        // Ensure track is full
-        while (displayList.length < 60) {
-            displayList = displayList.concat(allItems);
+        // Ensure we have enough items to fill the view
+        while (displayList.length < 40) {
+            displayList = [...displayList, ...allItems];
         }
+        // Double the list to create a perfect seamless loop for the translateY(-50%) animation
+        displayList = [...displayList, ...displayList];
     }
 
     const fragment = document.createDocumentFragment();
@@ -77,6 +79,7 @@ async function initVisualGrid() {
         fragment.appendChild(generateGridItem(item));
     });
 
+    visualGrid.innerHTML = ''; // Clear just in case
     visualGrid.appendChild(fragment);
 }
 

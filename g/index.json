@@ -375,5 +375,57 @@
             "https://images.igdb.com/igdb/image/upload/t_720p/sctrw9.webp",
             "https://images.igdb.com/igdb/image/upload/t_720p/sctrw8.webp"
         ]
+    },
+    {
+        "id": "kitten-cannon",
+        "title": "Kitten Cannon",
+        "description": "The landscape is filled with hazards and helpers: hit trampolines and piles of dynamite to extend your flight.",
+        "thumbnail": "g/kitten-cannon/thumbnail.webp",
+        "icon": "g/kitten-cannon/icon.jpg",
+        "path": "g/kitten-cannon/index.html",
+        "meta": "g/kitten-cannon/description.md",
+        "tags": [
+            "Arcade",
+            "Action"
+        ]
+    },
+    {
+        "id": "minesweeper",
+        "title": "Minesweeper",
+        "description": "The timeless logic puzzle classic where you uncover a grid of hidden tiles, using numbers to deduce and flag mine locations without detonating any.",
+        "thumbnail": "g/minesweeper/thumbnail.png",
+        "icon": "g/minesweeper/icon.jpg",
+        "path": "g/minesweeper/index.html",
+        "meta": "g/minesweeper/description.md",
+        "tags": [
+            "Puzzle",
+            "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/btghtvkllgoxc40ohilk.webp"
+        ]
+    },
+    {
+        "id": "thats-not-my-neighbor",
+        "title": "That's not my Neighbor",
+        "description": "A chilling 1955 apartment horror sim where you man the D.D.D. entrance as a door guard, scrutinizing residents via cameras, files, and photos to spot grotesque doppelgangers mimicking humans.",
+        "thumbnail": "g/thats-not-my-neighbor/thumbnail.png",
+        "icon": "g/thats-not-my-neighbor/icon.jpg",
+        "path": "g/thats-not-my-neighbor/index.html",
+        "meta": "g/thats-not-my-neighbor/description.md",
+        "tags": [
+            "Horror",
+            "Strategy",
+            "Point & Click",
+            "Adventure"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scqukx.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scquky.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scqukz.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scqul0.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scqul1.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scqul2.webp"
+        ]
     }
 ]
