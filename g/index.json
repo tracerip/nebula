@@ -286,5 +286,49 @@
             "https://images.igdb.com/igdb/image/upload/t_720p/scq9ic.webp",
             "https://images.igdb.com/igdb/image/upload/t_720p/scq9id.webp"
         ]
+    },
+    {
+        "id": "terraria",
+        "title": "Terraria",
+        "description": "A 2D sandbox action-adventure game, often described as 2D Minecraft.",
+        "thumbnail": "g/terraria/thumbnail.jpg",
+        "logo": "g/terraria/logo.png",
+        "path": "g/terraria/index.html",
+        "meta": "g/terraria/description.md",
+        "tags": [
+            "Sandbox",
+            "Adventure",
+            "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljrg.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljru.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljrv.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljrw.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljrq.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljrr.webp"
+        ]
+    },
+    {
+        "id": "repo",
+        "title": "R.E.P.O.",
+        "description": "A 2D sandbox action-adventure game, often described as 2D Minecraft.",
+        "thumbnail": "g/repo/thumbnail.jpg",
+        "logo": "g/repo/logo.jpg",
+        "path": "g/repo/index.html",
+        "meta": "g/repo/description.md",
+        "tags": [
+            "Horror",
+            "Strategy",
+            "Action"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljrg.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljru.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljrv.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljrw.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljrq.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scljrr.webp"
+        ]
     }
 ]

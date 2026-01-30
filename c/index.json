@@ -38,5 +38,10 @@
         "id": "multiplayer",
         "title": "Multiplayer",
         "thumbnail": "🧑‍🤝‍🧑"
+    },
+    {
+        "id": "adventure",
+        "title": "Adventure",
+        "thumbnail": "⛰️"
     }
 ]
