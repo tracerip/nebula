@@ -244,23 +244,6 @@
         ]
     },
     {
-        "id": "city-builder",
-        "title": "City Builder",
-        "thumbnail": "🏙️",
-        "aliases": [
-            "management",
-            "builder"
-        ]
-    },
-    {
-        "id": "beat-em-up",
-        "title": "Beat 'em up",
-        "thumbnail": "�",
-        "aliases": [
-            "brawler"
-        ]
-    },
-    {
         "id": "automobile-sim",
         "title": "Automobile Sim",
         "thumbnail": "🚗",
@@ -275,30 +258,6 @@
         "thumbnail": "🥊",
         "aliases": [
             "fighting game"
-        ]
-    },
-    {
-        "id": "rhythm",
-        "title": "Rhythm",
-        "thumbnail": "🎸",
-        "aliases": [
-            "music"
-        ]
-    },
-    {
-        "id": "farming-sim",
-        "title": "Farming Sim",
-        "thumbnail": "👩‍🌾",
-        "aliases": [
-            "farm"
-        ]
-    },
-    {
-        "id": "auto-battler",
-        "title": "Auto Battler",
-        "thumbnail": "�",
-        "aliases": [
-            "autochess"
         ]
     },
     {
@@ -334,14 +293,6 @@
         ]
     },
     {
-        "id": "mmorpg",
-        "title": "MMORPG",
-        "thumbnail": "🌐",
-        "aliases": [
-            "mmo"
-        ]
-    },
-    {
         "id": "battle-royale",
         "title": "Battle Royale",
         "thumbnail": "🪂",
@@ -359,28 +310,16 @@
         ]
     },
     {
-        "id": "god-game",
-        "title": "God Game",
-        "thumbnail": "⚡",
-        "aliases": [
-            "creator"
-        ]
+        "id": "physics",
+        "title": "Physics",
+        "thumbnail": "🧲"
     },
     {
-        "id": "4x",
-        "title": "4X",
-        "thumbnail": "🏺",
+        "id": "blood",
+        "title": "Blood",
+        "thumbnail": "🩸",
         "aliases": [
-            "civilization"
-        ]
-    },
-    {
-        "id": "moba",
-        "title": "MOBA",
-        "thumbnail": "🏟️",
-        "aliases": [
-            "dota",
-            "lol"
+            "gore"
         ]
     },
     {

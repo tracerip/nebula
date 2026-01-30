@@ -1,0 +1,22 @@
+# Description
+[People Playground](https://store.steampowered.com/app/1118200/People_Playground/) is a gruesomely fun 2D sandbox physics simulator where you unleash chaos on over 100 ragdolls with 200+ weapons, explosives, traps, gadgets, and machines. Shoot, stab, burn, freeze, crush, or invent wild contraptions to test deadly scenarios. Endless experimentation, Steam Workshop sharing, and creative destruction make it a gore-filled playground of mayhem and discovery.
+
+# Controls
+Mouse Wheel - Switch tools / Cycle inventory.
+
+Left Click - Select / Place / Grab / Shoot / Activate.
+
+Hold Left Click - Drag objects.
+
+Right Click - Context menu (Delete, Freeze, Save, Rotate, Inspect).
+
+1-9 Keys - Quick select tools (if customized).
+
+Space - Jump (for some objects).
+
+R - Reset scene.
+
+Escape - Menu / Pause.
+
+# Hidden SEO
+people playground unblocked, people playground free download, people playground online free, play people playground unblocked, people playground no download, people playground browser game, people playground game free, people playground steam unblocked, people playground ragdoll free, people playground sandbox unblocked, people playground gore online, people playground pc free download, people playground workshop free, people playground destruction game, ragdoll torture unblocked, physics sandbox free, gore game no download, people playground demo free, people playground weapons unblocked, addictive ragdoll game online, browser physics game free, people playground contraptions unblocked, people playground full game free, mayhem sandbox online, people playground walkthrough free, people playground controls unblocked, people playground free play

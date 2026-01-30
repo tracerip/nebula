@@ -488,5 +488,24 @@
             "https://images.igdb.com/igdb/image/upload/t_720p/sce8zv.webp",
             "https://images.igdb.com/igdb/image/upload/t_720p/sc8e2m.webp"
         ]
+    },
+    {
+        "id": "people-playground",
+        "title": "People Playground",
+        "description": "A gruesomely fun 2D sandbox physics simulator where you unleash chaos on over 100 ragdolls with 200+ weapons, explosives, traps, gadgets, and machines.",
+        "thumbnail": "g/people-playground/thumbnail.jpg",
+        "icon": "g/people-playground/icon.webp",
+        "path": "g/people-playground/index.html",
+        "meta": "g/people-playground/description.md",
+        "tags": [
+            "Sandbox",
+            "Gore",
+            "Physics"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/sccwoa.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/sccwob.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/sccwoc.webp"
+        ]
     }
 ]

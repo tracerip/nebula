@@ -1,2 +1,2 @@
-games/people-playground/Build/pggbog.data filter=lfs diff=lfs merge=lfs -text
 * text=auto
+g/people-playground/Build/pggbog.data filter=lfs diff=lfs merge=lfs -text
