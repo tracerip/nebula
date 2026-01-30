@@ -54,8 +54,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             `;
         }
 
+        const displayImage = item.thumbnail || item.logo;
         previewTooltip.innerHTML = `
-            <img src="${item.thumbnail}" class="preview-thumb" alt="${item.title}">
+            <img src="${displayImage}" class="preview-thumb" alt="${item.title}">
             <div class="preview-title">${item.title}</div>
             <div class="preview-desc">${item.description || 'No description available.'}</div>
             ${screenshotsHtml}
@@ -187,7 +188,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 card.style.transition = 'all 0.2s';
 
                 const img = document.createElement('img');
-                img.src = item.thumbnail;
+                img.src = item.thumbnail || item.logo;
                 img.style.width = '100%';
                 img.style.aspectRatio = '16/9';
                 img.style.objectFit = 'cover';
@@ -274,15 +275,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const link = document.createElement('a');
                 link.className = 'submenu-item';
 
-                // Check if thumbnail is url or emoji
-                const isUrl = item.thumbnail && (item.thumbnail.includes('/') || item.thumbnail.includes('.'));
+                // Check if image exists (prefer logo for square icons)
+                const displayIcon = item.logo || item.thumbnail;
+                const isUrl = displayIcon && (displayIcon.includes('/') || displayIcon.includes('.'));
 
                 let iconHtml = '';
                 if (isUrl) {
-                    iconHtml = `<img class="submenu-icon" src="${item.thumbnail}">`;
+                    iconHtml = `<img class="submenu-icon" src="${displayIcon}">`;
                 } else {
-                    // Emoji / Text
-                    iconHtml = `<span style="width:18px; text-align:center; font-size:14px;">${item.thumbnail || '📁'}</span>`;
+                    // Emoji / Text (Check both fields just in case)
+                    const iconValue = item.logo || item.thumbnail || '📁';
+                    iconHtml = `<span style="width:18px; text-align:center; font-size:14px;">${iconValue}</span>`;
                 }
 
                 link.innerHTML = `
@@ -527,7 +530,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 card.href = `?u=${sim.id}`;
 
                 const img = document.createElement('img');
-                img.src = sim.thumbnail;
+                img.src = sim.thumbnail || sim.logo;
                 img.className = 'similar-thumb';
                 img.alt = sim.title;
                 img.style.transition = 'transform 0.3s ease'; // Keep for hover effect
@@ -609,4 +612,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         e.preventDefault();
         showDashboard();
     });
+
+    // Expose functions for other scripts (like renderGames.js)
+    window.openItem = openItem;
+    window.showTooltip = showTooltip;
+    window.updateTooltipPos = updateTooltipPos;
+    window.hideTooltip = hideTooltip;
 });

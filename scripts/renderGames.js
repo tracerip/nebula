@@ -2,28 +2,48 @@ import { featuredItem, library } from './games.js';
 
 const visualGrid = document.getElementById('visual-grid');
 
-// Utility to create HTML from string
-function createElementFromHTML(htmlString) {
-    const div = document.createElement('div');
-    div.innerHTML = htmlString.trim();
-    return div.firstChild;
-}
-
 // Generate the simple grid item (image only)
 function generateGridItem(item) {
-    if (item.thumbnail && (item.thumbnail.startsWith('http') || item.thumbnail.includes('/') || item.thumbnail.includes('.'))) {
-        return `
-            <div class="grid-item">
-                <img src="${item.thumbnail}" alt="${item.title}" loading="lazy">
-            </div>
-        `;
+    const div = document.createElement('div');
+    div.className = 'grid-item';
+
+    const displayImage = item.logo || item.thumbnail;
+    const isUrl = displayImage && (displayImage.startsWith('http') || displayImage.includes('/') || displayImage.includes('.'));
+
+    if (isUrl) {
+        const img = document.createElement('img');
+        img.src = displayImage;
+        img.alt = item.title;
+        img.loading = 'lazy';
+        div.appendChild(img);
     } else {
-        return `
-            <div class="grid-item" style="display:flex;align-items:center;justify-content:center;font-size:3rem;">
-                ${item.thumbnail || '🎮'}
-            </div>
-        `;
+        div.style.display = 'flex';
+        div.style.alignItems = 'center';
+        div.style.justifyContent = 'center';
+        div.style.fontSize = '3rem';
+        div.innerText = displayImage || '🎮';
     }
+
+    // --- CLICK HANDLER ---
+    div.addEventListener('click', () => {
+        if (window.openItem) {
+            window.hideTooltip(); // Hide tooltip if it was showing
+            window.openItem(item);
+        }
+    });
+
+    // --- TOOLTIP HANDLERS ---
+    div.addEventListener('mouseenter', (e) => {
+        if (window.showTooltip) window.showTooltip(e, item);
+    });
+    div.addEventListener('mousemove', (e) => {
+        if (window.updateTooltipPos) window.updateTooltipPos(e);
+    });
+    div.addEventListener('mouseleave', () => {
+        if (window.hideTooltip) window.hideTooltip();
+    });
+
+    return div;
 }
 
 // Populate the visual scroll track
@@ -44,18 +64,9 @@ async function initVisualGrid() {
         return;
     }
 
-    // Filter out items without proper image thumbnails for the visual grid if desired,
-    // or just let them render as blocks. User said "get all images", so maybe prioritize images.
-    // Let's filter for image-based thumbnails to keep the visual grid looking 3D/pretty.
-    // actually user said "get all the images" implying extract image urls.
-    // But let's just use all items, maybe some apps have image thumbnails.
-
-    // We need enough items to create a tall column that scrolls (approx 24-30 items)
-    // User reported blank spaces, so let's increase the count significantly to ensure
-    // the track is always full regardless of screen height or scroll speed.
     let displayList = [];
     if (allItems.length > 0) {
-        // Ensure at least 60 items or enough to cover large screens 2x over
+        // Ensure track is full
         while (displayList.length < 60) {
             displayList = displayList.concat(allItems);
         }
@@ -63,7 +74,7 @@ async function initVisualGrid() {
 
     const fragment = document.createDocumentFragment();
     displayList.forEach(item => {
-        fragment.appendChild(createElementFromHTML(generateGridItem(item)));
+        fragment.appendChild(generateGridItem(item));
     });
 
     visualGrid.appendChild(fragment);

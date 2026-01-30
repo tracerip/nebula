@@ -532,6 +532,8 @@ body {
     margin-bottom: 24px;
     flex-shrink: 0;
     /* Prevent squishing */
+    cursor: pointer;
+    pointer-events: auto;
 }
 
 .grid-item img {

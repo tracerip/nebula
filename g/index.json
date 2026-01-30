@@ -3,7 +3,8 @@
         "id": "buckshot-roulette",
         "title": "Buckshot Roulette",
         "description": "A gripping turn-based psychological horror game.",
-        "thumbnail": "g/buckshot-roulette/logo.jpg",
+        "thumbnail": "g/buckshot-roulette/thumbnail.jpg",
+        "logo": "g/buckshot-roulette/logo.jpg",
         "path": "g/buckshot-roulette/index.html",
         "meta": "g/buckshot-roulette/description.md",
         "tags": [
@@ -23,6 +24,7 @@
         "title": "Bloons TD 5",
         "description": "Tower defense game where players strategically place monkey towers to pop waves of incoming balloons before they reach the end of the track.",
         "thumbnail": "g/btd-5/thumbnail.jpg",
+        "logo": "g/btd-5/logo-1.png",
         "path": "g/btd-5/index.html",
         "meta": "g/btd-5/description.md",
         "tags": [
@@ -42,6 +44,7 @@
         "title": "Bloons TD 4",
         "description": "Tower defense game where players strategically place monkey towers to pop waves of incoming balloons before they reach the end of the track.",
         "thumbnail": "g/btd-4/thumbnail.png",
+        "logo": "g/btd-4/logo.jpg",
         "path": "g/btd-4/index.html",
         "meta": "g/btd-4/description.md",
         "tags": [
@@ -103,6 +106,7 @@
         "title": "Bloons Player Pack 5",
         "description": "Fun arcade game where you must help the monkey to pop all the balloons with its darts.",
         "thumbnail": "g/bloons-player-pack-5/thumbnail.jpg",
+        "logo": "g/bloons-player-pack-5/logo.png",
         "path": "g/bloons-player-pack-5/index.html",
         "meta": "g/bloons-player-pack-5/description.md",
         "tags": [
@@ -118,6 +122,7 @@
         "title": "Bloons Player Pack 4",
         "description": "Fun arcade game where you must help the monkey to pop all the balloons with its darts.",
         "thumbnail": "g/bloons-player-pack-4/thumbnail.jpg",
+        "logo": "g/bloons-player-pack-4/logo.jpg",
         "path": "g/bloons-player-pack-4/index.html",
         "meta": "g/bloons-player-pack-4/description.md",
         "tags": [
@@ -133,6 +138,7 @@
         "title": "Bloons Player Pack 3",
         "description": "Fun arcade game where you must help the monkey to pop all the balloons with its darts.",
         "thumbnail": "g/bloons-player-pack-3/thumbnail.jpg",
+        "logo": "g/bloons-player-pack-3/logo.jpg",
         "path": "g/bloons-player-pack-3/index.html",
         "meta": "g/bloons-player-pack-3/description.md",
         "tags": [
@@ -148,6 +154,7 @@
         "title": "Bloons Player Pack 2",
         "description": "Fun arcade game where you must help the monkey to pop all the balloons with its darts.",
         "thumbnail": "g/bloons-player-pack-2/thumbnail.jpg",
+        "logo": "g/bloons-player-pack-2/logo.jpg",
         "path": "g/bloons-player-pack-2/index.html",
         "meta": "g/bloons-player-pack-2/description.md",
         "tags": [
@@ -163,6 +170,7 @@
         "title": "Bloons Player Pack",
         "description": "Fun arcade game where you must help the monkey to pop all the balloons with its darts.",
         "thumbnail": "g/bloons-player-pack/thumbnail.jpg",
+        "logo": "g/bloons-player-pack/logo.jpg",
         "path": "g/bloons-player-pack/index.html",
         "meta": "g/bloons-player-pack/description.md",
         "tags": [
@@ -190,6 +198,7 @@
         "title": "Bloons",
         "description": "Fun arcade game where you must help the monkey to pop all the balloons with its darts.",
         "thumbnail": "g/bloons/thumbnail.png",
+        "logo": "g/bloons/logo.png",
         "path": "g/bloons/index.html",
         "meta": "g/bloons/description.md",
         "tags": [
@@ -208,7 +217,8 @@
         "id": "block-blast",
         "title": "Block Blast",
         "description": "Puzzle game where you place sets of three blocks on an 8x8 board to clear space and achieve high scores.",
-        "thumbnail": "g/block-blast/thumbnail.jpg",
+        "logo": "g/block-blast/thumbnail.jpg",
+        "thumbnail": "g/block-blast/thumb.jpg",
         "path": "g/block-blast/index.html",
         "meta": "g/block-blast/description.md",
         "tags": [
@@ -226,7 +236,8 @@
         "id": "infinite-craft",
         "title": "Infinite Craft",
         "description": "An endless crafting game powered by a LLM.",
-        "thumbnail": "g/infinite-craft/thumbnail.png",
+        "logo": "g/infinite-craft/logo.png",
+        "thumbnail": "g/infinite-craft/thumbnail.jpg",
         "path": "g/infinite-craft/index.html",
         "meta": "g/infinite-craft/description.md",
         "tags": [
@@ -245,6 +256,7 @@
         "title": "BuildNow GG",
         "description": "Fast-paced third-person tactical shooter that focuses heavily on building mechanics.",
         "thumbnail": "g/buildnow-gg/thumbnail.jpg",
+        "logo": "g/buildnow-gg/logo.png",
         "path": "g/buildnow-gg/index.html",
         "meta": "g/buildnow-gg/description.md",
         "tags": [
@@ -264,6 +276,7 @@
         "title": "Burrito Bison",
         "description": "Trapped in a world ruled by gummy bears, your only escape is to launch yourself from a wrestling ring and bounce your way out of Candy Land.",
         "thumbnail": "g/burrito-bison/thumbnail.jpg",
+        "logo": "g/burrito-bison/logo2.jpg",
         "path": "g/burrito-bison/index.html",
         "meta": "g/burrito-bison/description.md",
         "tags": [
