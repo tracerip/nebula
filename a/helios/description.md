@@ -5,10 +5,10 @@ It features advanced capabilities like tab cloaking, local offline access via a 
 
 # Controls
 Mouse - Navigate UI, Switch Tabs.
-Keyboard - Type URLs, Search.
-UI Buttons - Back, Forward, Reload, Home.
 
-# FAQ
+Keyboard - Type URLs, Search.
+
+UI Buttons - Back, Forward, Reload, Home.
 
 # Hidden SEO Keywords
 helios browser proxy, helios unblocked, dinguschan helios, web proxy github, browser in a browser, school chromebook bypass, unblock websites free, helios offline html, about blank cloaking, anti censorship tool, web os, html5 proxy, helios vercel, bypass admin blocks, dingusproxy, unrestricted internet access, helios github, proxy rotation

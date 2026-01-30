@@ -10,9 +10,7 @@ function createElementFromHTML(htmlString) {
 }
 
 // Generate the simple grid item (image only)
-// Generate the simple grid item (image only)
 function generateGridItem(item) {
-    // If thumbnail is emoji, create a colored box with emoji
     if (item.thumbnail && (item.thumbnail.startsWith('http') || item.thumbnail.includes('/') || item.thumbnail.includes('.'))) {
         return `
             <div class="grid-item">

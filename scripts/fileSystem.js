@@ -34,6 +34,56 @@ document.addEventListener('DOMContentLoaded', async () => {
     const loadedMenus = { c: false, a: false, g: false };
     let allItemsCache = []; // Cache all items for search/deep linking
 
+    // --- TOOLTIP LOGIC ---
+    const previewTooltip = document.createElement('div');
+    previewTooltip.className = 'game-preview-tooltip';
+    document.body.appendChild(previewTooltip);
+
+    function showTooltip(e, item) {
+        let screenshotsHtml = '';
+        if (item.screenshots && item.screenshots.length > 0) {
+            // Duplicate for infinite scroll effect
+            const images = [...item.screenshots, ...item.screenshots];
+            const trackHtml = images.map(src => `<img src="${src}" class="preview-screenshot-img">`).join('');
+            screenshotsHtml = `
+                <div class="preview-screenshots">
+                    <div class="preview-track">
+                        ${trackHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        previewTooltip.innerHTML = `
+            <img src="${item.thumbnail}" class="preview-thumb" alt="${item.title}">
+            <div class="preview-title">${item.title}</div>
+            <div class="preview-desc">${item.description || 'No description available.'}</div>
+            ${screenshotsHtml}
+        `;
+        previewTooltip.classList.add('visible');
+        updateTooltipPos(e);
+    }
+
+    function updateTooltipPos(e) {
+        const padding = 20;
+        let x = e.clientX + padding;
+        let y = e.clientY + padding;
+
+        if (x + previewTooltip.offsetWidth > window.innerWidth) {
+            x = e.clientX - previewTooltip.offsetWidth - padding;
+        }
+        if (y + previewTooltip.offsetHeight > window.innerHeight) {
+            y = e.clientY - previewTooltip.offsetHeight - padding;
+        }
+
+        previewTooltip.style.left = `${x}px`;
+        previewTooltip.style.top = `${y}px`;
+    }
+
+    function hideTooltip() {
+        previewTooltip.classList.remove('visible');
+    }
+
     // --- INITIALIZATION ---
 
     // Pre-fetch all indices for search/deep link lookup
@@ -65,31 +115,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (gameId) {
             const item = allItemsCache.find(i => i.id === gameId);
             if (item) {
-                openItem(item);
-                if (item.path.includes('games/') || item.tags) toggleSubmenu(toggleGames, subGames, 'g');
-                if (item.path.includes('a/')) toggleSubmenu(toggleApps, subApps, 'a');
+                openItem(item, true); // true = skip pushState
             }
         } else if (catId) {
-            // Need to look up category by ID
             fetch('c/index.json').then(r => r.json()).then(cats => {
                 const cat = cats.find(c => c.id === catId);
                 if (cat) {
                     renderCategoryView(cat.title);
-                    toggleSubmenu(toggleCategories, subCategories, 'c');
-
-                    // Wait for DOM to populate then highlight active
-                    setTimeout(() => {
-                        const link = Array.from(subCategories.querySelectorAll('.submenu-item')).find(l => l.innerText.trim() === cat.title);
-                        if (link) {
-                            document.querySelectorAll('.submenu-item').forEach(i => i.style.color = '#888');
-                            link.style.color = 'white';
-                            document.getElementById('nav-home').classList.remove('active');
-                        }
-                    }, 100);
                 }
             });
+        } else {
+            showDashboard(true); // true = skip pushState
         }
     }
+
+    window.addEventListener('popstate', checkDeepLink);
 
     // --- FILTERING & GRID RENDERING ---
 
@@ -152,6 +192,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 img.style.aspectRatio = '16/9';
                 img.style.objectFit = 'cover';
                 img.style.display = 'block';
+                img.style.transition = 'transform 0.3s ease';
 
                 const info = document.createElement('div');
                 info.style.padding = '16px';
@@ -163,7 +204,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 card.appendChild(img);
                 card.appendChild(info);
-                card.addEventListener('click', () => openItem(item));
+
+                card.addEventListener('mouseenter', () => {
+                    img.style.transform = 'scale(1.1)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    img.style.transform = 'scale(1)';
+                });
+
+                // Tooltip Listeners
+                card.addEventListener('mouseenter', (e) => showTooltip(e, item));
+                card.addEventListener('mousemove', (e) => updateTooltipPos(e));
+                card.addEventListener('mouseleave', () => hideTooltip());
+
+                card.addEventListener('click', () => {
+                    hideTooltip();
+                    openItem(item);
+                });
                 grid.appendChild(card);
             });
             container.appendChild(grid);
@@ -195,8 +252,23 @@ document.addEventListener('DOMContentLoaded', async () => {
             const response = await fetch(`${folder}/index.json`);
             if (!response.ok) throw new Error('Index not found');
             const data = await response.json();
-
             container.innerHTML = '';
+
+            // Custom sorting: 0-9, A-Z, then symbols
+            const getPriority = (str) => {
+                const char = (str || '').charAt(0).toLowerCase();
+                if (/[0-9]/.test(char)) return 1;
+                if (/[a-z]/.test(char)) return 2;
+                return 3;
+            };
+
+            data.sort((a, b) => {
+                const prioA = getPriority(a.title);
+                const prioB = getPriority(b.title);
+
+                if (prioA !== prioB) return prioA - prioB;
+                return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+            });
 
             data.forEach(item => {
                 const link = document.createElement('a');
@@ -250,12 +322,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // --- ITEM VIEWER (GAMES/APPS) ---
 
-    async function openItem(item) {
-        // Update URL without reload
-        const url = new URL(window.location);
-        url.searchParams.set('u', item.id);
-        url.searchParams.delete('c'); // Remove category param to prevent stacking
-        window.history.pushState({}, '', url);
+    async function openItem(item, skipPush = false) {
+        if (!skipPush) {
+            const url = new URL(window.location);
+            url.searchParams.set('u', item.id);
+            url.searchParams.delete('c');
+            window.history.pushState({}, '', url);
+        }
 
         // Update Dynamic Meta Tags
         const setMeta = (selector, val, attr = 'content') => {
@@ -298,7 +371,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (browseGrid) browseGrid.remove();
 
         // 1. Force Main Content to Full Width
-        mainContent.style.overflowY = 'auto'; // Enable scrolling for SEO content
+        mainContent.style.overflowY = 'auto'; // Enable scrolling for info content
 
         // Create View Container
         const viewContainer = document.createElement('div');
@@ -327,47 +400,32 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         viewContainer.appendChild(iframeContainer);
 
-        // --- SEO / INFO SECTION ---
-        const seoContainer = document.createElement('div');
-        seoContainer.style.padding = '40px';
-        seoContainer.style.maxWidth = '1000px';
-        seoContainer.style.margin = '0 auto';
-        seoContainer.style.color = '#ccc';
+        // --- GAME INFO CONTAINER ---
+        const infoWrapper = document.createElement('div');
+        infoWrapper.className = 'game-info-container';
+
+        // --- 1. TITLE & DESCRIPTION SECTION ---
+        const descSection = document.createElement('div');
+        descSection.className = 'info-section';
 
         let descContent = `<p>${item.description || 'No description available.'}</p>`;
-
-        // Try to fetch markdown description if available in meta field
         if (item.meta) {
             try {
                 const metaRes = await fetch(item.meta);
                 if (metaRes.ok) {
                     let mdText = await metaRes.text();
-
-                    // Extract SEO Keywords section (Hidden SEO or Hidden SEO Keywords)
-                    // Matches header and content up to next header or end of string
                     const seoRegex = /#\s*Hidden\s*SEO(?: Keywords)?\s*\n+([\s\S]*?)(?=\n#|$)/i;
                     const match = mdText.match(seoRegex);
-
                     if (match) {
-                        const keywords = match[1].replace(/\n/g, ', ').trim();
-
-                        // Update/Create Meta Tag
                         let metaTag = document.querySelector('meta[name="keywords"]');
                         if (!metaTag) {
                             metaTag = document.createElement('meta');
                             metaTag.name = "keywords";
                             document.head.appendChild(metaTag);
                         }
-                        metaTag.content = keywords;
-
-                        // Remove from the text so it doesn't render
+                        metaTag.content = match[1].replace(/\n/g, ', ').trim();
                         mdText = mdText.replace(seoRegex, '');
-                    } else {
-                        // Clear keywords if none found to avoid pollution from previous items
-                        let metaTag = document.querySelector('meta[name="keywords"]');
-                        if (metaTag) metaTag.content = "";
                     }
-
                     descContent = parseMarkdown(mdText);
                 }
             } catch (e) {
@@ -375,22 +433,155 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
 
-        seoContainer.innerHTML = `
-            <h1 style="font-family: 'Outfit', sans-serif; font-size: 3rem; color: white; margin-bottom: 20px;">${item.title}</h1>
-            <div style="font-size: 1.1rem; line-height: 1.6; color: #aaa;">
+        descSection.innerHTML = `
+            <div class="section-header">
+                <i data-feather="info" class="section-icon"></i>
+                <h2 class="section-title">Description</h2>
+            </div>
+            <h1 style="font-family: 'Outfit', sans-serif; font-size: 3.5rem; color: white; margin-bottom: 24px;">${item.title}</h1>
+            <div class="description-content">
                 ${descContent}
             </div>
         `;
+        infoWrapper.appendChild(descSection);
 
-        viewContainer.appendChild(seoContainer);
+        // --- 2. SCREENSHOTS SECTION ---
+        if (item.screenshots && Array.isArray(item.screenshots) && item.screenshots.length > 0) {
+            const screenshotSection = document.createElement('div');
+            screenshotSection.className = 'info-section';
 
+            const grid = document.createElement('div');
+            grid.className = 'screenshot-grid';
+
+            item.screenshots.forEach((src, idx) => {
+                const display = document.createElement('div');
+                display.className = 'screenshot-display';
+                display.style.backgroundImage = `url('${src}')`;
+
+                const img = document.createElement('img');
+                img.src = src;
+                img.className = 'screenshot-img';
+                img.alt = `${item.title} Screenshot ${idx + 1}`;
+
+                img.onload = () => {
+                    const ratio = img.naturalWidth / img.naturalHeight;
+                    // Dynamic Bento Logic
+                    if (idx === 0) {
+                        display.classList.add('span-large'); // Always feature the first one
+                    } else if (ratio > 1.8) {
+                        display.classList.add('span-wide');
+                    } else if (ratio < 0.7) {
+                        display.classList.add('span-tall');
+                    }
+                };
+
+                display.appendChild(img);
+                grid.appendChild(display);
+            });
+
+            screenshotSection.innerHTML = `
+                <div class="section-header">
+                    <i data-feather="image" class="section-icon"></i>
+                    <h2 class="section-title">Screenshots</h2>
+                </div>
+            `;
+            screenshotSection.appendChild(grid);
+            infoWrapper.appendChild(screenshotSection);
+        }
+
+        // --- 3. SIMILAR GAMES SECTION ---
+        let similarGames = allItemsCache.filter(i =>
+            i.id !== item.id &&
+            i.tags && item.tags &&
+            i.tags.some(tag => (item.tags || []).includes(tag))
+        ).slice(0, 10);
+
+        // Fallback to random games if no similar ones found
+        if (similarGames.length === 0) {
+            similarGames = allItemsCache
+                .filter(i => i.id !== item.id)
+                .sort(() => 0.5 - Math.random())
+                .slice(0, 10);
+        }
+
+        if (similarGames.length > 0) {
+            const isFallback = (allItemsCache.filter(i => i.id !== item.id && i.tags && item.tags && i.tags.some(tag => (item.tags || []).includes(tag))).length === 0);
+            const sectionTitle = isFallback ? 'Other Games' : 'Similar Games';
+
+            const similarSection = document.createElement('div');
+            similarSection.className = 'info-section';
+
+            similarSection.innerHTML = `
+                <div class="section-header">
+                    <i data-feather="grid" class="section-icon"></i>
+                    <h2 class="section-title">${sectionTitle}</h2>
+                </div>
+                <div class="similar-grid"></div>
+            `;
+
+            const grid = similarSection.querySelector('.similar-grid');
+
+            similarGames.forEach(sim => {
+                const card = document.createElement('a');
+                card.className = 'similar-card';
+                card.href = `?u=${sim.id}`;
+
+                const img = document.createElement('img');
+                img.src = sim.thumbnail;
+                img.className = 'similar-thumb';
+                img.alt = sim.title;
+                img.style.transition = 'transform 0.3s ease'; // Keep for hover effect
+
+                const info = document.createElement('div');
+                info.className = 'similar-info';
+                info.innerHTML = `
+                    <div class="similar-name">${sim.title}</div>
+                    <div class="similar-tags">${(sim.tags || []).join(', ')}</div>
+                `;
+
+                card.appendChild(img);
+                card.appendChild(info);
+
+                card.addEventListener('mouseenter', () => {
+                    img.style.transform = 'scale(1.1)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    img.style.transform = 'scale(1)';
+                });
+
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    hideTooltip();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    openItem(sim);
+                });
+
+                // Tooltip Listeners
+                card.addEventListener('mouseenter', (e) => showTooltip(e, sim));
+                card.addEventListener('mousemove', (e) => updateTooltipPos(e));
+                card.addEventListener('mouseleave', () => hideTooltip());
+
+                grid.appendChild(card);
+            });
+
+            infoWrapper.appendChild(similarSection);
+        }
+
+        viewContainer.appendChild(infoWrapper);
         mainContent.appendChild(viewContainer);
+
+        // Re-initialize feather icons for new content
+        if (window.feather) window.feather.replace();
     }
 
-    function showDashboard() {
-        const url = new URL(window.location);
-        url.searchParams.delete('c');
-        window.history.pushState({}, '', url);
+
+    function showDashboard(skipPush = false) {
+        if (!skipPush) {
+            const url = new URL(window.location);
+            url.searchParams.delete('c');
+            url.searchParams.delete('u');
+            window.history.pushState({}, '', url);
+        }
 
         document.querySelectorAll('.submenu-item').forEach(i => i.style.color = '#888');
 

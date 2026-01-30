@@ -5,9 +5,19 @@
         "thumbnail": "⚔️"
     },
     {
+        "id": "sandbox",
+        "title": "Sandbox",
+        "thumbnail": "🏜️"
+    },
+    {
         "id": "strategy",
         "title": "Strategy",
         "thumbnail": "🧠"
+    },
+    {
+        "id": "shooter",
+        "title": "Shooter",
+        "thumbnail": "🔫"
     },
     {
         "id": "horror",
@@ -23,5 +33,10 @@
         "id": "tower-defense",
         "title": "Tower Defense",
         "thumbnail": "🛡️"
+    },
+    {
+        "id": "multiplayer",
+        "title": "Multiplayer",
+        "thumbnail": "🧑‍🤝‍🧑"
     }
 ]

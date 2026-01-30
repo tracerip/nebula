@@ -8,8 +8,14 @@
         "meta": "g/buckshot-roulette/description.md",
         "tags": [
             "Horror",
-            "Strategy",
             "Action"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scq0im.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scq0in.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scq0io.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scq0ip.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scq0il.webp"
         ]
     },
     {
@@ -22,6 +28,13 @@
         "tags": [
             "Tower Defense",
             "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/dsj0vxjrlhhp4a7nngvf.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/x3ricpy7q38wojzvuclr.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/osmnmffy86ynffwtms0e.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/ihthg5rkn3hafd8556y1.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/sj17sanr0hcul9tjj65q.webp"
         ]
     },
     {
@@ -34,6 +47,12 @@
         "tags": [
             "Tower Defense",
             "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/rhnbfqaey6po8cscyfg2.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/svnvyrukq0grfev0e9kh.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/i6a0nyy8rgg0ca2kuns6.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/sc96q0.webp"
         ]
     },
     {
@@ -58,6 +77,9 @@
         "tags": [
             "Tower Defense",
             "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/sc95f3.webp"
         ]
     },
     {
@@ -70,6 +92,10 @@
         "tags": [
             "Tower Defense",
             "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/sc95e5.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/sc95e6.webp"
         ]
     },
     {
@@ -82,6 +108,9 @@
         "tags": [
             "Arcade",
             "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scvqmu.webp"
         ]
     },
     {
@@ -94,6 +123,9 @@
         "tags": [
             "Arcade",
             "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scvqmy.webp"
         ]
     },
     {
@@ -106,6 +138,9 @@
         "tags": [
             "Arcade",
             "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scvqmv.webp"
         ]
     },
     {
@@ -118,6 +153,9 @@
         "tags": [
             "Arcade",
             "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scvqmw.webp"
         ]
     },
     {
@@ -130,6 +168,9 @@
         "tags": [
             "Arcade",
             "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scvqmx.webp"
         ]
     },
     {
@@ -154,6 +195,13 @@
         "tags": [
             "Arcade",
             "Strategy"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scnzfp.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scnzfq.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scnzfr.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scnzfs.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scnzft.webp"
         ]
     },
     {
@@ -164,9 +212,14 @@
         "path": "g/block-blast/index.html",
         "meta": "g/block-blast/description.md",
         "tags": [
-            "Arcade",
             "Puzzle",
-            "Strategy"
+            "Arcade"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scosh2.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scosh3.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scosh4.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scosh5.webp"
         ]
     },
     {
@@ -177,9 +230,48 @@
         "path": "g/infinite-craft/index.html",
         "meta": "g/infinite-craft/description.md",
         "tags": [
-            "Arcade",
-            "Puzzle",
-            "Strategy"
+            "Sandbox"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scqdy3.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scqdy4.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scs8u0.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scs8u1.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scs8tz.webp"
+        ]
+    },
+    {
+        "id": "buildnow-gg",
+        "title": "BuildNow GG",
+        "description": "Fast-paced third-person tactical shooter that focuses heavily on building mechanics.",
+        "thumbnail": "g/buildnow-gg/thumbnail.jpg",
+        "path": "g/buildnow-gg/index.html",
+        "meta": "g/buildnow-gg/description.md",
+        "tags": [
+            "Shooter",
+            "Action",
+            "Multiplayer"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scvitx.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scvity.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scvitz.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scviu0.webp"
+        ]
+    },
+    {
+        "id": "burrito-bison",
+        "title": "Burrito Bison",
+        "description": "Trapped in a world ruled by gummy bears, your only escape is to launch yourself from a wrestling ring and bounce your way out of Candy Land.",
+        "thumbnail": "g/burrito-bison/thumbnail.jpg",
+        "path": "g/burrito-bison/index.html",
+        "meta": "g/burrito-bison/description.md",
+        "tags": [
+            "Arcade"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scq9ic.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scq9id.webp"
         ]
     }
 ]

@@ -556,3 +556,302 @@ body {
         transform: translateY(-50%);
     }
 }
+
+/* --- GAME DETAIL SECTIONS --- */
+.game-info-container {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.info-section {
+    margin-bottom: 80px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+.section-icon {
+    color: #6366f1;
+    width: 24px;
+    height: 24px;
+}
+
+.description-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #aaa;
+}
+
+.description-content h1,
+.description-content h2,
+.description-content h3 {
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+/* --- DYNAMIC BENTO SCREENSHOT GRID --- */
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.screenshot-display {
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    background: #050505;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* For the blurred background effect */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.screenshot-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(20px) brightness(0.4);
+    transform: scale(1.1);
+}
+
+.screenshot-display:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+/* Feature Smart Spans based on actual Content */
+.screenshot-display.span-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.screenshot-display.span-wide {
+    grid-column: span 2;
+}
+
+.screenshot-display.span-tall {
+    grid-row: span 2;
+}
+
+.screenshot-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    /* Prevents cutoff completely */
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
+
+.screenshot-display:hover .screenshot-img {
+    transform: scale(1.05);
+}
+
+/* Mobile Overrides for Bento */
+@media (max-width: 900px) {
+    .screenshot-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .screenshot-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .screenshot-display:nth-child(n) {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    .screenshot-img {
+        aspect-ratio: 16/9;
+    }
+}
+
+/* --- TOOLTIP SLIDESHOW --- */
+.preview-screenshots {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 12px;
+    position: relative;
+    border-radius: 8px;
+    height: 100px;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.preview-track {
+    display: flex;
+    gap: 8px;
+    width: max-content;
+    animation: preview-scroll 20s linear infinite;
+}
+
+.preview-screenshot-img {
+    height: 100px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes preview-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.similar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .similar-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1100px) {
+    .similar-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+a.similar-card {
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+
+.similar-card:hover {
+    transform: translateY(-8px);
+    border-color: #6366f1;
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+}
+
+.similar-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    background: #000;
+}
+
+
+.similar-info {
+    padding: 16px;
+}
+
+.similar-name {
+    font-weight: 700;
+    color: white;
+    font-size: 0.95rem;
+}
+
+.similar-tags {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* --- GAME PREVIEW TOOLTIP --- */
+.game-preview-tooltip {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    width: 280px;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: scale(0.95) translateY(10px);
+    visibility: hidden;
+}
+
+.game-preview-tooltip.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    visibility: visible;
+}
+
+.preview-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.preview-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.preview-desc {
+    font-size: 0.8rem;
+    color: #aaa;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

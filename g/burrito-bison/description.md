@@ -1,0 +1,12 @@
+# Description
+[Burrito Bison](https://www.igdb.com/games/burrito-bison) is the legendary launcher game where you play as a giant luchador who has been sucked into a candy bag while grocery shopping. Trapped in a world ruled by gummy bears, your only escape is to launch yourself from a wrestling ring and bounce your way out of Candy Land.
+
+Smash through massive doors, squash fleeing gummies to maintain speed, and earn cash to buy crucial upgrades like rocket pants, gliders, and stronger elastics. It is a perfect cycle of launch, crash, upgrade, and repeat.
+
+# Controls
+Space / Left Click - Launch from the ropes.
+
+Space / Left Click (In-air) - Rocket Slam (use stored energy to hit the ground and bounce higher).
+
+# Hidden SEO
+burrito bison unblocked, burrito bison free, play burrito bison browser, burrito bison no download, burrito bison revenge, burrito bison launcha libre, play burrito bison school, unblocked games burrito bison, launcher games unblocked, upgrade games free, distance games no download, toss the turtle alternative, juicy beast games, burrito bison online free, gummy bear game unblocked, burrito bison hacked, flash games unblocked
