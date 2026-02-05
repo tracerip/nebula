@@ -461,19 +461,34 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // --- IFRAME SECTION ---
         const iframeContainer = document.createElement('div');
+        iframeContainer.className = 'iframe-container';
         iframeContainer.style.width = '100%';
         iframeContainer.style.height = 'calc(100vh - 60px)'; // Full height minus topbar
         iframeContainer.style.minHeight = 'calc(100vh - 60px)';
         iframeContainer.style.flexShrink = '0'; // Prevent squishing
         iframeContainer.style.background = '#000';
         iframeContainer.style.borderBottom = '1px solid #1a1a1a';
+        iframeContainer.style.position = 'relative';
 
         const iframe = document.createElement('iframe');
         iframe.src = item.path || '#';
         iframe.style.width = '100%';
         iframe.style.height = '100%';
         iframe.style.border = 'none';
+
+        // Fullscreen Toggle
+        const fsBtn = document.createElement('button');
+        fsBtn.className = 'fullscreen-btn';
+        fsBtn.innerHTML = '<i data-feather="maximize"></i>';
+        fsBtn.title = 'Fullscreen';
+        fsBtn.onclick = () => {
+            if (iframe.requestFullscreen) iframe.requestFullscreen();
+            else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+            else if (iframe.msRequestFullscreen) iframe.msRequestFullscreen();
+        };
+
         iframeContainer.appendChild(iframe);
+        iframeContainer.appendChild(fsBtn);
 
         viewContainer.appendChild(iframeContainer);
 
