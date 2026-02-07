@@ -113,6 +113,20 @@ document.addEventListener('DOMContentLoaded', async () => {
                 console.error(`Failed to load ${folder} index`);
             }
         }
+
+        // Background pre-fetch images for common UI elements
+        prefetchImages();
+    }
+
+    function prefetchImages() {
+        const toPrefetch = allItemsCache.slice(0, 50);
+        toPrefetch.forEach(item => {
+            const imgUrl = item.thumbnail || item.icon;
+            if (imgUrl) {
+                const img = new Image();
+                img.src = imgUrl;
+            }
+        });
     }
 
     function syncSidebar(id) {
