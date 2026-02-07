@@ -784,5 +784,51 @@ document.addEventListener('DOMContentLoaded', async () => {
     window.openItem = openItem;
     window.showTooltip = showTooltip;
     window.updateTooltipPos = updateTooltipPos;
+    // --- MOBILE MENU LOGIC ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+    if (mobileMenuBtn && sidebar && sidebarOverlay) {
+
+        function toggleSidebar(show) {
+            if (show) {
+                sidebar.classList.add('open');
+                sidebarOverlay.classList.add('visible');
+            } else {
+                sidebar.classList.remove('open');
+                sidebarOverlay.classList.remove('visible');
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = sidebar.classList.contains('open');
+            toggleSidebar(!isOpen);
+        });
+
+        sidebarOverlay.addEventListener('click', () => {
+            toggleSidebar(false);
+        });
+
+        // Event Delegation for dynamic items
+        sidebar.addEventListener('click', (e) => {
+            if (window.innerWidth <= 900) {
+                const target = e.target.closest('a, .submenu-item, .nav-item');
+                if (target && !target.id.includes('toggle')) {
+                    // Check if it's a toggle button (expand/collapse), if so, don't close
+                    // The toggles have IDs nav-categories-toggle etc.
+                    // But wait, the toggle itself is an 'a' tag.
+                    // The user wants to expand the menu, not close the sidebar.
+
+                    if (target.id === 'nav-categories-toggle' || target.id === 'nav-apps-toggle' || target.id === 'nav-games-toggle') {
+                        return;
+                    }
+                    toggleSidebar(false);
+                }
+            }
+        });
+    }
+
     window.hideTooltip = hideTooltip;
 });

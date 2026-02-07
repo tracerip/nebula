@@ -89,6 +89,7 @@
 <body>
 
     <div class="app-layout">
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
         <!-- SIDEBAR -->
         <aside class="sidebar">
@@ -181,6 +182,10 @@
 
         <!-- TOP BAR -->
         <header class="top-bar">
+            <button id="mobile-menu-toggle"
+                style="display: none; background: none; border: none; color: white; margin-right: 16px; cursor: pointer;">
+                <i data-feather="menu"></i>
+            </button>
             <div class="search-container">
                 <i data-feather="search" class="search-icon"></i>
                 <input type="text" class="search-input" placeholder="Search games...">

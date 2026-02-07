@@ -328,7 +328,7 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(5px);
-    z-index: 1000;
+    z-index: 3000;
     display: none;
     justify-content: center;
     align-items: center;
@@ -859,6 +859,7 @@ a.similar-card {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
 /* --- FULLSCREEN BUTTON --- */
 .fullscreen-btn {
     position: absolute;
@@ -890,4 +891,147 @@ a.similar-card {
 .fullscreen-btn i {
     width: 20px;
     height: 20px;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 900px) {
+    .app-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "topbar"
+            "content";
+    }
+
+    /* Keep Sidebar hidden by default but reachable */
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        bottom: 0;
+        width: 260px;
+        z-index: 2000;
+        background: #0a0a0a;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-right: 1px solid #222;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .sidebar.open {
+        transform: translateX(280px);
+    }
+
+    /* Sidebar Overlay */
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 1500;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+    }
+
+    .sidebar-overlay.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Top Bar Adjustments */
+    .top-bar {
+        padding: 0 16px;
+        gap: 8px;
+    }
+
+    #mobile-menu-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-container {
+        flex: 1;
+        width: auto;
+    }
+
+    .search-input {
+        padding-left: 36px;
+    }
+
+    .search-icon {
+        left: 10px;
+    }
+
+    .top-widgets {
+        display: none;
+        /* Hide widgets on mobile to save space */
+    }
+
+    /* Content Area Adjustments */
+    .hero-section {
+        padding: 40px 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main-title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    .grid-panel {
+        display: none;
+        /* Hide 3D grid as it's purely decorative and heavy */
+    }
+
+    /* Center Action Cards */
+    .actions-grid {
+        justify-content: center;
+    }
+
+    .action-card {
+        width: 100%;
+        /* Stack cards vertically */
+        max-width: 400px;
+        flex: unset;
+    }
+
+    .action-card.primary-large {
+        flex: unset;
+    }
+
+    /* Game Info Adjustments */
+    .game-info-container {
+        padding: 40px 20px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .description-content h1 {
+        font-size: 1.8rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .browse-title {
+        font-size: 1.8rem;
+    }
+
+    .browse-grid {
+        grid-template-columns: 1fr;
+        /* Single column for games */
+    }
 }
