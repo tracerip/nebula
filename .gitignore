@@ -6,3 +6,4 @@
 !.vscode/*.code-snippets
 !*.code-workspace
 *.vsix
+/scripts/index.py
