@@ -469,7 +469,7 @@
         "id": "super-mario-64",
         "title": "Super Mario 64",
         "description": "Retrieve the Power Stars from their hidden locations and confront your arch-nemesis— Bowser, King of the Koopas!",
-        "thumbnail": "g/super-mario-64/thumbnail.jpg",
+        "thumbnail": "g/super-mario-64/thumbnail.png",
         "icon": "g/super-mario-64/icon.jpg",
         "path": "g/super-mario-64/index.html",
         "meta": "g/super-mario-64/description.md",
@@ -506,6 +506,39 @@
             "https://images.igdb.com/igdb/image/upload/t_720p/sccwoa.webp",
             "https://images.igdb.com/igdb/image/upload/t_720p/sccwob.webp",
             "https://images.igdb.com/igdb/image/upload/t_720p/sccwoc.webp"
+        ]
+    },
+    {
+        "id": "eaglercraft-1.12.2-wasm",
+        "title": "Minecraft 1.12.2 WASM",
+        "description": "A highly stable release of the iconic sandbox survival game developed by Mojang Studios. Known as The World of Color Update.",
+        "thumbnail": "g/eaglercraft-1.12.2-wasm/thumbnail.png",
+        "path": "g/eaglercraft-1.12.2-wasm/index.html",
+        "meta": "g/eaglercraft-1.12.2-wasm/description.md",
+        "tags": [
+            "Sandbox",
+            "Adventure"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scsey0.webp"
+        ]
+    },
+    {
+        "id": "eaglercraftx-1.8.8-wasm",
+        "title": "Minecraft 1.8.8 WASM",
+        "description": "A highly stable release of the iconic sandbox survival game developed by Mojang Studios. Known as The Bountiful Update.",
+        "thumbnail": "g/eaglercraftx-1.8.8-wasm/thumbnail.png",
+        "path": "g/eaglercraftx-1.8.8-wasm/index.html",
+        "meta": "g/eaglercraftx-1.8.8-wasm/description.md",
+        "tags": [
+            "Sandbox",
+            "Adventure"
+        ],
+        "screenshots": [
+            "https://images.igdb.com/igdb/image/upload/t_720p/scjejg.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scmli7.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scmli8.webp",
+            "https://images.igdb.com/igdb/image/upload/t_720p/scmli9.webp"
         ]
     }
 ]

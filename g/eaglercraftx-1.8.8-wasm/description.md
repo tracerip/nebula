@@ -1,0 +1,17 @@
+# Description
+[Minecraft 1.8.8](https://minecraft.wiki/w/Java_Edition_1.8.8) is a stable release of the legendary sandbox survival game developed by [Mojang Studios](https://minecraft.wiki/w/Mojang_Studios). Known as "[The Bountiful Update](https://minecraft.wiki/w/Bountiful_Update)," this version introduced ocean monuments, guardians, new stone variants, banners, armor stands, and enhanced command block functionality.
+
+# Controls
+Left Click - Attack/mine blocks; pick up all items from a slot; split a stack evenly (hold and drag); sort loose items into one stack (double click).
+Right Click - Place blocks/use items; pick up half of a stack; place one item from a stack (hold and drag).
+WASD - Move forward, left, backward, right.
+Space - Jump; swim upward; fly up (Creative Mode).
+Shift - Sneak/crouch; fly down (Creative Mode).
+E - Open inventory.
+Q - Drop held item.
+1-9 / Scroll Wheel - Select hotbar slot.
+F5 - Toggle third-person view.
+F3 - Debug screen.
+
+# Hidden SEO
+minecraft 1.8.8 wasm, minecraft webassembly, minecraft 1.8.8, minecraft 1.8, minecraft 1.8 pvp, minecraft bountiful update, minecraft 1.8 download, minecraft 1.8 free, play minecraft 1.8, minecraft java edition, minecraft 1.8 server, minecraft 1.8 mods, minecraft 1.8 texture packs, minecraft 1.8 multiplayer, minecraft classic pvp, minecraft no cooldown pvp, minecraft 1.8 combat, minecraft survival game, minecraft sandbox game, minecraft mojang, minecraft bedwars 1.8, minecraft skywars 1.8, minecraft hypixel 1.8, minecraft 1.8 optifine, minecraft old version, minecraft legacy combat, minecraft ocean monument update, minecraft guardians update, minecraft armor stands, minecraft banners

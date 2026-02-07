@@ -36,10 +36,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     let allItemsCache = []; // Cache all items for search/deep linking
     let categoriesCache = []; // Cache categories for alias mapping
 
-    // --- TOOLTIP LOGIC ---
     const previewTooltip = document.createElement('div');
     previewTooltip.className = 'game-preview-tooltip';
     document.body.appendChild(previewTooltip);
+
+    const PRIMARY_DOMAIN = 'https://trylearning.space';
+
+    const setMeta = (selector, val, attr = 'content') => {
+        let el = document.querySelector(selector);
+        if (!el) {
+            el = document.createElement(selector.startsWith('link') ? 'link' : 'meta');
+            if (selector.includes('property')) el.setAttribute('property', selector.match(/property="([^"]+)"/)[1]);
+            if (selector.includes('name')) el.setAttribute('name', selector.match(/name="([^"]+)"/)[1]);
+            if (selector.includes('rel')) el.setAttribute('rel', 'canonical');
+            document.head.appendChild(el);
+        }
+        el.setAttribute(attr, val);
+    };
 
     function showTooltip(e, item) {
         let screenshotsHtml = '';
@@ -107,7 +120,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const res = await fetch(`${folder}/index.json`);
                 if (res.ok) {
                     const data = await res.json();
-                    allItemsCache = [...allItemsCache, ...data];
+                    const typedData = data.map(item => ({ ...item, type: folder }));
+                    allItemsCache = [...allItemsCache, ...typedData];
                 }
             } catch (e) {
                 console.error(`Failed to load ${folder} index`);
@@ -190,10 +204,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     function checkDeepLink() {
         const params = new URLSearchParams(window.location.search);
         const gameId = params.get('u');
+        const appId = params.get('a');
         const catId = params.get('c');
 
-        if (gameId) {
-            const item = allItemsCache.find(i => i.id === gameId);
+        const targetId = gameId || appId;
+
+        if (targetId) {
+            const item = allItemsCache.find(i => i.id === targetId);
             if (item) {
                 openItem(item, true); // true = skip pushState
             }
@@ -220,6 +237,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             const normalized = normalizeTags(item.tags);
             return normalized.some(tag => tag.toLowerCase() === categoryTitle.toLowerCase());
         });
+
+        // Update Canonical for Category
+        const params = new URLSearchParams(window.location.search);
+        const catId = params.get('c');
+        if (catId) {
+            const canonicalUrl = `${PRIMARY_DOMAIN}?c=${catId}`;
+            setMeta('link[rel="canonical"]', canonicalUrl, 'href');
+        }
+
         renderGrid(results, categoryTitle);
     }
 
@@ -353,7 +379,29 @@ document.addEventListener('DOMContentLoaded', async () => {
                 return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
             });
 
+            // Pre-calculate which categories are actually in use
+            const usedCategoryTitles = new Set();
+            if (folder === 'c') {
+                allItemsCache.forEach(game => {
+                    (game.tags || []).forEach(tag => {
+                        const t = tag.toLowerCase().trim();
+                        // Find ALL matching categories by ID, Title, or Alias
+                        const matchingCats = categoriesCache.filter(c =>
+                            c.id.toLowerCase() === t ||
+                            c.title.toLowerCase() === t ||
+                            (c.aliases && c.aliases.some(a => a.toLowerCase() === t))
+                        );
+                        matchingCats.forEach(cat => usedCategoryTitles.add(cat.title.toLowerCase()));
+                    });
+                });
+            }
+
             data.forEach(item => {
+                // If this is the categories menu, hide empty ones
+                if (folder === 'c') {
+                    if (!usedCategoryTitles.has(item.title.toLowerCase())) return;
+                }
+
                 const link = document.createElement('a');
                 link.className = 'submenu-item';
 
@@ -416,35 +464,25 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (!skipPush) {
             const url = new URL(window.location);
-            url.searchParams.set('u', item.id);
+            const param = item.type === 'a' ? 'a' : 'u';
+            url.searchParams.set(param, item.id);
+            if (param === 'a') url.searchParams.delete('u'); else url.searchParams.delete('a');
             url.searchParams.delete('c');
             window.history.pushState({}, '', url);
         }
 
-        // Update Dynamic Meta Tags
-        const setMeta = (selector, val, attr = 'content') => {
-            let el = document.querySelector(selector);
-            if (!el) {
-                el = document.createElement(selector.startsWith('link') ? 'link' : 'meta');
-                if (selector.includes('property')) el.setAttribute('property', selector.match(/property="([^"]+)"/)[1]);
-                if (selector.includes('name')) el.setAttribute('name', selector.match(/name="([^"]+)"/)[1]);
-                if (selector.includes('rel')) el.setAttribute('rel', 'canonical');
-                document.head.appendChild(el);
-            }
-            el.setAttribute(attr, val);
-        };
-
-        const absoluteThumb = new URL(item.thumbnail, window.location.origin).href;
-        const pageUrl = window.location.href;
+        const paramKey = item.type === 'a' ? 'a' : 'u';
+        const canonicalUrl = `${PRIMARY_DOMAIN}?${paramKey}=${item.id}`;
+        const absoluteThumb = new URL(item.thumbnail || item.icon, window.location.origin).href;
 
         document.title = `Play ${item.title} Unblocked for Free No Download`;
-        setMeta('link[rel="canonical"]', pageUrl, 'href');
+        setMeta('link[rel="canonical"]', canonicalUrl, 'href');
         setMeta('meta[property="og:title"]', `Play ${item.title} Unblocked for Free No Download`);
         setMeta('meta[property="og:description"]', item.description || `Play ${item.title} Unblocked for Free No Download`);
         setMeta('meta[property="og:image"]', absoluteThumb);
-        setMeta('meta[property="og:url"]', pageUrl);
+        setMeta('meta[property="og:url"]', canonicalUrl);
 
-        setMeta('meta[name="twitter:url"]', pageUrl);
+        setMeta('meta[name="twitter:url"]', canonicalUrl);
         setMeta('meta[name="twitter:card"]', 'summary_large_image');
         setMeta('meta[name="twitter:title"]', `Play ${item.title} Unblocked for Free No Download`);
         setMeta('meta[name="twitter:description"]', item.description || `Play ${item.title} Unblocked for Free No Download`);
@@ -700,6 +738,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const browseGrid = document.querySelector('.browse-grid-container');
         if (browseGrid) browseGrid.remove();
+
+        // Reset Meta for Dashboard
+        document.title = "Nebula";
+        setMeta('link[rel="canonical"]', PRIMARY_DOMAIN, 'href');
 
         // Restore Dashboard
         mainContent.scrollTop = 0;

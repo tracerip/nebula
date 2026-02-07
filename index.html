@@ -9,6 +9,7 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#6366f1">
     <meta name="color-scheme" content="dark">
+    <link rel="canonical" href="https://trylearning.space">
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico">
@@ -240,8 +241,7 @@
                             </div>
                         </div>
 
-                        <div class="action-card"
-                            onclick="window.open('https://github.com/tracerip/nebula', '_blank')">
+                        <div class="action-card" onclick="window.open('https://github.com/tracerip/nebula', '_blank')">
                             <div class="action-icon">
                                 <i data-feather="github"></i>
                             </div>
@@ -385,15 +385,6 @@
             }
         }
         fetchLastCommit();
-
-        // Register Service Worker
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('Service Worker registered'))
-                    .catch(err => console.log('Service Worker registration failed', err));
-            });
-        }
     </script>
 </body>
 

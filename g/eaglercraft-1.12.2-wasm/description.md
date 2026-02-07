@@ -1,0 +1,26 @@
+# Description
+[Minecraft 1.12.2](https://minecraft.wiki/w/Java_Edition_1.12.2) is a highly stable release of the iconic sandbox survival game developed by [Mojang Studios](https://minecraft.wiki/w/Mojang_Studios). Known as "[The World of Color Update](https://minecraft.wiki/w/World_of_Color_Update)," this version introduced concrete blocks, glazed terracotta, parrots, the recipe book, advancements system, and illusioners.
+
+# Controls
+Left Click - Attack/mine blocks; pick up all items from a slot; split a stack evenly (hold and drag); sort loose items into one stack (double click).
+
+Right Click - Place blocks/use items; pick up half of a stack; place one item from a stack (hold and drag).
+
+WASD - Move forward, left, backward, right.
+
+Space - Jump; swim upward; fly up (Creative Mode).
+
+Shift - Sneak/crouch; fly down (Creative Mode).
+
+E - Open inventory.
+
+Q - Drop held item.
+
+1-9 / Scroll Wheel - Select hotbar slot.
+
+F5 - Toggle third-person view.
+
+F3 - Debug screen.
+
+# Hidden SEO
+minecraft 1.12.2 wasm, minecraft webassembly, faster minecraft web, minecraft 1.12.2, minecraft 1.12, minecraft world of color update, minecraft 1.12.2 download, minecraft 1.12.2 mods, minecraft 1.12.2 modpacks, minecraft 1.12.2 forge, minecraft modded, minecraft java edition, minecraft 1.12.2 server, minecraft 1.12.2 texture packs, minecraft rlcraft, minecraft skyfactory, minecraft technic, minecraft feed the beast, minecraft curseforge mods, minecraft 1.12.2 shaders, minecraft 1.12.2 optifine, minecraft concrete update, minecraft glazed terracotta, minecraft parrots, minecraft advancements, minecraft recipe book, minecraft 1.12.2 multiplayer, minecraft survival game, minecraft sandbox game, minecraft mojang

@@ -1,5 +1,5 @@
-const CACHE_NAME = 'nebula-v2-cache';
-const IMAGE_CACHE = 'nebula-image-cache';
+const CACHE_NAME = 'nebula-v3-cache';
+const IMAGE_CACHE = 'nebula-image-cache-v2';
 
 self.addEventListener('install', (event) => {
     self.skipWaiting();
